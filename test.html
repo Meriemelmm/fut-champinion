@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terrain de Football - Div avec fond</title>
+    <style>
+        /* Réinitialisation des marges et du padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corps de la page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Div de terrain de football */
+        .field {
+            width: 800px;  /* Largeur du terrain */
+            height: 500px;  /* Hauteur du terrain */
+            background-image: url('https://example.com/football-field.jpg'); /* Lien de l'image de fond du terrain */
+            background-size: cover;  /* L'image couvre toute la div */
+            background-position: center;  /* L'image est centrée */
+            background-repeat: no-repeat;  /* L'image ne se répète pas */
+            border: 2px solid white;  /* Bordure pour délimiter le terrain */
+            position: relative;
+        }
+
+        /* Exemple de joueurs */
+        .player {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        /* Positions des joueurs */
+        .gk { bottom: 10%; left: 50%; transform: translateX(-50%); }  /* Gardien */
+        .cb { bottom: 30%; left: 20%; }  /* Défenseur central */
+        .rb { bottom: 30%; right: 20%; }  /* Défenseur droit */
+        .st { top: 10%; left: 50%; transform: translateX(-50%); }  /* Attaquant */
+
+    </style>
+</head>
+<body>
+
+    <div class="field">
+        <!-- Exemple de joueur -->
+        <div class="player gk">GK</div>
+        <div class="player cb">CB</div>
+        <div class="player rb">RB</div>
+        <div class="player st">ST</div>
+    </div>
+
+</body>
+</html>
