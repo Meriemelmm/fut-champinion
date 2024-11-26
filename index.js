@@ -241,7 +241,64 @@ players=[];
 
 // Vérifier que chaque valeur de caractéristique est un entier compris entre 0 et 100.
 // Une fois que vous avez défini ces conditions de validation, vous pouvez appliquer ces règles à l'aide d'événements JavaScript pour assurer que l'utilisateur saisit des données valides avant de soumettre un formulaire ou de traiter l'objet.
+nationality.addEventListener('input',valide_nationality);
+function valide_nationality(){
+  if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value)){
+    result[2].innerHTML="correct"
+  }
+  else(result[2].innerHTML="invalid")
+}
+ pace.addEventListener('click',valide_pace);
+function valide_pace() {
+  if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
+    result[5].innerHTML="valide";
+    console.log("correct")
 
+  }
+  else{
+    result[5].innerHTML="invalid";
+    // console.log("incorrect")
+  }
+ }
+
+ pace.addEventListener('click',valide_pace);
+function valide_pace() {
+  if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
+    result[5].innerHTML="valide";
+    console.log("correct")
+
+  }
+  else{
+    result[5].innerHTML="invalid";
+    // console.log("incorrect")
+  }
+ }
+ shooting.addEventListener('click',valide_shooting);
+ function valide_shooting() {
+   if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
+     result[6].innerHTML="valide";
+     console.log("correct")
+ 
+   }
+   else{
+     result[6].innerHTML="invalid";
+     // console.log("incorrect")
+   }
+  }
+  passing.addEventListener('click',valide_passing);
+ function valide_passing() {
+   if(passing.value != "" && !isNaN(passing.value) && r.value >= 0 && passing.value <= 100){
+    // result[7].innerHTML="valide";
+    console.log("correct")
+ 
+   }
+   else{
+    result[7].innerHTML="invalid";
+   
+     // console.log("incorrect")
+   }
+  }
+ 
 
 
 
