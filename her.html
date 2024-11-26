@@ -8,15 +8,13 @@
     <style>
         body {
                 font-family: Arial, sans-serif;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+              
                 height: 100vh;
                 background-color: #f0f0f0;
             }
-            * {
-                margin: 0;
-                padding: 0;
+            * {   
+    
+              
                 box-sizing: border-box;
             }
             .terran{
@@ -98,11 +96,12 @@
             .form_terran{
                 display: flex;
                 flex-wrap:  wrap;
+
                
               align-items: center;
               justify-content: center;
-              margin-top: 500px;
-              gap:60px;
+              margin-top: 100px;
+              gap:10px;
             }
             .text{
                 text-align: left;
@@ -118,11 +117,81 @@
            </style>
 
 </head>
-<body>
+<div>
+<body>  <div style="margin-top: 100px;  display:flex;flex-direction:  column; gap:10px"> <div><label for="formation-select" ></label>
+    <select name="formations" id="formation-select">
+      <option value="">--formation-</option>
+      <option value="433">4-3-3</option>
+      <option value="432">4-3-2</option>
+      >
+    </select> </div>
+   <button id="add_player" style="width: 100px;background-color: #45a049; margin-left: 20px;">  add players</button>
+   </div>
+
   
- 
-   
     <div  class="form_terran">
+       
+
+<form action="" id="forma" get  >
+        <h1 style="text-align: center;"> add your  player</h1>
+        <label for="">   nom</label>
+        <input type="text" id="nom"required>
+        <div class="text"></div>
+        <label for=""> positon</label>
+        <input type="text" id="position"required>
+        <div class="text"></div>
+    
+<!--        
+        <label for=""> statistique</label>
+        <input type="text"> -->
+        <label for=""> nationality</label>
+        <input type="text" id="nationality" required>
+        <div class="text"></div>
+        <label for=""> club</label>
+        <input type="text" id="club" required>
+        <div class="text"></div>
+        <label for=""> rating</label>
+        <input type="number" id="rating"required>
+        <div class="text"></div>
+        <label for=""> pace</label>
+        <input type="number" id="pace"required>
+        <div class="text"></div>
+        <label for=""> shootting</label>
+        <input type="number" id="shooting" required>
+        <div class="text"></div>
+        <label for="">passing</label>
+
+        <input type="number" id="passing"required> 
+        <div class="text"></div>
+        
+        <label for="">dribbling</label>
+        <input type="number" id="dribbling" required>
+        <div class="text"></div>
+        <label for="">defending</label>
+        <input type="nomber" id="defending"  required>
+        <div class="text"></div>
+        <label for="">physical</label>
+        <input type="number" id="physical"  required>
+        <div class="text"></div>
+        <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
+    
+        
+        <!-- "name": "Lionel Messi",
+        "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
+        "position": "RW",
+        "nationality": "Argentina",
+        "flag": "https://cdn.sofifa.net/flags/ar.png",
+        "club": "Inter Miami",
+        "logo": "https://cdn.sofifa.net/meta/team/239235/120.png",
+        "rating": 93,
+        "pace": 85,
+        "shooting": 92,
+        "passing": 91,
+        "dribbling": 95,
+        "defending": 35,
+        "physical": 65 -->
+     </form>
+
        <div class="terran"> 
        
 
@@ -206,68 +275,12 @@
 
 
        </div> 
-       <div id="btn_form"><button id="add_player">  add your favourite players</button>
-       <form action="" id="forma" get  >
-        <h1 style="text-align: center;"> add your  player</h1>
-        <label for="">   nom</label>
-        <input type="text" id="nom"required>
-        <div class="text"></div>
-        <label for=""> positon</label>
-        <input type="text" id="position"required>
-        <div class="text"></div>
-    
-<!--        
-        <label for=""> statistique</label>
-        <input type="text"> -->
-        <label for=""> nationality</label>
-        <input type="text" id="nationality" required>
-        <div class="text"></div>
-        <label for=""> club</label>
-        <input type="text" id="club" required>
-        <div class="text"></div>
-        <label for=""> rating</label>
-        <input type="number" id="rating"required>
-        <div class="text"></div>
-        <label for=""> pace</label>
-        <input type="number" id="pace"required>
-        <div class="text"></div>
-        <label for=""> shootting</label>
-        <input type="number" id="shooting" required>
-        <div class="text"></div>
-        <label for="">passing</label>
-
-        <input type="number" id="passing"required> 
-        <div class="text"></div>
-        
-        <label for="">dribbling</label>
-        <input type="number" id="dribbling" required>
-        <div class="text"></div>
-        <label for="">defending</label>
-        <input type="nomber" id="defending"  required>
-        <div class="text"></div>
-        <label for="">physical</label>
-        <input type="number" id="physical"  required>
-        <div class="text"></div>
-        <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
-    
-        
-        <!-- "name": "Lionel Messi",
-        "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
-        "position": "RW",
-        "nationality": "Argentina",
-        "flag": "https://cdn.sofifa.net/flags/ar.png",
-        "club": "Inter Miami",
-        "logo": "https://cdn.sofifa.net/meta/team/239235/120.png",
-        "rating": 93,
-        "pace": 85,
-        "shooting": 92,
-        "passing": 91,
-        "dribbling": 95,
-        "defending": 35,
-        "physical": 65 -->
-     </form></div>
+      
        
     </div>
+    
+
+
     <script src="index.js"></script>
 </body>
 </html>
