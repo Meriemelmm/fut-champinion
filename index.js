@@ -248,7 +248,7 @@ function valide_nationality(){
   }
   else(result[2].innerHTML="invalid")
 }
- pace.addEventListener('click',valide_pace);
+ pace.addEventListener('input',valide_pace);
 function valide_pace() {
   if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
     result[5].innerHTML="valide";
@@ -261,7 +261,7 @@ function valide_pace() {
   }
  }
 
- pace.addEventListener('click',valide_pace);
+ pace.addEventListener('input',valide_pace);
 function valide_pace() {
   if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
     result[5].innerHTML="valide";
@@ -273,7 +273,7 @@ function valide_pace() {
     // console.log("incorrect")
   }
  }
- shooting.addEventListener('click',valide_shooting);
+ shooting.addEventListener('input',valide_shooting);
  function valide_shooting() {
    if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
      result[6].innerHTML="valide";
@@ -285,19 +285,86 @@ function valide_pace() {
      // console.log("incorrect")
    }
   }
-  passing.addEventListener('click',valide_passing);
+  
+  defending.addEventListener('input',valide_defending);
+  function valide_defending() {
+    if(defending.value != "" && !isNaN(defending.value) && defending.value >= 0 && defending.value <= 100){
+      result[9].innerHTML="valide";
+      console.log("correct")
+   
+     }
+     else{
+      // result[9].innerHTML="invalid";
+     
+       console.log("incorrect");
+     }
+   }
+   physical.addEventListener('input',valide_physical);
+  function valide_physical() {
+    if(physical.value != "" && !isNaN(physical.value) && defending.value >= 0 && physical.value <= 100){
+      result[10].innerHTML="valide";
+      console.log("correct")
+   
+     }
+     else{
+      result[10].innerHTML="invalid";
+     
+       console.log("incorrect");
+     }
+   }
+   dribbling.addEventListener('input',valide_dribbling);
+   function valide_dribbling() {
+     if(dribbling.value != "" && !isNaN(dribbling.value) && dribbling.value >= 0 && dribbling.value <= 100){
+       result[8].innerHTML="valide";
+       console.log("correct")
+    
+      }
+      else{
+       result[8].innerHTML="invalid";
+      
+        console.log("incorrect");
+      }
+    }
+    passing.addEventListener('input',valide_passing);
  function valide_passing() {
-   if(passing.value != "" && !isNaN(passing.value) && r.value >= 0 && passing.value <= 100){
-    // result[7].innerHTML="valide";
+   if(passing.value != "" && !isNaN(passing.value) && passing.value >= 0 && passing.value <= 100){
+    result[7].innerHTML="valide";
     console.log("correct")
  
    }
    else{
     result[7].innerHTML="invalid";
    
-     // console.log("incorrect")
+     // console.log("incorrect");
    }
   }
+  club.addEventListener('input',valide_club);
+  function valide_club() {
+    if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value))
+   {
+     result[3].innerHTML="valide";
+     console.log("correct")
+  
+    }
+    else{
+     result[3].innerHTML="invalid";
+    
+      // console.log("incorrect");
+    }
+   }
+  
+  //  ajoutation player :
+  create.addEventListener('click',add_players); 
+   function add_players(){
+   
+
+    
+    
+
+  }
+  
+  
+  
  
 
 

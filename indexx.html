@@ -9,6 +9,7 @@
        
         
            background: url(https://i.pinimg.com/474x/02/f0/a0/02f0a04d141f9159906da402d942ec83.jpg);
+           /* https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/stadium_background.webp */
               position:relative;
               width:80vh;
      height: 
@@ -46,7 +47,7 @@
 
 
         <div style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;" id="gool_kipper">
-            <div style="text-align:  center;"> <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
+            <div style="text-align:  center;"> <img  src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px; position: relative;">
             
         </div>
      <div id="1 GK">kg</div>
@@ -110,7 +111,9 @@
      <!--  final players -->
        <div id="st" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;"><img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
          <div> rw</div> </div>
-
+         <!-- ffff -->
+         <div id="st" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;"><img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
+            <div> rw</div> </div>
 
 
 
@@ -119,45 +122,48 @@
 
        </div> 
        <div id="btn_form"><button id="add_player">  add your favourite players</button>
-       <form action="" id="forma" >
+       <form action="" id="forma" get  >
         <h1 style="text-align: center;"> add your  player</h1>
         <label for="">   nom</label>
-        <input type="text" id="nom">
+        <input type="text" id="nom"required>
         <div class="text"></div>
         <label for=""> positon</label>
-        <input type="text" id="position">
+        <input type="text" id="position"required>
         <div class="text"></div>
     
 <!--        
         <label for=""> statistique</label>
         <input type="text"> -->
         <label for=""> nationality</label>
-        <input type="text" id="nationality">
+        <input type="text" id="nationality" required>
         <div class="text"></div>
         <label for=""> club</label>
-        <input type="text" id="club">
+        <input type="text" id="club" required>
         <div class="text"></div>
         <label for=""> rating</label>
-        <input type="number" id="rating">
+        <input type="number" id="rating"required>
         <div class="text"></div>
         <label for=""> pace</label>
-        <input type="number" id="pace">
+        <input type="number" id="pace"required>
         <div class="text"></div>
         <label for=""> shootting</label>
-        <input type="number" id="shooting">
+        <input type="number" id="shooting" required>
         <div class="text"></div>
         <label for="">passing</label>
 
-        <input type="number" id="passing"> 
+        <input type="number" id="passing"required> 
         <div class="text"></div>
         
         <label for="">dribbling</label>
-        <input type="number" id="dribbling">
+        <input type="number" id="dribbling" required>
+        <div class="text"></div>
         <label for="">defending</label>
-        <input type="nomber" id="defending">
+        <input type="nomber" id="defending"  required>
+        <div class="text"></div>
         <label for="">physical</label>
-        <input type="number" id="physical">
-        <button  id="create" style="margin-top: 5px;">create</button>
+        <input type="number" id="physical"  required>
+        <div class="text"></div>
+        <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
     
         
         <!-- "name": "Lionel Messi",
