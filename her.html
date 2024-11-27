@@ -12,6 +12,114 @@
                 height: 100vh;
                 background-color: #f0f0f0;
             }
+            /* Style de la carte du joueur */
+.player-card {
+    background-color: #fff;
+    width: 280px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 15px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Position du joueur */
+.position {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Note globale du joueur */
+.rate {
+    font-size: 24px;
+    color: #f39c12;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Photo du joueur */
+.player-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Nom du joueur */
+.player-name {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Conteneur des statistiques */
+.statistique {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+/* Chaque statistique */
+.stat {
+    font-size: 16px;
+    color: #555;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Statistiques - les labels (VIT, TIR, etc.) */
+.stat span {
+    font-size: 14px;
+    color: #888;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Pour que les statistiques soient mises en valeur */
+.stat:first-child {
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+.stat:nth-child(2) {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.stat:nth-child(3) {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.stat:nth-child(4) {
+    font-weight: bold;
+    color: #f39c12;
+}
+
+.stat:nth-child(5) {
+    font-weight: bold;
+    color: #9b59b6;
+}
+
+.stat:nth-child(6) {
+    font-weight: bold;
+    color: #34495e;
+}
+
             * {   
     
               
@@ -155,11 +263,11 @@
     margin: auto;
 }
 .pect img {
-    width: 53px;
-    height: 47px;
+    width: 51px;
+    height: 57px;
     position: absolute;
-    top: 15px;
-    left: 27px;
+    top: 17px;
+    left: 26px;
     display: flex
 ;
     align-items: center;
@@ -247,6 +355,37 @@ gap:20px;
     gap: 10px;
     margin-bottom: 20px;
 }
+.logo img{
+    width: 22px;
+    position: absolute;
+    left: 10px;
+   
+    width: 17px;
+    position: absolute;
+    left: 10px;
+    top: 54px;
+
+
+}
+p{
+    position: absolute;
+    top: 66px;
+    left: 27px;
+}
+.statistisques{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #45a049;
+    width:300px;
+    height: 400px;
+    padding: 50px;
+    gap: 10px;
+}
+
+
+
     
           
            </style>
@@ -337,29 +476,21 @@ gap:20px;
         <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
     
         
-        <!-- "name": "Lionel Messi",
-        "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
-        "position": "RW",
-        "nationality": "Argentina",
-        "flag": "https://cdn.sofifa.net/flags/ar.png",
-        "club": "Inter Miami",
-        "logo": "https://cdn.sofifa.net/meta/team/239235/120.png",
-        "rating": 93,
-        "pace": 85,
-        "shooting": 92,
-        "passing": 91,
-        "dribbling": 95,
-        "defending": 35,
-        "physical": 65 -->
+       
      </form>
 
        <div class="terran"> 
        
 <div class="vs">
 
-        <div class="player" id="GK">  <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt=""  id="pecture"></div>  
-            <h6 class="name_player">meriem </h6>
+        <div class="player" id="GK">  <div class="pect">
+            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt=""  id="pecture">
+</div>  
+            <h6 class="name_player">meriem </h6> 
+           
             <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+            <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
+            <p  class="hr"style="position: absolute; top:30px;left: 50px;"> hello</p>
            
     
             </div>
@@ -368,10 +499,12 @@ gap:20px;
     <div class="player" id="">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
         </div>
     <div  class=" player" id>    <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" > </div>
     <h6 class="name_player">meriem </h6>
     <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+    <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
        
 
         
@@ -382,12 +515,14 @@ gap:20px;
     <div class="player" id="LB">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
 
 
         </div>
     <div  class=" player" id="RB">    <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div>  
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
 
       
          </div>
@@ -398,26 +533,31 @@ gap:20px;
     <div class="player" id="">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
         </div>
     <div  class=" player" id="">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
          </div>
          <div  class=" player" id="">  
             <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
         <h6 class="name_player">meriem </h6>
         <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div> 
+        <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
              </div>
 
 </div>
 <div class="W">
     <div class="player" id="LW">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
     <h6 class="name_player">meriem </h6>
-    <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>>
+    <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+    <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
         </div>
     <div  class=" player" id="RW">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
     <h6 class="name_player">meriem </h6>
     <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+    <div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
          </div>
         
 
@@ -426,100 +566,26 @@ gap:20px;
 <div class="player" id="ST"  style="">   <div class="pect"><img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="" ></div> 
 <h6 class="name_player">meriem </h6>
 <div class="flag"> <img src="https://cdn.sofifa.net/flags/ar.png" alt="" style="position: abosulte;"></div>
+<div class="logo"> <img src="https://cdn.sofifa.net/meta/team/239235/120.png" alt=""></div>
     </div>
 </div> 
 
 
 
 
-        <!-- <div style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; margin-top: 200px;" id="gool_kipper">
-            <div style="text-align:  center;"> <img  src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px; position: relative;">
-            
-        </div>
-     <div id="1 GK">kg</div>
-     </div> -->
-     <!--  second players -->
-     <!-- <div id="defenceux centre" style="display: flex; justify-items: center; align-items: center; justify-content: center; gap:50px"> 
-         <div class="cb" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;" >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> cb</div>
-     
-         </div>
-         <div class="cb" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> cb</div>
-     
-         </div>
-        
-     </div> -->
-            
-<!--      
-     <!-- third payers  -->
-      <!-- <div id="laterall" style=" display: flex; gap:300px; justify-items: center;align-items: center;justify-content: center;">
-         <div class="lb" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> lb</div>
-     
-         </div>
-         <div class="rb" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> rb</div>
-     
-         </div>
-      </div> -->
-      <!-- for player -->
-      <!-- <div id="center" style=" display: flex; flex-direction: row; gap:150px; justify-items: center;align-items: center;justify-content: center;">
-         <div class="cm" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> cm</div>
-     
-         </div>
-         <div class="cm" style=" margin-top:0px; flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> cm</div>
-     
-         </div>
-         <div class="cm" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; " >
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> cm</div>
-     
-         </div>
-      </div>
-     five players  -->
-       <!-- <div id="w"  style="display: flex; gap:200px; justify-items: center;align-items: center;justify-content: center; margin-top: 120px;">
-         <div class=" lw" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;">   <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> lw</div>
-       </div>
-         <div class="rw"  style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center; ">  
-             <img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-             <div> rw</div> </div>
-       </div> -->
-     <!--  final players -->
-       <!-- <div id="st" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;"><img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-         <div> rw</div> </div> -->
-         <!-- ffff -->
-         <!-- <div id="st" style="display: flex;flex-direction: column;  justify-items: center; justify-content: center; align-items: center;"><img src="https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp"   style=" width:60px">
-            <div> rw</div> </div>  -->
-
-
-
-
+       
 
 
        </div> 
-      
+        <div class="statistisques">
+           
+
        
     </div>
-    <div style="display: flex;flex-direction: column; width:200px"><label for=""> position</label>
+   
+   
        
-        <select id="formation-select">
-            <option value="GK">GK</option>
-            <option value="GK">FK</option>
-            <option value="FK">DK</option>
-        </select></div>
-        <h4 id="nm"></h4>
-        <h4 id="pst"></h4>
-        
+   
        
     
 

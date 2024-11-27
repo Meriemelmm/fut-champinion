@@ -167,12 +167,11 @@ function add_players(){
 
 }
 nom.addEventListener("input", validation)
-// input.addEventListener("input", logKey);
+
 function validation() {
-  
-  // Vérifier si le champ 'nom' n'est pas vide
+ 
   if (typeof(nom.value)  === "string" && nom.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nom.value)) {
-    // Si la valeur n'est pas vide, retourner true (ou effectuer une action comme afficher un message)
+   
 console.log("correct")
 
 result[0].innerHTML="coorrect";
@@ -246,124 +245,8 @@ console.log(name_playeer)
 
 
 
-// const validPositions = ["GK", "CB", "RW", "CF", "CM", "LW"];
-// if (!validPositions.includes(value)) {
-//   document.getElementById('positionError').innerText = "Position invalide.";
-//   isValid = false;('h1)
-// } else {
-//   document.getElementById('positionError').innerText = "Correct!";
-// }
-
-// /valider_message.js
-
-// nom.addEventListener('', function() {
-//     var nomas= nom.value.trim(); // Supprime les espaces avant/après
-   
-//     var length = nomas.length;
-  
-//     if (length === 0) {
-//     //   text.innerHTML = "votre message est invalide (vide ou uniquement des espaces)";
-//       text.style.color = "red";
-//       text.style.fontSize = "12px" ;
-  
-//     } else {
-//       if (length < 10) {
-//         // text.innerHTML = "votre message est invalide (message < 10)";
-//         text.style.color = "orange";
-//         text.style.fontSize = "12px" ;
-  
-//       } else {
-//         // text.innerHTML = "votre message est valide";
-//         text.style.color = "green";
-//         text.style.fontSize = "12px" ;
-  
-//       }
-//     }
-//   });
-
-// tableau des players
 
 
-// Pour valider un champ input correspondant à un objet tel que celui que vous avez mentionné (contenant des informations sur un joueur de football), vous pouvez définir certaines conditions de validation basées sur les types de données et les valeurs attendues dans l'objet. L'objectif de validation sera de vérifier que les valeurs entrées par l'utilisateur correspondent aux critères définis pour chaque champ, comme suit :
-
-// 1. Nom du joueur ("name")
-// Condition : Le champ name doit être une chaîne de caractères non vide.
-// Validation : Vérifier que le nom ne soit pas vide et qu'il soit composé de caractères alphabétiques et éventuellement d'espaces.
-// Exemple de validation :
-// name ne doit pas être vide.
-// name doit être une chaîne contenant des lettres et des espaces uniquement.
-// 2. Photo du joueur ("photo")
-// Condition : Le champ photo doit contenir une URL valide qui mène à une image.
-// Validation : Vérifier que l'URL est bien formatée (commence par http ou https et se termine par .png, .jpg, etc.) et qu'elle pointe vers une ressource image.
-// Exemple de validation :
-// L'URL doit commencer par http:// ou https://.
-// L'URL doit se terminer par une extension d'image valide (.png, .jpg, .jpeg, etc.).
-// 3. Position du joueur ("position")
-// Condition : Le champ position doit être une chaîne de caractères et correspondre à une position valide parmi une liste de positions connues (par exemple : GK, CB, RW, CF, etc.).
-// Validation : Vérifier que la position appartient à une liste pré-défini de positions valides.
-// Exemple de validation :
-// La position doit être dans une liste des positions valides (ex. : ["GK", "CB", "RW", "CF", "CM", "LW"]).
-// 4. Nationalité ("nationality")
-// Condition : Le champ nationality doit être une chaîne de caractères et correspondre à un pays valide.
-// Validation : Vérifier que la nationalité appartient à une liste pré-défini des pays.
-// Exemple de validation :
-// La nationality doit être dans une liste des pays valides (ex. : ["Argentina", "Brazil", "France", "Spain"]).
-// 5. Drapeau ("flag")
-// Condition : Le champ flag doit être une URL valide pointant vers une image de type .png.
-// Validation : Vérifier que l'URL est bien formatée (commence par http ou https et se termine par .png).
-// Exemple de validation :
-// L'URL doit commencer par http:// ou https://.
-// L'URL doit se terminer par .png.
-// 6. Club ("club")
-// Condition : Le champ club doit être une chaîne de caractères non vide.
-// Validation : Vérifier que le champ club n'est pas vide.
-// Exemple de validation :
-// club ne doit pas être vide.
-// 7. Logo du club ("logo")
-// Condition : Le champ logo doit être une URL valide pointant vers une image.
-// Validation : Vérifier que l'URL est bien formatée (commence par http ou https et se termine par .png).
-// Exemple de validation :
-// L'URL doit commencer par http:// ou https://.
-// L'URL doit se terminer par .png.
-// 8. Note du joueur ("rating")
-// Condition : Le champ rating doit être un nombre entier entre 1 et 100.
-// Validation : Vérifier que la valeur est un nombre entier et qu'elle est comprise dans l'intervalle de 1 à 100.
-// Exemple de validation :
-// rating doit être un entier compris entre 1 et 100.
-// 9. Caractéristiques du joueur : pace, shooting, passing, dribbling, defending, physical
-// Condition : Chaque caractéristique (pace, shooting, passing, dribbling, defending, physical) doit être un nombre entier compris entre 0 et 100.
-// Validation : Vérifier que chaque caractéristique est un nombre entier dans l'intervalle de 0 à 100.
-// Exemple de validation :
-// Chaque caractéristique doit être un entier compris entre 0 et 100.
-// Validation des champs
-// Voici une liste de conditions générales pour la validation de l'entrée dans un formulaire ou de l'objet utilisateur en fonction de chaque champ :
-
-// Nom : Non vide, uniquement alphabétiques et espaces.
-// Photo : URL valide qui pointe vers une image.
-// Position : Doit appartenir à une liste de positions valides (ex. RW, CF).
-// Nationalité : Doit correspondre à un pays valide.
-// Drapeau : URL valide qui pointe vers une image de type .png.
-// Club : Non vide.
-// Logo du club : URL valide qui pointe vers une image de type .png.
-// Rating : Entier compris entre 1 et 100.
-// Caractéristiques : Entiers compris entre 0 et 100 pour chaque caractéristique (pace, shooting, passing, dribbling, defending, physical).
-// Exemple de validation pour le formulaire
-// Si vous validez un formulaire avec des champs correspondant à cet objet, vous pourriez écrire un algorithme de validation comme suit (en utilisant les événements comme input, blur, ou submit dans le code JavaScript) :
-
-// Validation pour le champ name :
-
-// Vérifier que name n'est pas vide.
-// Vérifier qu'il ne contient que des lettres et des espaces.
-// Validation pour les champs URL (photo, flag, logo) :
-
-// Vérifier que chaque URL commence par http:// ou https:// et se termine par .png, .jpg, etc.
-// Validation pour le champ position :
-
-// Vérifier que position appartient à une liste de positions valides.
-// Validation pour rating et les caractéristiques :
-
-// Vérifier que chaque valeur de caractéristique est un entier compris entre 0 et 100.
-// Une fois que vous avez défini ces conditions de validation, vous pouvez appliquer ces règles à l'aide d'événements JavaScript pour assurer que l'utilisateur saisit des données valides avant de soumettre un formulaire ou de traiter l'objet.
 nationality.addEventListener('input',valide_nationality);
 function valide_nationality(){
   if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value)){
@@ -380,7 +263,7 @@ function valide_pace() {
   }
   else{
     result[5].innerHTML="invalid";
-    // console.log("incorrect")
+   
   }
  }
 
@@ -405,7 +288,7 @@ function valide_pace() {
    }
    else{
      result[6].innerHTML="invalid";
-     // console.log("incorrect")
+     
    }
   }
   
