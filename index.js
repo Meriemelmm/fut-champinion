@@ -6,7 +6,113 @@ console.log(forma);
   let nom=document.getElementById('nom');
  console.log(nom);
   let position=document.getElementById('position');
+  let container=document.getElementById('container');
+  console.log(container);
+  let formation_select=document.getElementById('formation-select');
+  console.log(formation_select);
+ formation_select.addEventListener('change',()=>{
+  let formulevalue=formation_select.value;
+
+  if(formulevalue==="433"){
+    alert("cool");
+  }
+  else if(formulevalue==="432"){
+    alert("niceeeee");
+  }
+ })
+
  console.log(position);
+ let positionvalue=position.value;
+ console.log( positionvalue);
+ position.addEventListener('change',(event)=>{
+  let  positionvalue = position.value;
+  if(positionvalue=="GK"){
+  
+    container.innerHTML=`
+    
+    <label for=""> diving</label>
+        <input type="number" id=""diving"required>
+        <div class="text"></div>
+        <label for=""> handling</label>
+        <input type="number" id="handling" required>
+        <div class="text"></div>
+        <label for=""></label>
+
+        <input type="number" id="passing"required> 
+        <div class="text"></div>
+        
+        <label for="">dribbling</label>
+        <input type="number" id="dribbling" required>
+        <div class="text"></div>
+        <label for="">defending</label>
+        <input type="nomber" id="defending"  required>
+        <div class="text"></div>
+        <label for="">physical</label>
+        <input type="number" id="physical"  required>
+        <div class="text"></div>
+    
+    
+    `
+
+  }
+ 
+else{ 
+  container.innerHTML=`<label for=""> pace</label>
+  <input type="number" id="pace"required>
+  <div class="text"></div>
+  <label for=""> shootting</label>
+  <input type="number" id="shooting" required>
+  <div class="text"></div>
+  <label for="">passing</label>
+
+  <input type="number" id="passing"required> 
+  <div class="text"></div>
+  
+  <label for="">dribbling</label>
+  <input type="number" id="dribbling" required>
+  <div class="text"></div>
+  <label for="">defending</label>
+  <input type="nomber" id="defending"  required>
+  <div class="text"></div>
+  <label for="">physical</label>
+  <input type="number" id="physical"  required>
+  <div class="text"></div>`
+
+  
+
+}})
+
+//  <form>
+//   <select id="answer">
+//     <option value="">chosse your inswer <option/>
+    
+//     <option value="yes"> yes
+//       <option/>
+//     <option value="non"> non
+//       <option/>
+//   </select>
+  
+// </form>
+//  let answer= document.getElementById('answer');
+//  let h = document.createElement('h1');
+// document.body.appendChild(h);
+// answer.addEventListener('change', () => {
+//     let answervalue = answer.value;
+//     // console.log(answervalue)
+//   if(answervalue === "yes"){
+//     console.log("eebebe")
+//     h.innerHTML = "correct";
+//     h.style.color="green";
+//   }
+//   else if(answervalue === 'non'){
+//     h.innerhtml="incorrect";
+//     h.style.color="red"
+//   }
+//   else{
+//     h.innerHTML="rien dire";
+//     h.style.color="orange;" 
+//   }
+// })
   let nationality=document.getElementById('nationality');
  console.log(nationality);
   let club=document.getElementById('club');
@@ -27,6 +133,19 @@ console.log(defending);
 console.log(physical);
 let result=document.getElementsByClassName('text');
 console.log(result);
+
+console.log(rating);
+let kicking=document.getElementById('kicking');
+console.log(kicking);
+let  speed=document.getElementById('speed');
+console.log(speed);
+let  handling=document.getElementById('handling');
+let positioning=document.getElementById('positioning');
+console.log(positioning);
+let reflexes=document.getElementById('reflexes');
+console.log(reflexes);
+console.log(position);
+
 
   // Initialiser isvalid à false, car on vérifie si le champ est rempli
 
@@ -67,6 +186,8 @@ result[0].innerHTML="coorrect";
   }}
   const validPositions = ["ST", "GK", "CB", "LB", "RB", "CM", "LM", "RM", "LW", "RW"];
   position.addEventListener('input',valide_positon)
+  
+  console.log()
   function valide_positon(){
     let positionne=position.value.trim();
      if(validPositions.includes(positionne)){
@@ -379,18 +500,17 @@ function valide_pace() {
   create.addEventListener('click',add_players); 
 
 
-   function add_players(){
+  function add_players(){
+
+alert("hello meriem");
+
+
+}
+
+
+  
    
-alert("hello");
-    if(position.value==="GK"){
-      image.src="https://cdn.sofifa.net/players/020/801/25_120.png";
-      name_playeer.innerHTML=nom.value;
-      console.log(name_player);
 
-    }
-    
-
-  }
   
   
   
