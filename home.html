@@ -1,270 +1,228 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUT Champions Web App - Ultimate Team</title>
+    <title>Football Team Formation Builder</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .flex-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+.formation-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
-        .form-section {
-            flex: 1;
-            min-width: 300px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+.terran {
+    width: 80vh;
+    height: 80vh;
+    background-image: url('https://i.pinimg.com/736x/8f/c6/84/8fc6842335424ed0c34cf0008c18ecc1.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
 
-        .field-section {
-            flex: 1;
-            min-width: 300px;
-            aspect-ratio: 16/9;
-            position: relative;
-            background-color: #4CAF50;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+.form_terran {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-        .field {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
+#forma {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
-        .field::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            height: 80%;
-            border: 2px solid rgba(255,255,255,0.5);
-        }
+#forma h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        .field::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20%;
-            height: 20%;
-            border: 2px solid rgba(255,255,255,0.5);
-            border-radius: 50%;
-        }
+#forma label {
+    display: block;
+    margin-bottom: 5px;
+}
 
-        .goal-area-left, .goal-area-right {
-            position: absolute;
-            width: 15%;
-            height: 30%;
-            border: 2px solid rgba(255,255,255,0.5);
-        }
+#forma input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
-        .goal-area-left {
-            left: 5%;
-            top: 35%;
-        }
+#forma button {
+    width: 100%;
+    padding: 10px;
+    background-color: #45a049;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        .goal-area-right {
-            right: 5%;
-            top: 35%;
-        }
+#forma button:hover {
+    background-color: #3d8b41;
+}
 
-        .center-line {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            height: 100%;
-            width: 2px;
-            background-color: rgba(255,255,255,0.5);
-        }
+.player {
+    background: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp');
+    background-size: contain;
+    width: 100px;
+    height: 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+.player img {
+    width: 53px;
+    height: 47px;
+    position: absolute;
+    top: 15px;
+    left: 27px;
+}
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+.name_player {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    color: #333;
+}
 
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+.flag img {
+    width: 22px;
+    position: absolute;
+    left: 10px;
+    top: 35px;
+}
 
-        .form-group button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+.defence_centre, .milieu_centre, .lb_rb, .W {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .form-group button:hover {
-            background-color: #45a049;
-        }
+.W {
+    gap: 250px;
+}
 
-        .player-position {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-image: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
 
-        .player-position:hover {
-            transform: scale(1.1);
-        }
-
-        /* Positions des joueurs */
-        #gk { bottom: 5%; left: 50%; transform: translateX(-50%); }
-        #lb { bottom: 25%; left: 15%; }
-        #cb1 { bottom: 25%; left: 35%; }
-        #cb2 { bottom: 25%; right: 35%; }
-        #rb { bottom: 25%; right: 15%; }
-        #lm { bottom: 50%; left: 20%; }
-        #cm1 { bottom: 50%; left: 40%; }
-        #cm2 { bottom: 50%; right: 40%; }
-        #rm { bottom: 50%; right: 20%; }
-        #st1 { top: 25%; left: 35%; }
-        #st2 { top: 25%; right: 35%; }
-
-        @media (max-width: 768px) {
-            .field-section {
-                min-height: 200px;
-            }
-            
-            .player-position {
-                width: 30px;
-                height: 30px;
-                font-size: 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="flex-container">
-            <section class="form-section">
-                <h2>Ajouter un joueur</h2>
-                <form id="player-form">
-                    <div class="form-group">
-                        <label for="name">Nom</label>
-                        <input type="text" id="name" required>
+        <div class="formation-controls">
+            <select id="formation-select">
+                <option value="">--Select Formation--</option>
+                <option value="433">4-3-3</option>
+                <option value="432">4-3-2</option>
+            </select>
+            <button id="add_player">Add Player</button>
+        </div>
+
+        <div class="form_terran">
+            <form id="forma">
+                <h1>Add Your Player</h1>
+                <label for="nom">Name</label>
+                <input type="text" id="nom" required>
+                
+                <label for="position">Position</label>
+                <input type="text" id="position" required>
+                
+                <label for="nationality">Nationality</label>
+                <input type="text" id="nationality" required>
+                
+                <label for="club">Club</label>
+                <input type="text" id="club" required>
+                
+                <label for="rating">Rating</label>
+                <input type="number" id="rating" required>
+                
+                <label for="pace">Pace</label>
+                <input type="number" id="pace" required>
+                
+                <label for="shooting">Shooting</label>
+                <input type="number" id="shooting" required>
+                
+                <label for="passing">Passing</label>
+                <input type="number" id="passing" required>
+                
+                <label for="dribbling">Dribbling</label>
+                <input type="number" id="dribbling" required>
+                
+                <label for="defending">Defending</label>
+                <input type="number" id="defending" required>
+                
+                <label for="physical">Physical</label>
+                <input type="number" id="physical" required>
+                
+                <button id="create" type="submit">Create</button>
+            </form>
+
+            <div class="terran">
+                <div class="vs">
+                    <div class="player" id="GK">
+                        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player">
+                        <h6 class="name_player">Player Name</h6>
+                        <div class="flag">
+                            <img src="https://cdn.sofifa.net/flags/ar.png" alt="Flag">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="position">Position</label>
-                        <input type="text" id="position" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nationality">Nationalité</label>
-                        <input type="text" id="nationality" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="club">Club</label>
-                        <input type="text" id="club" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="rating">Note</label>
-                        <input type="number" id="rating" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="pace">Vitesse</label>
-                        <input type="number" id="pace" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="shooting">Tir</label>
-                        <input type="number" id="shooting" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="passing">Passe</label>
-                        <input type="number" id="passing" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="dribbling">Dribble</label>
-                        <input type="number" id="dribbling" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="defending">Défense</label>
-                        <input type="number" id="defending" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <label for="physical">Physique</label>
-                        <input type="number" id="physical" required min="1" max="99">
-                    </div>
-                    <div class="form-group">
-                        <button type="submit">Ajouter le joueur</button>
-                    </div>
-                </form>
-            </section>
-            
-            <section class="field-section">
-                <div class="field">
-                    <div class="goal-area-left"></div>
-                    <div class="goal-area-right"></div>
-                    <div class="center-line"></div>
-                    <div id="gk" class="player-position">GK</div>
-                    <div id="lb" class="player-position">LB</div>
-                    <div id="cb1" class="player-position">CB</div>
-                    <div id="cb2" class="player-position">CB</div>
-                    <div id="rb" class="player-position">RB</div>
-                    <div id="lm" class="player-position">LM</div>
-                    <div id="cm1" class="player-position">CM</div>
-                    <div id="cm2" class="player-position">CM</div>
-                    <div id="rm" class="player-position">RM</div>
-                    <div id="st1" class="player-position">ST</div>
-                    <div id="st2" class="player-position">ST</div>
                 </div>
-            </section>
+                
+                <div class="defence_centre">
+                    <!-- Repeat player div for other positions -->
+                </div>
+                
+                <div class="lb_rb">
+                    <!-- Repeat player div for LB and RB -->
+                </div>
+                
+                <div class="milieu_centre">
+                    <!-- Repeat player div for midfielders -->
+                </div>
+                
+                <div class="W">
+                    <!-- Repeat player div for wingers -->
+                </div>
+                
+                <div class="vs">
+                    <div class="player" id="ST">
+                        <!-- Striker player div -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('player-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Joueur ajouté !');
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>
+

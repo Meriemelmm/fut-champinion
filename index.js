@@ -65,7 +65,7 @@ result[0].innerHTML="coorrect";
 
     
   }}
-  const validPositions = ["GK", "CB", "RW", "CF", "CM", "LW"];
+  const validPositions = ["ST", "GK", "CB", "LB", "RB", "CM", "LM", "RM", "LW", "RW"];
   position.addEventListener('input',valide_positon)
   function valide_positon(){
     let positionne=position.value.trim();
@@ -90,6 +90,8 @@ result[1].innerHTML="coorrect";
     console.log("incorrect");
     result[4].innerHTML = "invalide";
 }}
+name_playeer=document.getElementsByClassName('name_player');
+console.log(name_playeer)
 
  
 
@@ -159,7 +161,7 @@ result[1].innerHTML="coorrect";
 //   });
 
 // tableau des players
-players=[];
+
 
 // Pour valider un champ input correspondant à un objet tel que celui que vous avez mentionné (contenant des informations sur un joueur de football), vous pouvez définir certaines conditions de validation basées sur les types de données et les valeurs attendues dans l'objet. L'objectif de validation sera de vérifier que les valeurs entrées par l'utilisateur correspondent aux critères définis pour chaque champ, comme suit :
 
@@ -355,10 +357,37 @@ function valide_pace() {
   
   //  ajoutation player :
   create.addEventListener('click',add_players); 
+  let players=[
+
+  ];
+
+   newPlayer = {
+     nom:nom,
+      position: position,
+      nationality: nationality,
+      club: club,
+      rating: parseInt(rating),
+      pace: parseInt(pace),
+      shooting: parseInt(shooting),
+      passing: parseInt(passing),
+      dribbling: parseInt(dribbling),
+      defending: parseInt(defending),
+      physical: parseInt(physical)
+  };
+  
+  players.push( newPlayer);
+  create.addEventListener('click',add_players); 
+
+
    function add_players(){
    
+alert("hello");
+    if(position.value==="GK"){
+      image.src="https://cdn.sofifa.net/players/020/801/25_120.png";
+      name_playeer.innerHTML=nom.value;
+      console.log(name_player);
 
-    
+    }
     
 
   }
