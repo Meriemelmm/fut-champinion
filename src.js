@@ -21,6 +21,8 @@ let physical=document.getElementById('physical');
 console.log(physical);
 let result=document.getElementsByClassName('text');
 console.log(result);
+console.log(result);
+
 
 console.log(rating);
 // let kicking=document.getElementById('kicking');
@@ -76,12 +78,8 @@ position.addEventListener('change',(event)=>{
           <input type="number" id="passing"required> 
           <div class="text"></div>
           
-          <label for="">dribbling</label>
-          <input type="number" id="dribbling" required>
-          <div class="text"></div>
-          <label for="">defending</label>
-          <input type="nomber" id="defending"  required>
-          <div class="text"></div>
+        
+         
           <label for="">physical</label>
           <input type="number" id="physical"  required>
           <div class="text"></div>
@@ -145,22 +143,22 @@ function valide_pace() {
  pace.addEventListener('input',valide_pace);
  function valide_pace() {
   if (pace.value != "" && !isNaN(pace.value) && pace.value >= 0 && pace.value <= 100) {
-    result[5].innerHTML = "valide";
+    result[4].innerHTML = "valide";
     console.log("correct");
   } else {
-    result[5].innerHTML = "invalid";
+    result[4].innerHTML = "invalid";
     console.log("incorrect");
   }
 }
  shooting.addEventListener('input',valide_shooting);
  function valide_shooting() {
    if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
-     result[6].innerHTML="valide";
+     result[5].innerHTML="valide";
      console.log("correct")
  
    }
    else{
-     result[6].innerHTML="invalid";
+     result[5].innerHTML="invalid";
      
    }
   }
@@ -181,21 +179,22 @@ function valide_pace() {
    physical.addEventListener('input',valide_physical);
   function valide_physical() {
     if(physical.value != "" && !isNaN(physical.value) && defending.value >= 0 && physical.value <= 100){
-      result[10].innerHTML="valide";
-      console.log("correct")
+      result[10].innerHTML="nice";
+      console.log("correct");
    
      }
      else{
-      result[10].innerHTML="invalid";
+      // result[10].innerHTML="invalid";
      
        console.log("incorrect");
      }
    }
+   console.log(result[10])
    dribbling.addEventListener('input',valide_dribbling);
    function valide_dribbling() {
      if(dribbling.value != "" && !isNaN(dribbling.value) && dribbling.value >= 0 && dribbling.value <= 100){
        result[8].innerHTML="valide";
-       console.log("correct")
+       console.log("correct");
     
       }
       else{
@@ -207,12 +206,12 @@ function valide_pace() {
     passing.addEventListener('input',valide_passing);
  function valide_passing() {
    if(passing.value != "" && !isNaN(passing.value) && passing.value >= 0 && passing.value <= 100){
-    result[7].innerHTML="valide";
+    result[6].innerHTML="valide";
     console.log("correct")
  
    }
    else{
-    result[7].innerHTML="invalid";
+    result[6].innerHTML="invalid";
    
      // console.log("incorrect");
    }
@@ -275,8 +274,9 @@ result[1].innerHTML="coorrect";
 
 
   }
-  rating.addEventListener('click',valide_rating);
-  function  valide_rating(){ if (rating.value != "" && !isNaN(rating.value) && rating.value >= 1 && rating.value <= 100) {
+  rating.addEventListener('input',valide_rating);
+  function valide_rating(){     if (rating.value != "" && !isNaN(rating.value) && rating.value >= 1 && rating.value <= 100) {
+     
     console.log("correct");
     result[4].innerHTML = "valide";
 } else {
@@ -307,7 +307,10 @@ create.addEventListener('click', function( event) {
      shooting : shooting.value,
      passing : passing.value,
      physical : physical.value,
-     position:position.value
+     position:position.value,
+     nationality:nationality.value,
+     club:club.value,
+    pace:pace.value
     }
 
     console.log("hano" , obj  );   
