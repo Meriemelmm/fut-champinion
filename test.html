@@ -1,1075 +1,262 @@
-<!-- <!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Team - EA FC 25</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>* {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-    
-    header {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    h1 {
-        font-size: 2.5em;
-        color: #007bff;
-    }
-    
-    main {
-        width: 100%;
-        max-width: 1200px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-    
-    form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 600px;
-    }
-    
-    form input, form select {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    
-    button {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    button:hover {
-        background-color: #0056b3;
-    }
-    
-    .team-display {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .team-display h2 {
-        margin-bottom: 20px;
-    }
-    
-    #team-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    .player-card {
-        background-color: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        width: 150px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .player-card h3 {
-        
-        .pitch-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    background-color: #007bff;
-    margin-top: 20px;
-    border-radius: 10px;
-    border: 2px solid #003366;
-}
-
-.position {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #ffcc00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-}
-
-.position span {
-    font-size: 0.8em;
-}
-
-h2 {
-    text-align: center;
-}
-font-size: 1.2em;
-    }
-    
-    .player-card p {
-        font-size: 0.9em;
-        color: #555;
-    }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Ultimate Team - EA FC 25</h1>
-    </header>
-    <main>
-        <section class="team-builder">
-            <h2>Construisez votre équipe</h2>
-            <form id="player-form">
-                <label for="name">Nom du joueur:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="position">Position:</label>
-                <select id="position" name="position" required>
-                    <option value="GK">Gardien de but (GK)</option>
-                    <option value="DF">Défenseur (DF)</option>
-                    <option value="MF">Milieu de terrain (MF)</option>
-                    <option value="FW">Attaquant (FW)</option>
-                </select>
-
-                <label for="rating">Note du joueur:</label>
-                <input type="number" id="rating" name="rating" min="1" max="100" required>
-
-                <label for="stats">Statistiques (optionnel):</label>
-                <input type="text" id="stats" name="stats">
-
-                <button type="submit">Ajouter le joueur</button>
-            </form>
-        </section>
-
-        <section class="team-display">
-            <h2>Votre équipe</h2>
-            <div id="team-container">
-                <!-- L'équipe sera affichée ici -->
-            <!-- </div>
-        </section>
-        <section class="formation">
-            <h2>Choisir la formation</h2>
-            <select id="formation-select">
-                <option value="4-3-3">4-3-3</option>
-                <option value="4-4-2">4-4-2</option>
-                <option value="3-5-2">3-5-2</option>
-            </select>
-        </section>
-        
-        <section class="team-builder">
-            <h2>Construisez votre équipe</h2>
-            <form id="player-form">
-                <!-- Les champs du formulaire restent les mêmes -->
-            <!-- </form>
-        </section>
-        
-        <section class="team-display">
-            <h2>Votre équipe sur le terrain</h2>
-            <div id="pitch-container" class="pitch-container">
-                <!-- Le terrain sera affiché ici -->
-            <!-- </div>
-        </section>
-        
-    </main>
-    
-
-    <script src="app.js">
-        // Sélection des éléments du DOM
-const playerForm = document.getElementById("player-form");
-const teamContainer = document.getElementById("team-container");
-
-// Vérifier si une équipe est déjà enregistrée dans localStorage
-let team = JSON.parse(localStorage.getItem("team")) || []; -->
-<!-- 
-// Fonction pour afficher les joueurs dans l'équipe
-function displayTeam() {
-    teamContainer.innerHTML = "";
-    team.forEach(player => {
-        const playerCard = document.createElement("div");
-        playerCard.classList.add("player-card");
-        playerCard.innerHTML = `
-            <h3>${player.name}</h3>
-            <p>Position: ${player.position}</p>
-            <p>Note: ${player.rating}</p> -->
-            <!-- <p>Stats: ${player.stats}</p>
-        `;
-        teamContainer.appendChild(playerCard);
-    });
-}
-
-// Gérer l'ajout d'un joueur
-playerForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const player = {
-        name: document.getElementById("name").value,
-        position: document.getElementById("position").value,
-        rating: document.getElementById("rating").value,
-        stats: document.getElementById("stats").value || "Aucune",
-    };
-
-    // Ajouter le joueur à l'équipe
-    team.push(player);
-    localStorage.setItem("team", JSON.stringify(team));
-
-    // Réinitialiser le formulaire et mettre à jour l'affichage
-    playerForm.reset();
-    displayTeam(); -->
-});
-
-<!-- // Initialisation de l'affichage de l'équipe
-displayTeam(); --> -->
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation Football</title>
+    <title>Football Team Manager</title>
     <style>
-        /* Style général du corps de la page */
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background-color: #f0f0f0;
         }
-
-        /* Style du conteneur du terrain */
-        .terran {
-            width: 500px;
-            height: 600px;
-            background-color: #4CAF50;
-            position: relative;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .main-container {
+            flex: 1;
+            min-width: 300px;
+            max-width: 800px;
+        }
+        .stadium {
+            background-image: url('https://raw.githubusercontent.com/Mo7amed-Boukab/FUT-Champions-Web-App/refs/heads/main/src/assets/img/stadium_background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: grid;
-            grid-template-areas: 
-                "vs vs vs"
-                "defence_centre defence_centre defence_centre"
-                "midfield midfield midfield"
-                "attack attack attack";
             gap: 10px;
-            padding: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            aspect-ratio: 16 / 9;
         }
-
-        .vs {
-            grid-area: vs;
-            display: flex;
-            justify-content: space-between;
+        .player-card {
+            background: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp');
+            background-size: contain;
+            width: 100px;
+            height: 150px;
+            background-repeat: no-repeat;
+            position: relative;
+            margin: -8px;
         }
-
-        .defence_centre, .midfield, .attack {
-            display: flex;
-            justify-content: space-between;
+        .player-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
-
-        .player {
+        .player-rating,
+        .player-position {
+            position: absolute;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        .player-rating {
+            top: 8px;
+            left: 8px;
+        }
+        .player-position {
+            top: 8px;
+            right: 8px;
+        }
+        .player-photo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 60px;
             height: 60px;
-            background-color: #FF5722;
             border-radius: 50%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+        }
+        .player-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .player-name {
+            position: absolute;
+            top: 95px;
+            left: 0;
+            width: 100%;
+            font-size: 10px;
+            font-weight: bold;
+            color: #333;
             text-align: center;
-            font-size: 12px;
-            color: white;
-            border: 2px solid #fff;
         }
+        .statistique {
+            position: absolute;
+            bottom: 10px;
+            left: 5px;
+            right: 5px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+        }
+        .stat {
+            font-size: 8px;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .stat span {
+            font-weight: bold;
+            margin-right: 2px;
+        }
+        /* Le reste du CSS reste inchangé */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-container">
+            <div class="formation-controls">
+                <select id="formation-select">
+                    <option value="">--Select Formation--</option>
+                    <option value="433">4-3-3</option>
+                    <option value="442">4-4-2</option>
+                </select>
+                <button id="add_player">Add Player</button>
+            </div>
+            <main class="stadium">
+                <div class="player-card">
+                    <div class="player-info">
+                        <div class="player-rating">85</div>
+                        <div class="player-position">ST</div>
+                        <div class="player-photo">
+                            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+                        </div>
+                        <div class="player-name">John Doe</div>
+                        <div class="statistique">
+                            <div class="stat"><span>86</span>PAC</div>
+                            <div class="stat"><span>82</span>SHO</div>
+                            <div class="stat"><span>75</span>PAS</div>
+                            <div class="stat"><span>84</span>DRI</div>
+                            <div class="stat"><span>34</span>DEF</div>
+                            <div class="stat"><span>76</span>PHY</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ajoutez plus de cartes de joueurs ici -->
+            </main>
+        </div>
+        <!-- Le formulaire reste inchangé -->
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Team Manager</title>
+    <style>
+        .player-card {
+            background: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/badge_gold.webp');
+            background-size: contain;
+            width: 100px;
+            height: 150px;
+            background-repeat: no-repeat;
+            position: relative;
+            margin: -8px;
+        }
+        .player-rating {
+            position: absolute;
+           
+    top: 27px;
+    left: 15px;
 
-        .player img {
-            width: 30px;
-            height: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .player-position {
+    position: absolute;
+    top: 28px;
+    right: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+        .player-photo {
+            position: absolute;
+            top: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
-            margin-bottom: 5px;
+            overflow: hidden;
         }
-
-        .form-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-        }
-
-        .form-container input {
+        .player-photo img {
             width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .form-container button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px;
+        .player-name {
+            position: absolute;
+            bottom: 102px;
+            left: 0;
             width: 100%;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-top: 10px;
+            top: 81px;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #333;
         }
+        .statistique {
+          
+    position: absolute;
+    bottom: 29px;
+    left: 12px;
+    right: 8px;
+    display: grid
+;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
 
-        .form-container button:hover {
-            background-color: #45a049;
+        }
+        .stat {
+            font-size: 8px;
+            color: #333;
+        }
+        .stat span {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h3>Ajouter un joueur</h3>
-        <form id="playerForm">
-            <input type="text" id="nom" placeholder="Nom" required><br>
-            <input type="text" id="position" placeholder="Position (ex: GK, LB, CM, ST)" required><br>
-            <input type="text" id="nationality" placeholder="Nationalité" required><br>
-            <input type="text" id="club" placeholder="Club" required><br>
-            <input type="number" id="rating" placeholder="Rating" required><br>
-            <input type="number" id="pace" placeholder="Pace" required><br>
-            <input type="number" id="shooting" placeholder="Shooting" required><br>
-            <input type="number" id="passing" placeholder="Passing" required><br>
-            <input type="number" id="dribbling" placeholder="Dribbling" required><br>
-            <input type="number" id="defending" placeholder="Defending" required><br>
-            <input type="number" id="physical" placeholder="Physical" required><br>
-            <button type="submit">Ajouter Joueur</button>
-        </form>
-    </div>
-
-    <div class="terran">
-        <div class="vs">
-            <div class="player" id="GK"></div>
+    <div class="player-card">
+        <div class="player-rating">85</div>
+        <div class="player-position">ST</div>
+        <div class="player-photo">
+            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
         </div>
-        <div class="defence_centre">
-            <div class="player" id="LB"></div>
-            <div class="player" id="CB"></div>
-            <div class="player" id="RB"></div>
-        </div>
-        <div class="midfield">
-            <div class="player" id="CM1"></div>
-            <div class="player" id="CM2"></div>
-            <div class="player" id="CM3"></div>
-        </div>
-        <div class="attack">
-            <div class="player" id="ST"></div>
+        <div class="player-name">John Doe</div>
+        <div class="statistique">
+            <div class="stat"><span>86</span> PAC</div>
+            <div class="stat"><span>82</span> SHO</div>
+            <div class="stat"><span>75</span> PAS</div>
+            <div class="stat"><span>84</span> DRI</div>
+            <div class="stat"><span>34</span> DEF</div>
+            <div class="stat"><span>76</span> PHY</div>
         </div>
     </div>
-
+</body>
+</html>
     <script>
-        // Écouter la soumission du formulaire
-        document.getElementById('playerForm').addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêche la soumission du formulaire
-
-            // Récupérer les valeurs du formulaire
-            let nom = document.getElementById('nom').value;
-            let position = document.getElementById('position').value;
-            let nationality = document.getElementById('nationality').value;
-            let club = document.getElementById('club').value;
-            let rating = document.getElementById('rating').value;
-            let pace = document.getElementById('pace').value;
-            let shooting = document.getElementById('shooting').value;
-            let passing = document.getElementById('passing').value;
-            let dribbling = document.getElementById('dribbling').value;
-            let defending = document.getElementById('defending').value;
-            let physical = document.getElementById('physical').value;
-
-            // Créer un élément de joueur
-            let playerDiv = document.createElement('div');
-            playerDiv.classList.add('player');
-
-            // Ajouter les informations du joueur à l'élément
-            playerDiv.innerHTML = `
-                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Picture">
-                <h6>${nom}</h6>
-                <p>Rating: ${rating}</p>
-                <p>${nationality} - ${club}</p>
-                <p>Pace: ${pace} | Shooting: ${shooting}</p>
-                <p>Passing: ${passing} | Dribbling: ${dribbling}</p>
-                <p>Defending: ${defending} | Physical: ${physical}</p>
-            `;
-
-            // Vérifier si la position est correcte
-            let positionDiv = document.getElementById(position);
-            if (positionDiv) {
-                positionDiv.appendChild(playerDiv);  // Ajouter le joueur à la position
-            } else {
-                alert('Position invalide ! Veuillez entrer une position valide (ex: GK, LB, CM, ST)');
-            }
-
-            // Réinitialiser le formulaire
-            document.getElementById('playerForm').reset();
-        });
+        // Le code JavaScript sera ajouté ici plus tard pour la fonctionnalité dynamique
     </script>
-</body>
-</html> -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .container{
-    display: flex;
-    width: 80%;
-    margin-inline: auto;
-  }
-  aside{
-    height: 100vh;
-    width: 30%;
-    background: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    height: 50%;
-  }
-  h1{
-    font-size: 2rem;
-    color: #fee440;
-    margin-top: 50px;
-    height: 30%;
-  }
-  h1 span{
-    color: #fff;
-  }
-  #btn{
-    width: 140px;
-    height:40px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background: #fff;
-    color: #333;
-    border: none;
-    transition: 0.3s ease;
-  }
-  #btn:hover{
-    background-color: #fee440;
-    color: #333;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.8px;
-  }
-  .main-container{
-     width: 70%;
-     height: 100vh;
-  }
-  .stadium {
-    background-image: url('./src/assets/img/stadium_background.webp');
-    background-size: cover; 
-    background-position: center;
-    background-repeat: no-repeat;
-    display: grid;
-    gap: 30px;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(4, 1fr);
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
-    height: 100%;
-  }
-  
-  .player-card {
-    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-    width: 80px;
-    height: 110px;
-    background-color: #d4e09b;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    padding: 2px;
-    position: relative;
-    transition: transform 0.5s ease;
-  }
-  
-  .player-card:hover {
-    transform: scale(1.2);
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
-  }
-  .player-card p {
-    font-size: 12px;
-    color: #333;
-  }
-  .player-card img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .rate {
-    font-size: 9px;
-    font-weight: 700;
-    position: absolute;
-    top: 3px;
-    left: 3px;
-  }
-  
-  .position {
-    font-size: 9px;
-    font-weight: 700;
-    position: absolute;
-    top: 3px;
-    right: 3px;
-  }
-  
-  .player-photo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-top: 3px;
-  }
-  
-  .player-name {
-    font-size: 8px;
-    font-weight: 700;
-    margin-bottom: 2px;
-  }
-  
-  .statistique {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-  }
-  
-  .stat {
-    font-size: 6px;
-    font-weight: 700;
-    background: #fff;
-    padding: 2px;
-    border-radius: 2px;
-  }
-  
-  .stat span {
-    font-size: 5px;
-    font-weight: 500;
-    color: #555;
-  }
-  .goalkeeper {
-    grid-row: 4;
-    grid-column: 3;
-  }
-  
-  .left-back {
-    grid-row: 3;
-    grid-column: 1;
-    position: relative;
-    left: 10px;
-    bottom: 20px;
-  }
-  
-  .center-back1 {
-    grid-row: 3;
-    grid-column: 2;
-    position: relative;
-    top: 50px;
-  }
-  
-  .center-back2 {
-    grid-row: 3;
-    grid-column: 4;
-    position: relative;
-    top: 50px;
-  }
-  
-  .right-back {
-    grid-row: 3;
-    grid-column: 5;
-    position: relative;
-    right: 10px;
-    bottom: 20px;
-  }
-  
-  .enter-mid1 {
-    grid-row: 2;
-    grid-column: 1;
-    position: relative;
-    left: 50px;
-  }
-  
-  .enter-mid2 {
-    grid-row: 2;
-    grid-column: 3;
-    position: relative;
-    top: 80px;
-  }
-  
-  .enter-mid3 {
-    grid-row: 2;
-    grid-column: 5;
-    position: relative;
-    right: 50px;
-  }
-  
-  .left-wing {
-    grid-row: 1;
-    grid-column: 2;
-    position: relative;
-    top: 20px;
-  }
-  
-  .striker {
-    grid-row: 1;
-    grid-column: 3;
-  
-  }
-  
-  .right-wing {
-    grid-row: 1;
-    grid-column: 4;
-    position: relative;
-    top: 20px;
-  
-  }
-  
-  /*------------------------------------- Responsive max-width: 1024px */
-  @media (max-width: 1024px) {
-    .container {
-      flex-direction: column-reverse; 
-      width: 100%;
-      height: 100vh;
-    }
-    aside {
-      width: 90%;
-      height: 15vh;
-      flex-direction: row;
-      justify-content: space-around;
-      margin: auto;
-    }
-    .buttons{
-      flex-direction: row;
-      align-items: center;
-    }
-    h1{
-      margin: 0;
-    }
-    .main-container{
-      width: 90%;
-      height: 100vh;
-      margin: 0 auto;
-   }
-   #btn{
-    width: 120px;
-    height:35px;
-    padding: 5px 10px;
-  }
-  }
-  
-  
-  @media (max-width: 768px) {
-    aside {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-      width: 100vw;
-      height: 15vh;
-      margin: 0;
-    }
-    h1 {
-      font-size: 1.8rem;
-      text-align: center;
-    }
-    .buttons {
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;
-    }
-    #btn {
-      width: 100px;
-      font-size: 0.8rem;
-    }
-    .player-card {
-      width: 70px; 
-      height: 90px;
-    }
-    .player-card p {
-      font-size: 10px;
-    }
-    .main-container{
-      width: 100%;
-      height: 85vh;
-   }
-  }
-  
-  /*------------------------------------- Responsive max-width: 480px */
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-    #btn {
-      width: 90px;
-      font-size: 0.7rem;
-    }
-    .player-card {
-      width: 45px; 
-      height: 65px;
-    }
-    .player-card img {
-      height: 80%; 
-    }
-  }
-  
-  
-  
-  /*----------------- Responsive for cart ------------------*/
-  
-  @media (max-width: 1024px) {
-    .player-card {
-      width: 70px;
-      height: 100px;
-    }
-    .rate, .position {
-      font-size: 8px;
-    }
-    .player-photo img {
-      width: 40px;
-      height: 40px;
-    }
-    .player-name {
-      font-size: 7px;
-    }
-    .stat {
-      font-size: 5px;
-    }
-    .stat span {
-      font-size: 4px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .player-card {
-      width: 60px;
-      height: 90px;
-    }
-    .rate, .position {
-      font-size: 7px;
-    }
-    .player-photo img {
-      width: 35px;
-      height: 35px;
-    }
-    .player-name {
-      font-size: 6px;
-    }
-    .stat {
-      font-size: 5px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .player-card {
-      width: 50px;
-      height: 80px;
-    }
-    .rate, .position {
-      font-size: 6px;
-    }
-    .player-photo img {
-      width: 30px;
-      height: 30px;
-    }
-    .player-name {
-      font-size: 5px;
-    }
-    .stat {
-      font-size: 4px;
-    }
-    .stat span {
-      font-size: 3px;
-    }
-  }</style>
-  <title>FUT APP</title>
-</head>
-<body>
-  <div class="container">
-    <div class="main-container">
-      <main  class="stadium">
-        <div class="player-card goalkeeper">
-          <div class="rate">185</div>
-          <div class="position">GK</div>
-          <div class="player-photo">
-            <img src="./src/assets/img/goalkeeper.jpg" alt="Yassin Bonu">
-          </div>
-          <div class="player-name">Yassin Bonu</div>
-          <div class="statistique">
-            <div class="stat">86 <span>VIT</span></div>
-            <div class="stat">82 <span>TIR</span></div>
-            <div class="stat">75 <span>PAS</span></div>
-            <div class="stat">84 <span>DRI</span></div>
-            <div class="stat">34 <span>DEF</span></div>
-            <div class="stat">76 <span>PHY</span></div>
-          </div>
-        </div>
-        <div class="player-card center-back1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card center-back2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card left-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LB</p>
-        </div>
-        <div class="player-card right-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RB</p>
-        </div>
-        <div class="player-card enter-mid1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid3">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card left-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LW</p>
-        </div>
-        <div class="player-card right-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RW</p>
-        </div>
-        <div class="player-card striker">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">ST</p>
-        </div>
-      
-      </main>
-    </div>
-
-    <aside>
-      <h1><span>EA</span> FC 25</h1>
-
-      <div class="buttons">
-        <button id="btn">Add player</button>
-        <button id="btn">Edit</button>
-        <button id="btn">Remove</button>
-      </div>
-        
-    </aside>
-  </div>
-  
-  
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>FUT APP</title>
-</head>
-<body>
-  <div class="container">
-    <div class="main-container">
-      <main  class="stadium">
-        <div class="player-card goalkeeper">
-          <div class="rate">185</div>
-          <div class="position">GK</div>
-          <div class="player-photo">
-            <img src="./src/assets/img/goalkeeper.jpg" alt="Yassin Bonu">
-          </div>
-          <div class="player-name">Yassin Bonu</div>
-          <div class="statistique">
-            <div class="stat">86 <span>VIT</span></div>
-            <div class="stat">82 <span>TIR</span></div>
-            <div class="stat">75 <span>PAS</span></div>
-            <div class="stat">84 <span>DRI</span></div>
-            <div class="stat">34 <span>DEF</span></div>
-            <div class="stat">76 <span>PHY</span></div>
-          </div>
-        </div>
-        <div class="player-card center-back1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card center-back2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card left-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LB</p>
-        </div>
-        <div class="player-card right-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RB</p>
-        </div>
-        <div class="player-card enter-mid1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid3">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card left-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LW</p>
-        </div>
-        <div class="player-card right-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RW</p>
-        </div>
-        <div class="player-card striker">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">ST</p>
-        </div>
-      
-      </main>
-    </div>
-
-    <aside>
-      <h1><span>EA</span> FC 25</h1>
-
-      <div class="buttons">
-        <button id="btn">Add player</button>
-        <button id="btn">Edit</button>
-        <button id="btn">Remove</button>
-      </div>
-        
-    </aside>
-  </div>
-  
-  
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>FUT APP</title>
-</head>
-<body>
-  <div class="container">
-    <div class="main-container">
-      <main  class="stadium">
-        <div class="player-card goalkeeper">
-          <div class="rate">185</div>
-          <div class="position">GK</div>
-          <div class="player-photo">
-            <img src="./src/assets/img/goalkeeper.jpg" alt="Yassin Bonu">
-          </div>
-          <div class="player-name">Yassin Bonu</div>
-          <div class="statistique">
-            <div class="stat">86 <span>VIT</span></div>
-            <div class="stat">82 <span>TIR</span></div>
-            <div class="stat">75 <span>PAS</span></div>
-            <div class="stat">84 <span>DRI</span></div>
-            <div class="stat">34 <span>DEF</span></div>
-            <div class="stat">76 <span>PHY</span></div>
-          </div>
-        </div>
-        <div class="player-card center-back1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card center-back2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CB</p>
-        </div>
-        <div class="player-card left-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LB</p>
-        </div>
-        <div class="player-card right-back">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RB</p>
-        </div>
-        <div class="player-card enter-mid1">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid2">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card enter-mid3">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">CM</p>
-        </div>
-        <div class="player-card left-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">LW</p>
-        </div>
-        <div class="player-card right-wing">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">RW</p>
-        </div>
-        <div class="player-card striker">
-          <img src="./src/assets/img/goalkeeper.jpg" alt="">
-          <p class="player-position">ST</p>
-        </div>
-      
-      </main>
-    </div>
-
-    <aside>
-      <h1><span>EA</span> FC 25</h1>
-
-      <div class="buttons">
-        <button id="btn">Add player</button>
-        <button id="btn">Edit</button>
-        <button id="btn">Remove</button>
-      </div>
-        
-    </aside>
-  </div>
-  
-  
 </body>
 </html>
 
