@@ -147,6 +147,7 @@ console.log(reflexes);
 console.log(position);
 
 
+
   // Initialiser isvalid à false, car on vérifie si le champ est rempli
 
 
@@ -268,17 +269,15 @@ function valide_pace() {
  }
 
  pace.addEventListener('input',valide_pace);
-function valide_pace() {
-  if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
-    result[5].innerHTML="valide";
-    console.log("correct")
-
+ function valide_pace() {
+  if (pace.value != "" && !isNaN(pace.value) && pace.value >= 0 && pace.value <= 100) {
+    result[5].innerHTML = "valide";
+    console.log("correct");
+  } else {
+    result[5].innerHTML = "invalid";
+    console.log("incorrect");
   }
-  else{
-    result[5].innerHTML="invalid";
-    // console.log("incorrect")
-  }
- }
+}
  shooting.addEventListener('input',valide_shooting);
  function valide_shooting() {
    if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
@@ -360,35 +359,329 @@ function valide_pace() {
    }
   
   //  ajoutation player :
-  create.addEventListener('click',add_players); 
-  let players=[
+ 
+  let players=[];
 
-  ];
+    // Créer un nouvel objet joueur
+function addPlayer() {
 
-   newPlayer = {
-     nom:nom,
-      position: position,
-      nationality: nationality,
-      club: club,
-      rating: parseInt(rating),
-      pace: parseInt(pace),
-      shooting: parseInt(shooting),
-      passing: parseInt(passing),
-      dribbling: parseInt(dribbling),
-      defending: parseInt(defending),
-      physical: parseInt(physical)
-  };
+  const newPlayer = {
+      nom: nom.value.trim(),
+      position: position.value.trim(),
+      nationality: nationality.value.trim(),
+      club: club.value.trim(),
+      rating: parseInt(rating.value),
+      pace: parseInt(pace.value),
+      shooting: parseInt(shooting.value),
+      passing: parseInt(passing.value),
+      dribbling: parseInt(dribbling.value),
+      defending: parseInt(defending.value),
+      physical: parseInt(physical.value)
+  }
+  players.push(newPlayer);
+    console.log(players);};
+
+
+
+
   
-  players.push( newPlayer);
-  create.addEventListener('click',add_players); 
+
+  
+  // Vérifier si toutes les informations nécessaires sont remplies
+//   if (!position || !nom || !nationality || !club || !rating || !pace || !shooting || !passing || !dribbling || !defending || !physical) {
+//     alert("Please fill in all fields.");
+//     return;
+//   }
+
+//   const playerCard = document.createElement('div');
+//   playerCard.classList.add('player-card');
+
+//   // Ajouter les informations au joueur
+//   playerCard.innerHTML = `
+//     <div class="player-rating">${rating}</div>
+//     <div class="player-position">${position}</div>
+//     <div class="player-photo">
+//       <img src="${photo}" alt="${nom}">
+//     </div>
+//     <div class="player-name">${name}</div>
+//     <div class="statistique">
+//       <div class="stat"><span>${pace}</span> PAC</div>
+//       <div class="stat"><span>${shooting}</span> SHO</div>
+//       <div class="stat"><span>${passing}</span> PAS</div>
+//       <div class="stat"><span>${dribbling}</span> DRI</div>
+//       <div class="stat"><span>${defending}</span> DEF</div>
+//       <div class="stat"><span>${physical}</span> PHY</div>
+//     </div>
+//   `;
+
+//   // Ajouter la card du joueur dans la position correspondante sur le terrain
+//   const stadium = document.querySelector('.stadium');
+//   let positionClass = '';
+
+//   // Associer les positions à des classes CSS
+//   switch (position) {
+//     case 'GK':
+//       positionClass = 'goalkeeper';
+//       break;
+//     case 'LB':
+//       positionClass = 'left-back';
+//       break;
+//     case 'RB':
+//       positionClass = 'right-back';
+//       break;
+//     case 'CM':
+//       positionClass = 'enter-mid1'; // Pour l'exemple, peut être modifié selon la formation
+//       break;
+//     case 'CB':
+//       positionClass = 'center-back1'; // Ou 'center-back2' selon la formation
+//       break;
+//     case 'LW':
+//       positionClass = 'left-wing';
+//       break;
+//     case 'RW':
+//       positionClass = 'right-wing';
+//       break;
+//     case 'ST':
+//       positionClass = 'striker';
+//       break;
+//     default:
+//       alert('Invalid position');
+//       return;
+//   }
+
+//   // Ajouter la classe de position au joueur
+//   playerCard.classList.add(positionClass);
+
+//   // Ajouter le joueur au terrain
+//   stadium.appendChild(playerCard);
+// });
+/* <div class="player-position" data-position="GK">GK</div> */
+
+  
+// Afficher la valeur dans la console
 
 
-  function add_players(){
-
-alert("hello meriem");
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// positionvalue;
+
+
+// create.addEventListener('click',function (event) {let  carte = document.createElement('div');
+//   carte.classList.add('player-card'); 
+//   alert("hello")
+//   event.preventDefault(); 
+//   if( positionvalue=="GK"){
+//     carte.innerHTML = `
+//     <div class="player">
+//       <div class="player-rating">${rating}</div>
+//       <div class="player-position">${position}</div>
+//       <div class="player-photo">
+//         <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+//       </div>
+//       <div class="player-name">${nom}</div>
+//       <div class="statistique">
+//         <div class="stat"><span>${handling}</span> SHO</div>
+       
+//         // <div class="stat"><span>${diving}</span> DRI</div>
+//         <div class="stat"><span>${dribbling}</span> DEF</div>
+//         <div class="stat"><span>${defending}</span> PHY</div>
+//       </div>
+//     </div>
+//   `;
+
+//   }
+//   else{
+//     carte.innerHTML = `
+//     <div class="player">
+//       <div class="player-rating">${rating}</div>
+//       <div class="player-position">${position}</div>
+//       <div class="player-photo">
+//         <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+//       </div>
+//       <div class="player-name">${nom}</div>
+//       <div class="statistique">
+//         <div class="stat"><span>${shooting}</span> SHO</div>
+//         <div class="stat"><span>${passing}</span> PAS</div>
+//         <div class="stat"><span>${dribbling}</span> DRI</div>
+//         <div class="stat"><span>${defending}</span> DEF</div>
+//         <div class="stat"><span>${physical}</span> PHY</div>
+//       </div>
+//     </div>
+//   `;
+
+//   }
+
+ 
+// document.querySelector('.main-container').appendChild(carte);
+
+//   }
+  
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+//   )
+ // Assurez-vous que le bouton existe
+
+create.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Assurez-vous que le bouton a cet ID
+
+create.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Récupérer les valeurs des champs
+    
+    let rating = rating.value;
+    let nom = nom.value;
+    let handling =handling.value;
+    let dribbling = dribbling.value;
+    let defending = defending.value;
+    let shooting = shooting.value;
+    let passing = passing.value;
+    let physical = physical.value;
+
+    // Créer une carte de joueur
+    let carte = document.createElement('div');
+    carte.classList.add('player-card');
+
+    if (positionvalue === "GK" ) {
+        carte.innerHTML = `
+        <div class="player">
+            <div class="player-rating">${rating}</div>
+            <div class="player-position">${positionvalue}</div>
+            <div class="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+            </div>
+            <div class="player-name">${nom}</div>
+            <div class="statistique">
+                <div class="stat"><span>${handling}</span> SHO</div>
+                <div class="stat"><span>${dribbling}</span> DRI</div>
+                <div class="stat"><span>${defending}</span> DEF</div>
+                <div class="stat"><span>${physical}</span> PHY</div>
+            </div>
+        </div>
+        `;
+    } else {
+        carte.innerHTML = `
+        <div class="player">
+            <div class="player-rating">${rating}</div>
+            <div class="player-position">${positionvalue}</div>
+            <div class="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+            </div>
+            <div class="player-name">${nom}</div>
+            <div class="statistique">
+                <div class="stat"><span>${shooting}</span> SHO</div>
+                <div class="stat"><span>${passing}</span> PAS</div>
+                <div class="stat"><span>${dribbling}</span> DRI</div>
+                <div class="stat"><span>${defending}</span> DEF</div>
+                <div class="stat"><span>${physical}</span> PHY</div>
+            </div>
+        </div>
+        `;
+    }
+
+    // Ajouter la carte dans le conteneur principal
+    let mainContainer = document.querySelector('.main-container');
+    if (mainContainer) {
+        mainContainer.appendChild(carte);
+    } else {
+        console.error("Le conteneur '.main-container' n'a pas été trouvé.");
+    }
+
+    alert("Carte de joueur ajoutée avec succès !");
+});
+
+
+   
+    let carte = document.createElement('div');
+    carte.classList.add('player-card');
+
+    if (positionvalue == "GK") {
+        carte.innerHTML = `
+        <div class="player">
+            <div class="player-rating">${rating}</div>
+            <div class="player-position">${position}</div>
+            <div class="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+            </div>
+            <div class="player-name">${nom}</div>
+            <div class="statistique">
+                <div class="stat"><span>${handling}</span> SHO</div>
+                <div class="stat"><span>${dribbling}</span> DRI</div>
+                <div class="stat"><span>${defending}</span> DEF</div>
+                <div class="stat"><span>${physical}</span> PHY</div>
+            </div>
+        </div>
+        `;
+    } else {
+        carte.innerHTML = `
+        <div class="player">
+            <div class="player-rating">${rating}</div>
+            <div class="player-position">${position}</div>
+            <div class="player-photo">
+                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+            </div>
+            <div class="player-name">${nom}</div>
+            <div class="statistique">
+                <div class="stat"><span>${shooting}</span> SHO</div>
+                <div class="stat"><span>${passing}</span> PAS</div>
+                <div class="stat"><span>${dribbling}</span> DRI</div>
+                <div class="stat"><span>${defending}</span> DEF</div>
+                <div class="stat"><span>${physical}</span> PHY</div>
+            </div>
+        </div>
+        `;
+    }
+
+    let mainContainer = document.querySelector('.main-container');
+    if (mainContainer) {
+        mainContainer.appendChild(carte);
+    } else {
+        console.error("Le conteneur '.main-container' n'a pas été trouvé.");
+    }
+
+    alert("Carte de joueur ajoutée avec succès !"); 
+    alert("hello");
+  
+});
+
+  
+
 
 
 

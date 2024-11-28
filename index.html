@@ -193,6 +193,79 @@
     "physical": 65 -->
  </form></div>
 <img src=".jpg" alt="">
-     <script src="index.js"></script>
+     <!-- <script src="index.js"> function displayPlayerCard(position) {
+        let playerCard = document.createElement('div');
+        playerCard.classList.add('player-card');
+    
+        switch (position) {
+            case 'GK':
+                playerCard.innerHTML = `<div class="player-position">Gardien</div>`;
+                break;
+            case 'ST':
+                playerCard.innerHTML = `<div class="player-position">Attaquant</div>`;
+                break;
+            case 'CM':
+                playerCard.innerHTML = `<div class="player-position">Milieu de terrain</div>`;
+                break;
+            default:
+                playerCard.innerHTML = `<div class="player-position">Position inconnue</div>`;
+                break;
+        }
+    
+        // Ajouter la carte à l'écran
+        document.querySelector('.stadium').appendChild(playerCard);
+    } -->
+    let position = document.getElementById('position');
+    let container = document.getElementById('container');
+    
+    position.addEventListener('change', function() {
+        let positionValue = position.value.trim();
+    
+        if (positionValue === "GK") {
+            container.innerHTML = `
+                <label for="diving">Diving</label>
+                <input type="number" id="diving" required>
+    
+                <label for="handling">Handling</label>
+                <input type="number" id="handling" required>
+    
+                <label for="passing">Passing</label>
+                <input type="number" id="passing" required>
+    
+                <label for="dribbling">Dribbling</label>
+                <input type="number" id="dribbling" required>
+    
+                <label for="defending">Defending</label>
+                <input type="number" id="defending" required>
+    
+                <label for="physical">Physical</label>
+                <input type="number" id="physical" required>
+            `;
+        } else {
+            // Si la position n'est pas "GK", on affiche les champs généraux pour les autres positions.
+            container.innerHTML = `
+                <label for="pace">Pace</label>
+                <input type="number" id="pace" required>
+    
+                <label for="shooting">Shooting</label>
+                <input type="number" id="shooting" required>
+    
+                <label for="passing">Passing</label>
+                <input type="number" id="passing" required>
+    
+                <label for="dribbling">Dribbling</label>
+                <input type="number" id="dribbling" required>
+    
+                <label for="defending">Defending</label>
+                <input type="number" id="defending" required>
+    
+                <label for="physical">Physical</label>
+                <input type="number" id="physical" required>
+            `;
+        }
+    });
+    
+
+    </script>
 </body>
 </html> -->

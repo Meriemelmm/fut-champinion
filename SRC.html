@@ -1,9 +1,19 @@
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  
   <style>*{
     
     box-sizing: border-box;
@@ -347,7 +357,7 @@ gap:10px;
       <main  class="stadium">
         <div class="player-card goalkeeper">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="GK">GK</div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
@@ -396,13 +406,13 @@ gap:10px;
         </div>
         <div class="player-card left-back">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="LB">LB</div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
           <div class="player-name">John Doe</div>
           <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
+              <div class="stat"><span >86</span> PAC</div>
               <div class="stat"><span>82</span> SHO</div>
               <div class="stat"><span>75</span> PAS</div>
               <div class="stat"><span>84</span> DRI</div>
@@ -412,7 +422,7 @@ gap:10px;
         </div>
         <div class="player-card right-back">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="RB">RB</div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
@@ -476,7 +486,7 @@ gap:10px;
         </div>
         <div class="player-card left-wing">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="LW">LW  </div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
@@ -492,7 +502,7 @@ gap:10px;
         </div>
         <div class="player-card right-wing">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="RW">RW</div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
@@ -508,7 +518,7 @@ gap:10px;
         </div>
         <div class="player-card striker">
           <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+          <div class="player-position" data-position="ST">ST</div>
           <div class="player-photo">
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
           </div>
@@ -557,7 +567,7 @@ gap:10px;
         <label for=""> statistique</label>
         <input type="text"> -->
        
-        <label for="" style="margin"> nationality</label>
+        <label for="" > nationality</label>
         <input type="text" id="nationality" required>
         <div class="text"></div>
         <label for=""> club</label>
@@ -566,31 +576,34 @@ gap:10px;
         <label for=""> rating</label>
         <input type="number" id="rating"required>
         <div class="text"></div>
-       <div id="container" style="width:350px;"> <label for=""> pace</label>
-        <input type="number" id="pace"required>
-        <div class="text"></div>
-        <label for=""> shootting</label>
-        <input type="number" id="shooting" required>
-        <div class="text"></div>
-        <label for="">passing</label>
-
-        <input type="number" id="passing"required> 
-        <div class="text"></div>
+        <div id="container" style="width:350px;"> <label for=""> pace</label>
+          <input type="number" id="pace"required>
+          <div class="text"></div>
+          <label for=""> shootting</label>
+          <input type="number" id="shooting" required>
+          <div class="text"></div>
+          <label for="">passing</label>
+  
+          <input type="number" id="passing"required> 
+          <div class="text"></div>
+          
+          <label for="">dribbling</label>
+          <input type="number" id="dribbling" required>
+          <div class="text"></div>
+          <label for="">defending</label>
+          <input type="nomber" id="defending"  required>
+          <div class="text"></div>
+          <label for="">physical</label>
+          <input type="number" id="physical"  required>
+          <div class="text"></div></div>
+          <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
+      </div> 
         
-        <label for="">dribbling</label>
-        <input type="number" id="dribbling" required>
-        <div class="text"></div>
-        <label for="">defending</label>
-        <input type="nomber" id="defending"  required>
-        <div class="text"></div>
-        <label for="">physical</label>
-        <input type="number" id="physical"  required>
-        <div class="text"></div></div> 
         <!--  -->
         
         
         
-        <button  id="create" style="margin-top: 5px;" type="submit" >create</button>
+        
     
         
        
@@ -599,91 +612,7 @@ gap:10px;
   </div>
  </div>
   
-  <script > document.getElementById('create').addEventListener('click', function (event) {
-    event.preventDefault();  
-    
- 
-    const position = document.getElementById('position').value;
-    const name = document.getElementById('nom').value;
-    const nationality = document.getElementById('nationality').value;
-    const club = document.getElementById('club').value;
-    const rating = document.getElementById('rating').value;
-    const pace = document.getElementById('pace').value;
-    const shooting = document.getElementById('shooting').value;
-    const passing = document.getElementById('passing').value;
-    const dribbling = document.getElementById('dribbling').value;
-    const defending = document.getElementById('defending').value;
-    const physical = document.getElementById('physical').value;
-    
-    // Vérifier si toutes les informations nécessaires sont remplies
-    if (!position || !name || !nationality || !club || !rating || !pace || !shooting || !passing || !dribbling || !defending || !physical) {
-      alert("Please fill in all fields.");
-      return;
-    }
-  
-    // Créer l'élément du joueur (player-card)
-    const playerCard = document.createElement('div');
-    playerCard.classList.add('player-card');
-  
-    // Ajouter les informations au joueur
-    playerCard.innerHTML = `
-      <div class="player-rating">${rating}</div>
-      <div class="player-position">${position}</div>
-      <div class="player-photo">
-        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${name}">
-      </div>
-      <div class="player-name">${name}</div>
-      <div class="statistique">
-        <div class="stat"><span>${pace}</span> PAC</div>
-        <div class="stat"><span>${shooting}</span> SHO</div>
-        <div class="stat"><span>${passing}</span> PAS</div>
-        <div class="stat"><span>${dribbling}</span> DRI</div>
-        <div class="stat"><span>${defending}</span> DEF</div>
-        <div class="stat"><span>${physical}</span> PHY</div>
-      </div>
-    `;
-  
-    // Ajouter la card du joueur dans la position correspondante sur le terrain
-    const stadium = document.querySelector('.stadium');
-    let positionClass = '';
-  
-    // Associer les positions à des classes CSS
-    switch (position) {
-      case 'GK':
-        positionClass = 'goalkeeper';
-        break;
-      case 'LB':
-        positionClass = 'left-back';
-        break;
-      case 'RB':
-        positionClass = 'right-back';
-        break;
-      case 'CM':
-        positionClass = 'enter-mid1'; // Pour l'exemple, peut être modifié selon la formation
-        break;
-      case 'CB':
-        positionClass = 'center-back1'; // Ou 'center-back2' selon la formation
-        break;
-      case 'LW':
-        positionClass = 'left-wing';
-        break;
-      case 'RW':
-        positionClass = 'right-wing';
-        break;
-      case 'ST':
-        positionClass = 'striker';
-        break;
-      default:
-        alert('Invalid position');
-        return;
-    }
-  
-    // Ajouter la classe de position au joueur
-    playerCard.classList.add(positionClass);
-  
-    // Ajouter le joueur au terrain
-    stadium.appendChild(playerCard);
-  });
+  <script  src="index.js"> 
   </script>
 </body>
 </html>
