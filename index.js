@@ -1,5 +1,52 @@
+let nationality=document.getElementById('nationality');
+console.log(nationality);
+ let club=document.getElementById('club');
+console.log(club);
+ let rating=document.getElementById('rating');
+console.log(rating);
+ let pace=document.getElementById('pace');
+console.log(pace);
+ let shooting=document.getElementById('shooting');
+console.log(shooting)
+ let passing=document.getElementById('passing')
+console.log(passing);
+let dribbling=document.getElementById('dribbling');
+console.log(dribbling);
+let defending=document.getElementById('defending');
+console.log(defending);
+let physical=document.getElementById('physical');
+console.log(physical);
+let result=document.getElementsByClassName('text');
+console.log(result);
 
- let forma=document.getElementById('forma');
+console.log(rating);
+let kicking=document.getElementById('kicking');
+console.log(kicking);
+let  speed=document.getElementById('speed');
+console.log(speed);
+let  handling=document.getElementById('handling');
+let positioning=document.getElementById('positioning');
+console.log(positioning);
+let reflexes=document.getElementById('reflexes');
+console.log(reflexes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let forma=document.getElementById('forma');
 console.log(forma);
  
  let create=document.getElementById('create');
@@ -113,38 +160,7 @@ else{
 //     h.style.color="orange;" 
 //   }
 // })
-  let nationality=document.getElementById('nationality');
- console.log(nationality);
-  let club=document.getElementById('club');
- console.log(club);
-  let rating=document.getElementById('rating');
- console.log(rating);
-  let pace=document.getElementById('pace');
- console.log(pace);
-  let shooting=document.getElementById('shooting');
- console.log(shooting)
-  let passing=document.getElementById('passing')
-console.log(passing);
- let dribbling=document.getElementById('dribbling');
-console.log(dribbling);
- let defending=document.getElementById('defending');
-console.log(defending);
- let physical=document.getElementById('physical');
-console.log(physical);
-let result=document.getElementsByClassName('text');
-console.log(result);
 
-console.log(rating);
-let kicking=document.getElementById('kicking');
-console.log(kicking);
-let  speed=document.getElementById('speed');
-console.log(speed);
-let  handling=document.getElementById('handling');
-let positioning=document.getElementById('positioning');
-console.log(positioning);
-let reflexes=document.getElementById('reflexes');
-console.log(reflexes);
-console.log(position);
 
 
 
@@ -248,115 +264,115 @@ console.log(name_playeer)
 
 
 
-nationality.addEventListener('input',valide_nationality);
-function valide_nationality(){
-  if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value)){
-    result[2].innerHTML="correct"
-  }
-  else(result[2].innerHTML="invalid")
-}
- pace.addEventListener('input',valide_pace);
-function valide_pace() {
-  if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
-    result[5].innerHTML="valide";
-    console.log("correct")
+// nationality.addEventListener('input',valide_nationality);
+// function valide_nationality(){
+//   if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value)){
+//     result[2].innerHTML="correct"
+//   }
+//   else(result[2].innerHTML="invalid")
+// }
+//  pace.addEventListener('input',valide_pace);
+// function valide_pace() {
+//   if(pace.value != "" && !isNaN(pace.value) && rating.value >= 0 && pace.value <= 100){
+//     result[5].innerHTML="valide";
+//     console.log("correct")
 
-  }
-  else{
-    result[5].innerHTML="invalid";
+//   }
+//   else{
+//     result[5].innerHTML="invalid";
    
-  }
- }
+//   }
+//  }
 
- pace.addEventListener('input',valide_pace);
- function valide_pace() {
-  if (pace.value != "" && !isNaN(pace.value) && pace.value >= 0 && pace.value <= 100) {
-    result[5].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[5].innerHTML = "invalid";
-    console.log("incorrect");
-  }
-}
- shooting.addEventListener('input',valide_shooting);
- function valide_shooting() {
-   if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
-     result[6].innerHTML="valide";
-     console.log("correct")
+//  pace.addEventListener('input',valide_pace);
+//  function valide_pace() {
+//   if (pace.value != "" && !isNaN(pace.value) && pace.value >= 0 && pace.value <= 100) {
+//     result[5].innerHTML = "valide";
+//     console.log("correct");
+//   } else {
+//     result[5].innerHTML = "invalid";
+//     console.log("incorrect");
+//   }
+// }
+//  shooting.addEventListener('input',valide_shooting);
+//  function valide_shooting() {
+//    if(shooting.value != "" && !isNaN(shooting.value) && shooting.value >= 0 && shooting.value <= 100){
+//      result[6].innerHTML="valide";
+//      console.log("correct")
  
-   }
-   else{
-     result[6].innerHTML="invalid";
+//    }
+//    else{
+//      result[6].innerHTML="invalid";
      
-   }
-  }
+//    }
+//   }
   
-  defending.addEventListener('input',valide_defending);
-  function valide_defending() {
-    if(defending.value != "" && !isNaN(defending.value) && defending.value >= 0 && defending.value <= 100){
-      result[9].innerHTML="valide";
-      console.log("correct")
+//   defending.addEventListener('input',valide_defending);
+//   function valide_defending() {
+//     if(defending.value != "" && !isNaN(defending.value) && defending.value >= 0 && defending.value <= 100){
+//       result[9].innerHTML="valide";
+//       console.log("correct")
    
-     }
-     else{
-      // result[9].innerHTML="invalid";
+//      }
+//      else{
+//       // result[9].innerHTML="invalid";
      
-       console.log("incorrect");
-     }
-   }
-   physical.addEventListener('input',valide_physical);
-  function valide_physical() {
-    if(physical.value != "" && !isNaN(physical.value) && defending.value >= 0 && physical.value <= 100){
-      result[10].innerHTML="valide";
-      console.log("correct")
+//        console.log("incorrect");
+//      }
+//    }
+//    physical.addEventListener('input',valide_physical);
+//   function valide_physical() {
+//     if(physical.value != "" && !isNaN(physical.value) && defending.value >= 0 && physical.value <= 100){
+//       result[10].innerHTML="valide";
+//       console.log("correct")
    
-     }
-     else{
-      result[10].innerHTML="invalid";
+//      }
+//      else{
+//       result[10].innerHTML="invalid";
      
-       console.log("incorrect");
-     }
-   }
-   dribbling.addEventListener('input',valide_dribbling);
-   function valide_dribbling() {
-     if(dribbling.value != "" && !isNaN(dribbling.value) && dribbling.value >= 0 && dribbling.value <= 100){
-       result[8].innerHTML="valide";
-       console.log("correct")
+//        console.log("incorrect");
+//      }
+//    }
+//    dribbling.addEventListener('input',valide_dribbling);
+//    function valide_dribbling() {
+//      if(dribbling.value != "" && !isNaN(dribbling.value) && dribbling.value >= 0 && dribbling.value <= 100){
+//        result[8].innerHTML="valide";
+//        console.log("correct")
     
-      }
-      else{
-       result[8].innerHTML="invalid";
+//       }
+//       else{
+//        result[8].innerHTML="invalid";
       
-        console.log("incorrect");
-      }
-    }
-    passing.addEventListener('input',valide_passing);
- function valide_passing() {
-   if(passing.value != "" && !isNaN(passing.value) && passing.value >= 0 && passing.value <= 100){
-    result[7].innerHTML="valide";
-    console.log("correct")
+//         console.log("incorrect");
+//       }
+//     }
+//     passing.addEventListener('input',valide_passing);
+//  function valide_passing() {
+//    if(passing.value != "" && !isNaN(passing.value) && passing.value >= 0 && passing.value <= 100){
+//     result[7].innerHTML="valide";
+//     console.log("correct")
  
-   }
-   else{
-    result[7].innerHTML="invalid";
+//    }
+//    else{
+//     result[7].innerHTML="invalid";
    
-     // console.log("incorrect");
-   }
-  }
-  club.addEventListener('input',valide_club);
-  function valide_club() {
-    if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value))
-   {
-     result[3].innerHTML="valide";
-     console.log("correct")
+//      // console.log("incorrect");
+//    }
+//   }
+//   club.addEventListener('input',valide_club);
+//   function valide_club() {
+//     if(typeof(nationality.value)  === "string" && nationality.value.trim() !== ""&& /^[A-Za-z\s]+$/.test(nationality.value))
+//    {
+//      result[3].innerHTML="valide";
+//      console.log("correct")
   
-    }
-    else{
-     result[3].innerHTML="invalid";
+//     }
+//     else{
+//      result[3].innerHTML="invalid";
     
-      // console.log("incorrect");
-    }
-   }
+//       // console.log("incorrect");
+//     }
+//    }
   
   //  ajoutation player :
  
@@ -556,8 +572,7 @@ function addPlayer() {
 //   )
  // Assurez-vous que le bouton existe
 
-create.addEventListener('click', function(event) {
-    event.preventDefault();
+
     // Assurez-vous que le bouton a cet ID
 
 create.addEventListener('click', function(event) {
@@ -565,120 +580,192 @@ create.addEventListener('click', function(event) {
 
     // Récupérer les valeurs des champs
     
-    let rating = rating.value;
-    let nom = nom.value;
-    let handling =handling.value;
-    let dribbling = dribbling.value;
-    let defending = defending.value;
-    let shooting = shooting.value;
-    let passing = passing.value;
-    let physical = physical.value;
+    let obj = {
+    rating : rating.value,
+     nom : nom.value,
+    //  handling :handling.value,
+     dribbling : dribbling.value,
+     defending : defending.value,
+     shooting : shooting.value,
+     passing : passing.value,
+     physical : physical.value
+    }
 
-    // Créer une carte de joueur
+    console.log("hano" , obj  );     
+
+
+    
+
+    //Créer une carte de joueur
     let carte = document.createElement('div');
-    carte.classList.add('player-card');
+    let pos = document.getElementById('gk');
+    let st=document.getElementById('STr');
+    console.log(st);
+    let rw=document.getElementById('rwt');
+    let left =document.getElementById('leftyo');
+    console.log(rw);
 
-    if (positionvalue === "GK" ) {
-        carte.innerHTML = `
-        <div class="player">
-            <div class="player-rating">${rating}</div>
-            <div class="player-position">${positionvalue}</div>
-            <div class="player-photo">
-                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
-            </div>
-            <div class="player-name">${nom}</div>
-            <div class="statistique">
-                <div class="stat"><span>${handling}</span> SHO</div>
-                <div class="stat"><span>${dribbling}</span> DRI</div>
-                <div class="stat"><span>${defending}</span> DEF</div>
-                <div class="stat"><span>${physical}</span> PHY</div>
-            </div>
-        </div>
-        `;
-    } else {
-        carte.innerHTML = `
-        <div class="player">
-            <div class="player-rating">${rating}</div>
-            <div class="player-position">${positionvalue}</div>
-            <div class="player-photo">
-                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
-            </div>
-            <div class="player-name">${nom}</div>
-            <div class="statistique">
-                <div class="stat"><span>${shooting}</span> SHO</div>
-                <div class="stat"><span>${passing}</span> PAS</div>
-                <div class="stat"><span>${dribbling}</span> DRI</div>
-                <div class="stat"><span>${defending}</span> DEF</div>
-                <div class="stat"><span>${physical}</span> PHY</div>
-            </div>
-        </div>
-        `;
+    // carte.classList.add('player-card');
+
+    // console.log(positionvalue === position.value)
+    console.log(position.value);
+    // console.log(positionvalue)
+
+
+    if ( position.value === "GK") {
+
+        pos.outerHTML = `<div id="GK" class="player-card goalkeeper">
+          <div class="player-rating">${obj.dribbling}</div>
+          <div class="player-position" data-position="GK">GK</div>
+          <div class="player-photo">
+              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+          </div>
+          <div class="player-name">${obj.nom}</div>
+          <div class="statistique">
+           <div class="stat"><span>86</span> PAC</div>
+              <div class="stat"><span>82</span> SHO</div>
+              <div class="stat"><span>75</span> PAS</div>
+              <div class="stat"><span>84</span> DRI</div>
+              <div class="stat"><span>34</span> DEF</div>
+              <div class="stat"><span>76</span> PHY</div>
+          </div>
+      </div>`
+        // pos.innerHTML = `
+        // <div class="player">
+        //     <div class="player-rating">${obj.rating}</div>
+        //     <div class="player-position">${obj.positionvalue}</div>
+        //     <div class="player-photo">
+        //         <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+        //     </div>
+        //     <div class="player-name">${obj.nom}</div>
+        //     <div class="statistique">
+        //         <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+        //         <div class="stat"><span>${obj.defending}</span> DEF</div>
+        //         <div class="stat"><span>${obj.physical}</span> PHY</div>
+        //     </div>
+        // </div>
+        // `;
+    } 
+    
+//     else if(  position.value === "RB"){
+//       pos.outerHTML =  `<div  class="player-card goalkeeper">
+//       <div class="player-rating">${obj.dribbling}</div>
+//       <div class="player-position" data-position="GK">GK</div>
+//       <div class="player-photo">
+//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+//       </div>
+//       <div class="player-name">${obj.nom}</div>
+//       <div class="statistique">
+// 0              <div class="stat"><span>86</span> PAC</div>
+//           <div class="stat"><span>82</span> SHO</div>
+//           <div class="stat"><span>75</span> PAS</div>
+//           <div class="stat"><span>84</span> DRI</div>
+//           <div class="stat"><span>34</span> DEF</div>
+//           <div class="stat"><span>76</span> PHY</div>
+//       </div>
+//   </div>`
+
+
+
+
+//     } else if( position.value === "LW"){
+//       left.outerHTML = `<div id="GK" class="player-card goalkeeper">
+//       <div class="player-rating">${obj.dribbling}</div>
+//       <div class="player-position" data-position="GK">GK</div>
+//       <div class="player-photo">
+//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+//       </div>
+//       <div class="player-name">${obj.nom}</div>
+//       <div class="statistique">
+//               <div class="stat"><span>86</span> PAC</div>
+//           <div class="stat"><span>82</span> SHO</div>
+//           <div class="stat"><span>75</span> PAS</div>
+//           <div class="stat"><span>84</span> DRI</div>
+//           <div class="stat"><span>34</span> DEF</div>
+//           <div class="stat"><span>76</span> PHY</div>
+//       </div>
+//   </div>`
+
+//     }
+//     else if( position.value === "RW"){
+     
+//       rw.outerHTML = `<div " class="player-card goalkeeper">
+//       <div class="player-rating">${obj.dribbling}</div>
+//       <div class="player-position" data-position="GK">GK</div>
+//       <div class="player-photo">
+//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+//       </div>
+//       <div class="player-name">${obj.nom}</div>
+//       <div class="statistique">
+// 0              <div class="stat"><span>86</span> PAC</div>
+//           <div class="stat"><span>82</span> SHO</div>
+//           <div class="stat"><span>75</span> PAS</div>
+//           <div class="stat"><span>84</span> DRI</div>
+//           <div class="stat"><span>34</span> DEF</div>
+//           <div class="stat"><span>76</span> PHY</div>
+//       </div>
+//   </div>`
+
+// }
+    else if( position.value === "ST"){ 
+       st.outerHTML = `<div  id="STr"class="player-card striker">
+          <div class="player-rating">85</div>
+          <div class="player-position" data-position="ST">ST</div>
+          <div class="player-photo">
+              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+          <div class="statistique">
+              <div class="stat"><span>86</span> PAC</div>
+              <div class="stat"><span>82</span> SHO</div>
+              <div class="stat"><span>75</span> PAS</div>
+              <div class="stat"><span>84</span> DRI</div>
+              <div class="stat"><span>34</span> DEF</div>
+              <div class="stat"><span>76</span> PHY</div>
+          </div>
+        </div>`
+
     }
+    
+    // else {
+    //     carte.innerHTML = `
+    //     <div class="player">
+    //         <div class="player-rating">${rating}</div>
+    //         <div class="player-position">${positionvalue}</div>
+    //         <div class="player-photo">
+    //             <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
+    //         </div>
+    //         <div class="player-name">${nom}</div>
+    //         <div class="statistique">
+    //             <div class="stat"><span>${shooting}</span> SHO</div>
+    //             <div class="stat"><span>${passing}</span> PAS</div>
+    //             <div class="stat"><span>${dribbling}</span> DRI</div>
+    //             <div class="stat"><span>${defending}</span> DEF</div>
+    //             <div class="stat"><span>${physical}</span> PHY</div>
+    //         </div>
+    //     </div>
+    //     `;
+    // }
 
-    // Ajouter la carte dans le conteneur principal
-    let mainContainer = document.querySelector('.main-container');
-    if (mainContainer) {
-        mainContainer.appendChild(carte);
-    } else {
-        console.error("Le conteneur '.main-container' n'a pas été trouvé.");
-    }
+    // // Ajouter la carte dans le conteneur principal
+    // let mainContainer = document.querySelector('.main-container');
+    // if (mainContainer) {
+    //     mainContainer.appendChild(carte);
+    // } else {
+    //     console.error("Le conteneur '.main-container' n'a pas été trouvé.");
+    // }
 
-    alert("Carte de joueur ajoutée avec succès !");
+    // alert("Carte de joueur ajoutée avec succès !");
+    players.push(obj);
+    console.log(players)
 });
+console.log(position);
+
 
 
    
-    let carte = document.createElement('div');
-    carte.classList.add('player-card');
+   
 
-    if (positionvalue == "GK") {
-        carte.innerHTML = `
-        <div class="player">
-            <div class="player-rating">${rating}</div>
-            <div class="player-position">${position}</div>
-            <div class="player-photo">
-                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
-            </div>
-            <div class="player-name">${nom}</div>
-            <div class="statistique">
-                <div class="stat"><span>${handling}</span> SHO</div>
-                <div class="stat"><span>${dribbling}</span> DRI</div>
-                <div class="stat"><span>${defending}</span> DEF</div>
-                <div class="stat"><span>${physical}</span> PHY</div>
-            </div>
-        </div>
-        `;
-    } else {
-        carte.innerHTML = `
-        <div class="player">
-            <div class="player-rating">${rating}</div>
-            <div class="player-position">${position}</div>
-            <div class="player-photo">
-                <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${nom}">
-            </div>
-            <div class="player-name">${nom}</div>
-            <div class="statistique">
-                <div class="stat"><span>${shooting}</span> SHO</div>
-                <div class="stat"><span>${passing}</span> PAS</div>
-                <div class="stat"><span>${dribbling}</span> DRI</div>
-                <div class="stat"><span>${defending}</span> DEF</div>
-                <div class="stat"><span>${physical}</span> PHY</div>
-            </div>
-        </div>
-        `;
-    }
-
-    let mainContainer = document.querySelector('.main-container');
-    if (mainContainer) {
-        mainContainer.appendChild(carte);
-    } else {
-        console.error("Le conteneur '.main-container' n'a pas été trouvé.");
-    }
-
-    alert("Carte de joueur ajoutée avec succès !"); 
-    alert("hello");
-  
-});
 
   
 
