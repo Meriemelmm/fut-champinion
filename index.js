@@ -129,42 +129,6 @@ else{
 
 }})
 
-//  <form>
-//   <select id="answer">
-//     <option value="">chosse your inswer <option/>
-    
-//     <option value="yes"> yes
-//       <option/>
-//     <option value="non"> non
-//       <option/>
-//   </select>
-  
-// </form>
-//  let answer= document.getElementById('answer');
-//  let h = document.createElement('h1');
-// document.body.appendChild(h);
-// answer.addEventListener('change', () => {
-//     let answervalue = answer.value;
-//     // console.log(answervalue)
-//   if(answervalue === "yes"){
-//     console.log("eebebe")
-//     h.innerHTML = "correct";
-//     h.style.color="green";
-//   }
-//   else if(answervalue === 'non'){
-//     h.innerhtml="incorrect";
-//     h.style.color="red"
-//   }
-//   else{
-//     h.innerHTML="rien dire";
-//     h.style.color="orange;" 
-//   }
-// })
-
-
-
-
-  // Initialiser isvalid à false, car on vérifie si le champ est rempli
 
 
 
@@ -668,45 +632,45 @@ create.addEventListener('click', function(event) {
 
 
 
-//     } else if( position.value === "LW"){
-//       left.outerHTML = `<div id="GK" class="player-card goalkeeper">
-//       <div class="player-rating">${obj.dribbling}</div>
-//       <div class="player-position" data-position="GK">GK</div>
-//       <div class="player-photo">
-//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-//       </div>
-//       <div class="player-name">${obj.nom}</div>
-//       <div class="statistique">
-//               <div class="stat"><span>86</span> PAC</div>
-//           <div class="stat"><span>82</span> SHO</div>
-//           <div class="stat"><span>75</span> PAS</div>
-//           <div class="stat"><span>84</span> DRI</div>
-//           <div class="stat"><span>34</span> DEF</div>
-//           <div class="stat"><span>76</span> PHY</div>
-//       </div>
-//   </div>`
+    else if( position.value === "LW"){
+      left.outerHTML = `<div id="GK" class="player-card goalkeeper">
+      <div class="player-rating">${obj.dribbling}</div>
+      <div class="player-position" data-position="GK">GK</div>
+      <div class="player-photo">
+          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+      </div>
+      <div class="player-name">${obj.nom}</div>
+      <div class="statistique">
+              <div class="stat"><span>86</span> PAC</div>
+          <div class="stat"><span>82</span> SHO</div>
+          <div class="stat"><span>75</span> PAS</div>
+          <div class="stat"><span>84</span> DRI</div>
+          <div class="stat"><span>34</span> DEF</div>
+          <div class="stat"><span>76</span> PHY</div>
+      </div>
+  </div>`
 
-//     }
-//     else if( position.value === "RW"){
+    }
+    else if( position.value === "RW"){
      
-//       rw.outerHTML = `<div " class="player-card goalkeeper">
-//       <div class="player-rating">${obj.dribbling}</div>
-//       <div class="player-position" data-position="GK">GK</div>
-//       <div class="player-photo">
-//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-//       </div>
-//       <div class="player-name">${obj.nom}</div>
-//       <div class="statistique">
-// 0              <div class="stat"><span>86</span> PAC</div>
-//           <div class="stat"><span>82</span> SHO</div>
-//           <div class="stat"><span>75</span> PAS</div>
-//           <div class="stat"><span>84</span> DRI</div>
-//           <div class="stat"><span>34</span> DEF</div>
-//           <div class="stat"><span>76</span> PHY</div>
-//       </div>
-//   </div>`
+      rw.outerHTML = ` <div  id="rwt" class="player-card right-wing">
+          <div class="player-rating">05</div>
+          <div class="player-position" data-position="RW">RW</div>
+          <div class="player-photo">
+              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+          </div>
+          <div class="player-name">John Doe</div>
+          <div class="statistique">
+              <div class="stat"><span>86</span> PAC</div>
+              <div class="stat"><span>82</span> SHO</div>
+              <div class="stat"><span>75</span> PAS</div>
+              <div class="stat"><span>84</span> DRI</div>
+              <div class="stat"><span>34</span> DEF</div>
+              <div class="stat"><span>76</span> PHY</div>
+          </div>
+        </div>`
 
-// }
+}
     else if( position.value === "ST"){ 
        st.outerHTML = `<div  id="STr"class="player-card striker">
           <div class="player-rating">85</div>
