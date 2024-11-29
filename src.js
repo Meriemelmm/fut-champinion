@@ -311,6 +311,7 @@ create.addEventListener('click', function( event) {
      nationality:nationality.value,
      club:club.value,
     pace:pace.value
+   
     }
 
     console.log("hano" , obj  );   
@@ -321,10 +322,12 @@ create.addEventListener('click', function( event) {
     
 
     //Créer une carte de joueur
+// let x = document.querySelector
 
-
-  
-   
+//  let ele = document.x.value.trim.
+//    function name(params) {
+//     `${ele}
+//    }
 
     console.log(position.value);
  let  card=document.getElementsByClassName('player-card ');
@@ -342,7 +345,15 @@ create.addEventListener('click', function( event) {
               <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
           </div>
           <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
+
+
+
+
+
+
+
+
+                <div class="statistique">
               <div class="stat"><span>86</span> PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
@@ -433,8 +444,9 @@ create.addEventListener('click', function( event) {
         
 
      }
-     else if(position.value="LCM"){
-        card[6].outerHTML=`<div class="player-card enter-mid1">
+     else if(position.value ==="LCM"){
+      console.log(card[6]);
+        card[5].outerHTML=`<div class="player-card enter-mid1">
           <div class="player-rating">85</div>
           <div class="player-position">cmm</div>
           <div class="player-photo">
@@ -491,31 +503,32 @@ create.addEventListener('click', function( event) {
 
 
       }
-      else if(position.value === "rCB"){card[2].outerHTML=`
-        <div class="player-card center-back1">
-          <div class="player-rating">85</div>
-          <div class="player-position">CBl</div>
-          <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-          </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
-          </div>
-         
-        </div>  `
+      else if(position.value === "RCB"){
+        console.log(card[2]);
+        card[2].outerHTML=
+        `<div class="player-card center-back2">
+        <div class="player-rating">85</div>
+        <div class="player-position">ST</div>
+        <div class="player-photo">
+            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+        </div>
+        <div class="player-name">${obj.nom}</div>
+        <div class="statistique">
+            <div class="stat"><span>86</span> PAC</div>
+            <div class="stat"><span>82</span> SHO</div>
+            <div class="stat"><span>75</span> PAS</div>
+            <div class="stat"><span>84</span> DRI</div>
+            <div class="stat"><span>34</span> DEF</div>
+            <div class="stat"><span>76</span> PHY</div>
+        </div>
+      </div>`
 
 
       }
       
       else if(position.value==="CCM"){
 
-        centre. outerHTML=`<div class="player-card enter-mid2">
+       card[6]. outerHTML=`<div class="player-card enter-mid2">
           <div class="player-rating">85</div>
           <div class="player-position">ST</div>
           <div class="player-photo">
@@ -533,7 +546,7 @@ create.addEventListener('click', function( event) {
         </div>`
       }
       else if(position.value==="ST"){
-        card[10].outerHTML=` <div  id="STr"class="player-card striker">
+        card[10].outerHTML=` <div  id="STr" class="player-card striker">
           <div class="player-rating">7</div>
           <div class="player-position" data-position="ST"> nice</div>
           <div class="player-photo">
@@ -558,8 +571,32 @@ create.addEventListener('click', function( event) {
 
   
 )
-     console.log(card[9])  ;
-     console.log(card[2])
+   
+ 
+
+
+
+
+
+let filteredGK = players.filter((player) =>player.position === "GK");
+
+
+console.log(filteredGK);
+console.log("hello");
+// 
+//  position la valeur qui determine par vous et qui deja comparer par valeur position pour  
+// const mids = filterPlayersByPosition(players, "Mid"); 
+// function filterPlayersByPosition(players, position) {  return players.filter(player => player.position === position);} //  
+// function filtreTexte(arr, requete) {
+//   return arr.filter(function (el) {
+//     return el.toLowerCase().indexOf(requete.toLowerCase()) !== -1;
+//   });
+// }
+
+
+
+
+
 
  
 
