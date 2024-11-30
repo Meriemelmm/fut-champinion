@@ -320,6 +320,9 @@ console.log(card[0]);
 //  ajoutaer players
 create.addEventListener("click", function (event) {
   event.preventDefault();
+  let  filteredGK_RW=filteredPlayers(players,"RW");
+  let  filteredGK_GK= filteredPlayers(players,"GK");
+  let  filteredGK_LW= filteredPlayers(players,"LW");
 
   let obj = {
     rating: rating.value,
@@ -342,13 +345,14 @@ create.addEventListener("click", function (event) {
   let changements=document.getElementById('changements');
   console.log( changements);
   changements.appendChild(cartat);
+  let stadiumplayers = [];
   
  
 
 
   if (position.value === "GK") { 
     // let filteredGK = players.filter((player) =>player.position === "GK");
-    let  filteredGK_GK= filteredPlayers(players,"GK");
+    // let  filteredGK_GK= filteredPlayers(players,"GK");
     console.log(filteredGK_GK)
    if (filteredGK_GK.length === 0){ card[0].outerHTML = ` <div  class="player-card goalkeeper">
     <div class="player-rating">${obj.rating}</div>
@@ -367,7 +371,8 @@ create.addEventListener("click", function (event) {
         <div class="stat"><span>${obj.defending}</span> DEF</div>
         <div class="stat"><span>${obj.physical}</span> PHY</div>
     </div>
-</div>`;}
+</div>`;
+}
  else {
   cartat.outerHTML = ` <div  class="player-card goalkeeper">
     <div class="player-rating">${obj.rating}</div>
@@ -394,7 +399,7 @@ create.addEventListener("click", function (event) {
  
      
   } else if (position.value === "LW") {
-    let  filteredGK_LW= filteredPlayers(players,"LW");
+    // let  filteredGK_LW= filteredPlayers(players,"LW");
     console.log(filteredGK_LW);
     if(filteredGK_LW.length===0){card[8].outerHTML = `
         <div  id="leftyo"class="player-card left-wing">
@@ -413,6 +418,7 @@ create.addEventListener("click", function (event) {
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+       
 
     }
      else {
@@ -439,7 +445,7 @@ create.addEventListener("click", function (event) {
      }
     
   } else if (position.value === "RW") {
-    let  filteredGK_RW=filteredPlayers(players,"RW");
+    // let  filteredGK_RW=filteredPlayers(players,"RW");
     console.log( filteredGK_RW);
 
     if( filteredGK_RW.length===0){card[9].outerHTML = `
@@ -458,7 +464,8 @@ create.addEventListener("click", function (event) {
            <div class="stat"><span>${obj.defending}</span> DEF</div>
            <div class="stat"><span>${obj.physical}</span> PHY</div>
        </div>
-     </div>`;}
+     </div>`;
+}
      else{ cartat.outerHTML = `
          <div  id="rwt" class="player-card ">
           <div class="player-rating">${obj.rating}</div>
@@ -718,6 +725,7 @@ create.addEventListener("click", function (event) {
               <div class="stat"><span>76</span> PHY</div>
           </div>
         </div>`;
+
       
     }
     else{
@@ -785,7 +793,7 @@ create.addEventListener("click", function (event) {
   }
 
 players.push(obj);
-console.log(players);
+console.log( 'players',players);
 
 let stadium = document.querySelector('.stadium');
 console.log(stadium);
@@ -803,9 +811,25 @@ stadium.querySelectorAll(".player-card").forEach(element => {
     
     
   });
+ 
 
 
-})});
+})
+// table(stadiumplayers,filteredGK_GK);
+// table(stadiumplayers,filteredGK_RW);
+// table(stadiumplayers,filteredGK_LW);
+
+// function table(stadiumplayers,filtred){
+//   filtred.length===0;
+//   stadiumplayers.push(obj);
+
+// }
+
+// Un tableau vide pour stocker les joueurs
+
+
+console.log('nice',stadiumplayers);
+});
 
 
 
