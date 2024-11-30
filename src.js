@@ -306,12 +306,15 @@ function valide_rating() {
   }
 }
 name_playeer = document.getElementsByClassName("name_player");
+// localStorage.setItem()
 console.log(name_playeer);
 //  tableau pour stocker
 let players = [];
 console.log(position.value);
 
 card = document.getElementsByClassName("player-card ");
+//   let stadium=document.querySelector(".stadium")
+// console.log(stadium);
 console.log(card[0]);
 
 //  ajoutaer players
@@ -331,26 +334,16 @@ create.addEventListener("click", function (event) {
     nationality: nationality.value,
     club: club.value,
     pace: pace.value,
-  };
-
-
-
-  //Créer une carte de joueur
-  // let x = document.querySelector
-
-  //  let ele = document.x.value.trim.
-  //    function name(params) {
-  //     `${ele}
-  //    }
-
+  }
   console.log(position.value);
   let card = document.getElementsByClassName("player-card ");
   console.log(card);
-  cartat=document.createElement('div');
-  changements=document.getElementById('  changements');
+   let cartat=document.createElement('div');
+  let changements=document.getElementById('changements');
   console.log( changements);
-  
   changements.appendChild(cartat);
+  
+ 
 
 
   if (position.value === "GK") { 
@@ -358,12 +351,12 @@ create.addEventListener("click", function (event) {
     let  filteredGK_GK= filteredPlayers(players,"GK");
     console.log(filteredGK_GK)
    if (filteredGK_GK.length === 0){ card[0].outerHTML = ` <div  class="player-card goalkeeper">
-    <div class="player-rating">85</div>
+    <div class="player-rating">${obj.rating}</div>
     <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
         <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
     </div>
-    <div class="player-name">${obj.nom}</div>
+    <div class="player-name">${obj .nom}</div>
 
 
           <div class="statistique">
@@ -376,13 +369,13 @@ create.addEventListener("click", function (event) {
     </div>
 </div>`;}
  else {
-  cartat.outerHTML = ` <div  class="player-card ">
-    <div class="player-rating">85</div>
+  cartat.outerHTML = ` <div  class="player-card goalkeeper">
+    <div class="player-rating">${obj.rating}</div>
     <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
         <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
     </div>
-    <div class="player-name">${obj.nom}</div>
+    <div class="player-name">${obj .nom}</div>
 
 
           <div class="statistique">
@@ -393,29 +386,12 @@ create.addEventListener("click", function (event) {
         <div class="stat"><span>${obj.defending}</span> DEF</div>
         <div class="stat"><span>${obj.physical}</span> PHY</div>
     </div>
-</div>`
+</div>`;
 
   
  }
 
-    // card[0].outerHTML = ` <div  class="player-card goalkeeper">
-    //       <div class="player-rating">85</div>
-    //       <div class="player-position" data-position="GK">${obj.position}</div>
-    //       <div class="player-photo">
-    //           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
-    //       </div>
-    //       <div class="player-name">${obj.nom}</div>
-
-
-    //             <div class="statistique">
-    //           <div class="stat"><span>86</span> PAC</div>
-    //           <div class="stat"><span>${obj.shooting}</span> SHO</div>
-    //           <div class="stat"><span>${obj.passing}</span> PAS</div>
-    //           <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-    //           <div class="stat"><span>${obj.defending}</span> DEF</div>
-    //           <div class="stat"><span>${obj.physical}</span> PHY</div>
-    //       </div>
-    //   </div>`;
+ 
      
   } else if (position.value === "LW") {
     let  filteredGK_LW= filteredPlayers(players,"LW");
@@ -745,7 +721,7 @@ create.addEventListener("click", function (event) {
       
     }
     else{
-      cartat.outerHTML = `<div class="player-card enter-mid2">
+      cartat.outerHTML = `<div class="player-card ">
           <div class="player-rating">85</div>
           <div class="player-position">ST</div>
           <div class="player-photo">
@@ -808,25 +784,188 @@ create.addEventListener("click", function (event) {
    
   }
 
-  players.push(obj);
+players.push(obj);
+console.log(players);
 
-console.log("plqqyers" , players);
-// let filteredGK = players.filter((player) =>player.position === "LW");
-
-});
-
+let stadium = document.querySelector('.stadium');
+console.log(stadium);
 
 
-//
-//  position la valeur qui determine par vous et qui deja comparer par valeur position pour
-// const mids = filterPlayersByPosition(players, "Mid");
-// function filterPlayersByPosition(players, position) {  return players.filter(player => player.position === position);} //
-// function filtreTexte(arr, requete) {
-//   return arr.filter(function (el) {
-//     return el.toLowerCase().indexOf(requete.toLowerCase()) !== -1;
-//   });
-// }
+stadium.querySelectorAll(".player-card").forEach(element => {
+  element.addEventListener("click", () => {
+    // Réinitialiser le fond de toutes les cartes
+    stadium.querySelectorAll(".player-card").forEach(i => {
+      i.style.scale = 1; 
+     
+    });
+    
+    element.style.scale=1.1;
+    
+    
+  });
+
+
+})});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+
+
+
+//   FUNCTION FILTRAGE LES POSITIONS
+
 function filteredPlayers(players,post){
   return players.filter(player => player.position === post);
 
+  
 }
+// create.addEventListener("click", function(event) {
+//   event.preventDefault();
+
+//   let obj = {
+//     rating: rating.value,
+//     nom: nom.value,
+//     dribbling: dribbling.value,
+//     defending: defending.value,
+//     shooting: shooting.value,
+//     passing: passing.value,
+//     physical: physical.value,
+//     position: position.value,
+//     nationality: nationality.value,
+//     club: club.value,
+//     pace: pace.value,
+//   }
+
+//   console.log(position.value);
+
+//   // Créer une fonction générique pour ajouter une carte de joueur
+//   function addPlayerCard(position) {
+//     let cartat = document.createElement('div');
+//     let changements = document.getElementById('changements');
+//     changements.appendChild(cartat);
+
+//     const playerCard = `
+//       <div class="player-card ${position}">
+//         <div class="player-rating">${obj.rating}</div>
+//         <div class="player-position" data-position="${position}">${obj.position}</div>
+//         <div class="player-photo">
+//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+//         </div>
+//         <div class="player-name">${obj.nom}</div>
+//         <div class="statistique">
+//           <div class="stat"><span>${obj.pace}</span> PAC</div>
+//           <div class="stat"><span>${obj.shooting}</span> SHO</div>
+//           <div class="stat"><span>${obj.passing}</span> PAS</div>
+//           <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+//           <div class="stat"><span>${obj.defending}</span> DEF</div>
+//           <div class="stat"><span>${obj.physical}</span> PHY</div>
+//         </div>
+//       </div>
+//     `;
+    
+//     cartat.innerHTML = playerCard;
+//   }
+
+//   // Vérification de la position et ajout de la carte appropriée
+//   if (position.value === "GK") {
+//     let filteredGK = filteredPlayers(players, "GK");
+//     if (filteredGK.length === 0) {
+//       addPlayerCard("goalkeeper");
+//     } else {
+//       addPlayerCard("goalkeeper");
+//     }
+//   } else if (position.value === "LW") {
+//     let filteredLW = filteredPlayers(players, "LW");
+//     if (filteredLW.length === 0) {
+//       addPlayerCard("left-wing");
+//     } else {
+//       addPlayerCard("left-wing");
+//     }
+//   } else if (position.value === "RW") {
+//     let filteredRW = filteredPlayers(players, "RW");
+//     if (filteredRW.length === 0) {
+//       addPlayerCard("right-wing");
+//     } else {
+//       addPlayerCard("right-wing");
+//     }
+//   } else if (position.value === "LB") {
+//     let filteredLB = filteredPlayers(players, "LB");
+//     if (filteredLB.length === 0) {
+//       addPlayerCard("left-back");
+//     } else {
+//       addPlayerCard("left-back");
+//     }
+//   } else if (position.value === "RB") {
+//     let filteredRB = filteredPlayers(players, "RB");
+//     if (filteredRB.length === 0) {
+//       addPlayerCard("right-back");
+//     } else {
+//       addPlayerCard("right-back");
+//     }
+//   } else if (position.value === "LCM") {
+//     let filteredLCM = filteredPlayers(players, "LCM");
+//     if (filteredLCM.length === 0) {
+//       addPlayerCard("center-mid1");
+//     } else {
+//       addPlayerCard("center-mid1");
+//     }
+//   } else if (position.value === "RCM") {
+//     let filteredRCM = filteredPlayers(players, "RCM");
+//     if (filteredRCM.length === 0) {
+//       addPlayerCard("center-mid3");
+//     } else {
+//       addPlayerCard("center-mid3");
+//     }
+//   } else if (position.value === "LCB") {
+//     let filteredLCB = filteredPlayers(players, "LCB");
+//     if (filteredLCB.length === 0) {
+//       addPlayerCard("center-back1");
+//     } else {
+//       addPlayerCard("center-back1");
+//     }
+//   } else if (position.value === "RCB") {
+//     let filteredRCB = filteredPlayers(players, "RCB");
+//     if (filteredRCB.length === 0) {
+//       addPlayerCard("center-back2");
+//     } else {
+//       addPlayerCard("center-back2");
+//     }
+//   } else if (position.value === "CCM") {
+//     let filteredCCM = filteredPlayers(players, "CCM");
+//     if (filteredCCM.length === 0) {
+//       addPlayerCard("center-mid2");
+//     } else {
+//       addPlayerCard("center-mid2");
+//     }
+//   }
+// });
+
+
+
+
