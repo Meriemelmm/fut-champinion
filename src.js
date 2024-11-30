@@ -345,7 +345,16 @@ create.addEventListener("click", function (event) {
   let changements=document.getElementById('changements');
   console.log( changements);
   changements.appendChild(cartat);
+ 
   let stadiumplayers = [];
+  let filteredGK_LB=filteredPlayers(players,"LB");
+  let filteredGK_RB=filteredPlayers(players,"RB");
+  let filteredGK_LCM=filteredPlayers(players,"LCM");
+  let filteredGK_RCM=filteredPlayers(players,"RCM");
+  let  filteredGK_LCB=filteredPlayers(players,"LCB");
+  let filteredGK_RCB=filteredPlayers(players,"RCB");
+  let filteredGK_CCM=filteredPlayers(players,"CCM");
+  let filteredGK_ST=filteredPlayers(players,"ST");
   
  
 
@@ -487,7 +496,7 @@ create.addEventListener("click", function (event) {
      }
    
   } else if (position.value === "LB") {
-    let filteredGK_LB=filteredPlayers(players,"LB");
+    // let filteredGK_LB=filteredPlayers(players,"LB");
     console.log(filteredGK_LB);
     if(filteredGK_LB.length===0){
     card[3].outerHTML = `<div class="player-card left-back">
@@ -526,7 +535,7 @@ create.addEventListener("click", function (event) {
 
         }
   } else if (position.value === "RB") {
-    let filteredGK_RB=filteredPlayers(players,"RB");
+    // let filteredGK_RB=filteredPlayers(players,"RB");
     console.log(filteredGK_RB);
     if(filteredGK_RB===0){ card[4].outerHTML = `<div class="player-card right-back">
           <div class="player-rating">85</div>
@@ -566,7 +575,7 @@ create.addEventListener("click", function (event) {
     }
    
   } else if (position.value === "LCM") {
-    let filteredGK_LCM=filteredPlayers(players,"LCM");
+    // let filteredGK_LCM=filteredPlayers(players,"LCM");
     console.log(filteredGK_LCM);
     console.log(card[6]);
     if(filteredGK_LCM.length===0){
@@ -606,7 +615,10 @@ create.addEventListener("click", function (event) {
         </div>`;}
     
   } else if (position.value === "RCM") {
-    card[7].outerHTML = ` <div class="player-card enter-mid3">
+    // let filteredGK_RCM=filteredPlayers(players,"RCM");
+    console.log(filteredGK_RCM);
+    if(filteredGK_RCM.length===0){
+        card[7].outerHTML = ` <div class="player-card enter-mid3">
           <div class="player-rating">85</div>
           <div class="player-position">CRM</div>
           <div class="player-photo">
@@ -622,8 +634,26 @@ create.addEventListener("click", function (event) {
               <div class="stat"><span>76</span> PHY</div>
           </div>
         </div>`;
+    }
+    else {  cartat.outerHTML = ` <div class="player-card enter-mid3">
+      <div class="player-rating">85</div>
+      <div class="player-position">CRM</div>
+      <div class="player-photo">
+          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+      </div>
+      <div class="player-name">${obj.nom}</div>
+      <div class="statistique">
+          <div class="stat"><span>86</span> PAC</div>
+          <div class="stat"><span>82</span> SHO</div>
+          <div class="stat"><span>75</span> PAS</div>
+          <div class="stat"><span>84</span> DRI</div>
+          <div class="stat"><span>34</span> DEF</div>
+          <div class="stat"><span>76</span> PHY</div>
+      </div>
+    </div>`;}
+  
   } else if (position.value === "LCB") {
-    let  filteredGK_LCB=filteredPlayers(players,"LCB");
+    // let  filteredGK_LCB=filteredPlayers(players,"LCB");
     console.log(filteredGK_LCB);
     if(filteredGK_LCB.length===0){
       card[1].outerHTML = `
@@ -666,7 +696,7 @@ create.addEventListener("click", function (event) {
         </div>  `;}
    
   } else if (position.value === "RCB") {
-    let filteredGK_RCB=filteredPlayers(players,"RCB");
+    // let filteredGK_RCB=filteredPlayers(players,"RCB");
     console.log(filteredGK_RCB);
     if(filteredGK_RCB.length===0){ 
     card[2].outerHTML = `<div class="player-card center-back2">
@@ -706,7 +736,7 @@ create.addEventListener("click", function (event) {
       }
    
   } else if (position.value === "CCM") {
-    let filteredGK_CCM=filteredPlayers(players,"CCM");
+    // let filteredGK_CCM=filteredPlayers(players,"CCM");
     console.log(filteredGK_CCM);
 
     if(filteredGK_CCM.length===0){card[6].outerHTML = `<div class="player-card enter-mid2">
@@ -749,7 +779,7 @@ create.addEventListener("click", function (event) {
     }
     
   } else if (position.value === "ST") {
-    let filteredGK_ST=filteredPlayers(players,"ST");
+    // let filteredGK_ST=filteredPlayers(players,"ST");
     console.log(filteredGK_ST);
 
     if(filteredGK_ST.length===0){ card[10].outerHTML = ` <div  id="STr" class="player-card striker">
@@ -815,6 +845,63 @@ stadium.querySelectorAll(".player-card").forEach(element => {
 
 
 })
+console.log(filteredGK_GK);
+ console.log( "first",filteredGK_GK[0]);
+
+
+
+
+ 
+let status=[
+ 
+]
+ 
+
+
+// Vérifier si chaque élément existe avant de l'ajouter au tableau
+// if (filteredGK_GK[0]) status.push(filteredGK_GK[0]);
+// if (filteredGK_LW[0]) status.push(filteredGK_LW[0]);
+// if (filteredGK_RW[0]) status.push(filteredGK_RW[0]);
+// if (filteredGK_CCM[0]) status.push(filteredGK_CCM[0]);
+// if(filteredGK_RCM[0]) status.push(filteredGK_RCM);
+// if(filteredGK_LCM[0])status.push(filteredGK_LCM[0]);
+// if(filteredGK_RCB[0]) status.push(filteredGK_RCB[0]);
+// if(filteredGK_ST[0]) status.push(filteredGK_ST[0]);
+// if(filteredGK_LCB[0]) status.push(filteredGK_LCB[0]);
+// if (filteredGK_LB[0]) status.push(filteredGK_LB[0]);
+// if(filteredGK_RB[0]) status.push(filteredGK_RB[0])
+
+
+// Créer un tableau de tableaux à vérifier
+let arraysToCheck = [
+  filteredGK_GK,
+  filteredGK_LW,
+  filteredGK_RW,
+  filteredGK_CCM,
+  filteredGK_RCM,
+  filteredGK_LCM,
+  filteredGK_RCB,
+  filteredGK_ST,
+  filteredGK_LCB,
+  filteredGK_LB,
+  filteredGK_RB
+];
+
+// Boucle pour ajouter uniquement les éléments définis
+arraysToCheck.forEach(arr => {
+  if (arr[0]) {
+    status.push(arr[0]);
+  }
+});
+
+console.log(status);  // Tableau status avec seulement les éléments définis
+
+
+
+
+
+console.log(status);  
+
 // table(stadiumplayers,filteredGK_GK);
 // table(stadiumplayers,filteredGK_RW);
 // table(stadiumplayers,filteredGK_LW);
@@ -828,7 +915,7 @@ stadium.querySelectorAll(".player-card").forEach(element => {
 // Un tableau vide pour stocker les joueurs
 
 
-console.log('nice',stadiumplayers);
+console.log('nice',status);
 });
 
 
@@ -866,6 +953,7 @@ console.log('nice',stadiumplayers);
 
 function filteredPlayers(players,post){
   return players.filter(player => player.position === post);
+
 
   
 }
