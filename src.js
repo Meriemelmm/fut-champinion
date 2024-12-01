@@ -20,17 +20,24 @@ console.log(physical);
 let result = document.getElementsByClassName("text");
 console.log(result);
 console.log(result);
+flag=document.getElementById('flag');
+console.log(flag);
+photo=document.getElementById('photo');
+console.log(photo);
+logo=document.getElementById('logo')
 
 console.log(rating);
-// let kicking=document.getElementById('kicking');
-// console.log(kicking);
-// let  speed=document.getElementById('speed');
-// console.log(speed);
-// let  handling=document.getElementById('handling');
-// let positioning=document.getElementById('positioning');
-// console.log(positioning);
-// let reflexes=document.getElementById('reflexes');
-// console.log(reflexes);
+let kicking=document.getElementById('kicking');
+console.log(kicking);
+let  speed=document.getElementById('speed');
+console.log(speed);
+let  handling=document.getElementById('handling');
+let positioning=document.getElementById('positioning');
+console.log(positioning);
+let reflexes=document.getElementById('reflexes');
+console.log(reflexes);
+let diving=document.getElementById('diving');
+console.log(diving)
 
 // formation switch
 
@@ -59,61 +66,70 @@ let positionvalue = position.value;
 console.log(positionvalue);
 // switch  position et gk
 position.addEventListener("change", (event) => {
+  container.style.display="block";
   let positionvalue = position.value;
   if (positionvalue == "GK") {
-    container.innerHTML = `
+   
+    container.innerHTML = ` <label for="">diving</label>
+          <input type="number" id="diving"  required>
+          <div class="text"></div></div>
+          <label for="">handling</label>
+          <input type="number" id="handling"  required>
+          <div class="text"></div></div>
+          <label for="">kicking</label>
+          <input type="number" id="kicking"  required>
+          <div class="text"></div></div>
+          <label for="">speed</label>
+          <input type="number" id="speed"  required>
+          <div class="text"></div></div>
+          <label for="">reflexes</label>
+          <input type="number" id="reflexes"  required>
+          <div class="text"></div></div>
+           <label for="">positioning</label>
+           <input type="number" id="positioning"  required>
+          <div class="text"></div>
       
-      <label for=""> diving</label>
-          <input type="number" id=""diving"required>
-          <div class="text"></div>
-       
-          <label for=""> passing</label>
-  
-          <input type="number" id="passing"required> 
-          <div class="text"></div>
-          
-        
-         
-          <label for="">physical</label>
-          <input type="number" id="physical"  required>
-          <div class="text"></div>
+      
+      
       
       
       `;
   } else {
-    container.innerHTML = `<label for=""> pace</label>
-    <input type="number" id="pace"required>
-    <div class="text"></div>
-    <label for=""> shootting</label>
-    <input type="number" id="shooting" required>
-    <div class="text"></div>
-    <label for="">passing</label>
+    container.innerHTML = ` <label for=""> pace</label>
+          <input type="number" id="pace" required>
+          <div class="text"></div>
+          <label for=""> shootting</label>
+          <input type="number" id="shooting" required>
+          <div class="text"></div>
+          <label for="">passing</label>
   
-    <input type="number" id="passing"required> 
-    <div class="text"></div>
-    
-    <label for="">dribbling</label>
-    <input type="number" id="dribbling" required>
-    <div class="text"></div>
-    <label for="">defending</label>
-    <input type="nomber" id="defending"  required>
-    <div class="text"></div>
-    <label for="">physical</label>
-    <input type="number" id="physical"  required>
-    <div class="text"></div>`;
+          <input type="number" id="passing" required> 
+          <div class="text"></div>
+          
+          <label for="">dribbling</label>
+          <input type="number" id="dribbling" required>
+          <div class="text"></div>
+          <label for="">defending</label>
+          <input type="nomber" id="defending"  required>
+          <div class="text"></div>`;
   }
 });
 //   validation les champs
 
+
 nationality.addEventListener("input", valide_nationality);
 function valide_nationality() {
   if (
-    typeof nationality.value === "string" &&
+    typeof( nationality).value === "string" &&
     nationality.value.trim() !== "" &&
     /^[A-Za-z\s]+$/.test(nationality.value)
   ) {
-    result[2].innerHTML = "correct";
-  } else result[2].innerHTML = "invalid";
+   result[2].textContent="correct"
+    console.log("correct")
+  } else {result[2].textContent = "invalid";
+
+    console.log("incorrect");
+  }
 }
 pace.addEventListener("input", valide_pace);
 function valide_pace() {
@@ -130,121 +146,20 @@ function valide_pace() {
   }
 }
 
-pace.addEventListener("input", valide_pace);
-function valide_pace() {
-  if (
-    pace.value != "" &&
-    !isNaN(pace.value) &&
-    pace.value >= 0 &&
-    pace.value <= 100
-  ) {
-    result[4].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[4].innerHTML = "invalid";
-    console.log("incorrect");
-  }
-}
-shooting.addEventListener("input", valide_shooting);
-function valide_shooting() {
-  if (
-    shooting.value != "" &&
-    !isNaN(shooting.value) &&
-    shooting.value >= 0 &&
-    shooting.value <= 100
-  ) {
-    result[5].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[5].innerHTML = "invalid";
-  }
-}
 
-defending.addEventListener("input", valide_defending);
-function valide_defending() {
-  if (
-    defending.value != "" &&
-    !isNaN(defending.value) &&
-    defending.value >= 0 &&
-    defending.value <= 100
-  ) {
-    result[9].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    // result[9].innerHTML="invalid";
 
-    console.log("incorrect");
-  }
-}
-physical.addEventListener("input", valide_physical);
-function valide_physical() {
-  if (
-    physical.value != "" &&
-    !isNaN(physical.value) &&
-    defending.value >= 0 &&
-    physical.value <= 100
-  ) {
-    result[10].innerHTML = "nice";
-    console.log("correct");
-  } else {
-    // result[10].innerHTML="invalid";
 
-    console.log("incorrect");
-  }
-}
+
+
 console.log(result[10]);
-dribbling.addEventListener("input", valide_dribbling);
-function valide_dribbling() {
-  if (
-    dribbling.value != "" &&
-    !isNaN(dribbling.value) &&
-    dribbling.value >= 0 &&
-    dribbling.value <= 100
-  ) {
-    result[8].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[8].innerHTML = "invalid";
 
-    console.log("incorrect");
-  }
-}
-passing.addEventListener("input", valide_passing);
-function valide_passing() {
-  if (
-    passing.value != "" &&
-    !isNaN(passing.value) &&
-    passing.value >= 0 &&
-    passing.value <= 100
-  ) {
-    result[6].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[6].innerHTML = "invalid";
 
-    // console.log("incorrect");
-  }
-}
-club.addEventListener("input", valide_club);
-function valide_club() {
-  if (
-    typeof nationality.value === "string" &&
-    nationality.value.trim() !== "" &&
-    /^[A-Za-z\s]+$/.test(nationality.value)
-  ) {
-    result[3].innerHTML = "valide";
-    console.log("correct");
-  } else {
-    result[3].innerHTML = "invalid";
 
-    // console.log("incorrect");
-  }
-}
-nom.addEventListener("input", validation);
 
-nom.addEventListener("input", validation);
 
-function validation() {
+nom.addEventListener("input", name_validation);
+
+function name_validation() {
   if (
     typeof nom.value === "string" &&
     nom.value.trim() !== "" &&
@@ -258,6 +173,21 @@ function validation() {
     console.log("Le champ est vide !");
 
     result[0].innerHTML = "incorrect";
+  }
+}
+function valide_club() {
+  // Vérifier si la valeur du champ "club" est une chaîne valide
+  if (
+    typeof club.value === "string" &&
+    club.value.trim() !== "" &&  // S'assurer que le champ n'est pas vide
+    /^[A-Za-z\s]+$/.test(club.value)  // Expression régulière pour valider les lettres et les espaces
+  ) {
+   result[3].innerHTML = "Valide";  
+   console.log("corect")// Afficher "Valide" dans la zone de résultat
+    // Mettre le texte en vert
+  } else {
+    result[3].innerHTML = "Invalide";  // Afficher "Invalide" dans la zone de résultat
+     // Mettre le texte en rouge
   }
 }
 const validPositions = [
@@ -290,21 +220,7 @@ function valide_positon() {
     result[1].innerHTML = "incorrect";
   }
 }
-rating.addEventListener("input", valide_rating);
-function valide_rating() {
-  if (
-    rating.value != "" &&
-    !isNaN(rating.value) &&
-    rating.value >= 1 &&
-    rating.value <= 100
-  ) {
-    console.log("correct");
-    result[4].innerHTML = "valide";
-  } else {
-    console.log("incorrect");
-    result[4].innerHTML = "invalide";
-  }
-}
+
 name_playeer = document.getElementsByClassName("name_player");
 // localStorage.setItem()
 console.log(name_playeer);
@@ -323,11 +239,9 @@ create.addEventListener("click", function (event) {
   let  filteredGK_RW=filteredPlayers(players,"RW");
   let  filteredGK_GK= filteredPlayers(players,"GK");
   let  filteredGK_LW= filteredPlayers(players,"LW");
-
   let obj = {
     rating: rating.value,
     nom: nom.value,
-    //  handling :handling.value,
     dribbling: dribbling.value,
     defending: defending.value,
     shooting: shooting.value,
@@ -337,7 +251,17 @@ create.addEventListener("click", function (event) {
     nationality: nationality.value,
     club: club.value,
     pace: pace.value,
-  }
+    photo: photo.value,
+    flag: flag.value,
+    diving: diving.value,
+    positioning: positioning.value,
+    kicking: kicking.value,
+    speed: speed.value,
+    reflexes: reflexes.value,
+    handling: handling.value
+  };
+  console.log("Player object:", obj);
+  
   console.log(position.value);
   let card = document.getElementsByClassName("player-card ");
   console.log(card);
@@ -367,59 +291,58 @@ create.addEventListener("click", function (event) {
     <div class="player-rating">${obj.rating}</div>
     <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
-        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+        <img src="${obj.photo}" alt="${obj.nom}">
     </div>
-    <div class="player-name">${obj .nom}</div>
+    <div class="player-name">${obj.nom}</div>
 
-
-          <div class="statistique">
-        <div class="stat"><span>86</span> PAC</div>
-        <div class="stat"><span>${obj.shooting}</span> SHO</div>
-        <div class="stat"><span>${obj.passing}</span> PAS</div>
-        <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-        <div class="stat"><span>${obj.defending}</span> DEF</div>
-        <div class="stat"><span>${obj.physical}</span> PHY</div>
-    </div>
+  <div class="statistique">
+              <div class="stat"><span>${obj.diving}</span>DIV</div>
+              <div class="stat"><span>${obj.kicking}</span> KI</div>
+              <div class="stat"><span>${obj.speed}</span> SP</div>
+              <div class="stat"><span>${obj.handling}</span> HAD</div>
+              <div class="stat"><span>${obj.reflexes}</span> RF</div>
+              <div class="stat"><span>${obj.positioning}</span> POS</div>
+          </div>
+          
+    
 </div>`;
 }
  else {
-  cartat.outerHTML = ` <div  class="player-card goalkeeper">
+  cartat.outerHTML = ` <div  class="player-card">
     <div class="player-rating">${obj.rating}</div>
     <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
-        <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+        <img src="${obj.photo}" alt="${obj.nom}">
     </div>
     <div class="player-name">${obj .nom}</div>
-
-
-          <div class="statistique">
-        <div class="stat"><span>86</span> PAC</div>
-        <div class="stat"><span>${obj.shooting}</span> SHO</div>
-        <div class="stat"><span>${obj.passing}</span> PAS</div>
-        <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-        <div class="stat"><span>${obj.defending}</span> DEF</div>
-        <div class="stat"><span>${obj.physical}</span> PHY</div>
-    </div>
+  <div class="statistique">
+              <div class="stat"><span>${obj.diving}</span>DIV</div>
+              <div class="stat"><span>${obj.kicking}</span> KI</div>
+              <div class="stat"><span>${obj.speed}</span> SP</div>
+              <div class="stat"><span>${obj.handling}</span> HAD</div>
+              <div class="stat"><span>${obj.reflexes}</span> RF</div>
+              <div class="stat"><span>${obj.positioning}</span> POS</div>
+          </div>
 </div>`;
 
   
- }
+ }}
 
  
      
-  } else if (position.value === "LW") {
+   else if (position.value === "LW") {
     // let  filteredGK_LW= filteredPlayers(players,"LW");
     console.log(filteredGK_LW);
     if(filteredGK_LW.length===0){card[8].outerHTML = `
         <div  id="leftyo"class="player-card left-wing">
-          <div class="player-rating">${obj.rating}</div>
-          <div class="player-position" data-position="LW">${obj.position} </div>
+         <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -433,14 +356,14 @@ create.addEventListener("click", function (event) {
      else {
      cartat.outerHTML = `
         <div  id="leftyo"class="player-card ">
-          <div class="player-rating">${obj.rating}</div>
-          <div class="player-position" data-position="LW">${obj.position} </div>
+         <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -459,32 +382,32 @@ create.addEventListener("click", function (event) {
 
     if( filteredGK_RW.length===0){card[9].outerHTML = `
       <div  id="rwt" class="player-card right-wing">
-       <div class="player-rating">${obj.rating}</div>
-       <div class="player-position" data-position="LW">${obj.position} </div>
-       <div class="player-photo">
-           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
-       </div>
-       <div class="player-name">${obj.nom}</div>
-       <div class="statistique">
-           <div class="stat"><span>86</span> PAC</div>
-           <div class="stat"><span>${obj.shooting}</span> SHO</div>
-           <div class="stat"><span>${obj.passing}</span> PAS</div>
-           <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-           <div class="stat"><span>${obj.defending}</span> DEF</div>
-           <div class="stat"><span>${obj.physical}</span> PHY</div>
-       </div>
+        <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>
      </div>`;
 }
      else{ cartat.outerHTML = `
          <div  id="rwt" class="player-card ">
-          <div class="player-rating">${obj.rating}</div>
-          <div class="player-position" data-position="LW">${obj.position} </div>
+           <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -500,14 +423,14 @@ create.addEventListener("click", function (event) {
     console.log(filteredGK_LB);
     if(filteredGK_LB.length===0){
     card[3].outerHTML = `<div class="player-card left-back">
-          <div class="player-rating">85</div>
-          <div class="player-position" data-position="LB">${obj.position}</div>
+          <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span >86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -516,15 +439,15 @@ create.addEventListener("click", function (event) {
           </div>
         </div>`;}
         else {
-          cartat.outerHTML = `<div class="player-card left-back">
-          <div class="player-rating">85</div>
-          <div class="player-position" data-position="LB">${obj.position}</div>
+          cartat.outerHTML = `<div class="player-card ">
+           <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span >86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -538,14 +461,14 @@ create.addEventListener("click", function (event) {
     // let filteredGK_RB=filteredPlayers(players,"RB");
     console.log(filteredGK_RB);
     if(filteredGK_RB===0){ card[4].outerHTML = `<div class="player-card right-back">
-          <div class="player-rating">85</div>
-          <div class="player-position" data-position="LB">${obj.position}</div>
+           <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span >86</span> PAC</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
               <div class="stat"><span>${obj.shooting}</span> SHO</div>
               <div class="stat"><span>${obj.passing}</span> PAS</div>
               <div class="stat"><span>${obj.dribbling}</span> DRI</div>
@@ -556,21 +479,21 @@ create.addEventListener("click", function (event) {
 
     }
     else{
-      cartat.outerHTML = `<div class="player-card right-back">
-      <div class="player-rating">85</div>
-      <div class="player-position" data-position="LB">${obj.position}</div>
-      <div class="player-photo">
-          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
-      </div>
-      <div class="player-name">${obj.nom}</div>
-      <div class="statistique">
-          <div class="stat"><span >86</span> PAC</div>
-          <div class="stat"><span>${obj.shooting}</span> SHO</div>
-          <div class="stat"><span>${obj.passing}</span> PAS</div>
-          <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-          <div class="stat"><span>${obj.defending}</span> DEF</div>
-          <div class="stat"><span>${obj.physical}</span> PHY</div>
-      </div>
+      cartat.outerHTML = `<div class="player-card ">
+       <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>>
     </div>`;
     }
    
@@ -580,37 +503,37 @@ create.addEventListener("click", function (event) {
     console.log(card[6]);
     if(filteredGK_LCM.length===0){
       card[5].outerHTML = `<div class="player-card enter-mid1">
-      <div class="player-rating">85</div>
-      <div class="player-position">cmm</div>
-      <div class="player-photo">
-          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-      </div>
-      <div class="player-name">${obj.nom}</div>
-      <div class="statistique">
-          <div class="stat"><span>86</span> PAC</div>
-          <div class="stat"><span>82</span> SHO</div>
-          <div class="stat"><span>75</span> PAS</div>
-          <div class="stat"><span>84</span> DRI</div>
-          <div class="stat"><span>34</span> DEF</div>
-          <div class="stat"><span>76</span> PHY</div>
-      </div>
+       <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>
     </div>`;
 
     }
-    else{cartat.outerHTML = `<div class="player-card enter-mid1">
-          <div class="player-rating">85</div>
-          <div class="player-position">cmm</div>
+    else{cartat.outerHTML = `<div class="player-card ">
+          <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;}
     
@@ -619,37 +542,37 @@ create.addEventListener("click", function (event) {
     console.log(filteredGK_RCM);
     if(filteredGK_RCM.length===0){
         card[7].outerHTML = ` <div class="player-card enter-mid3">
-          <div class="player-rating">85</div>
-          <div class="player-position">CRM</div>
+       <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
     }
-    else {  cartat.outerHTML = ` <div class="player-card enter-mid3">
-      <div class="player-rating">85</div>
-      <div class="player-position">CRM</div>
-      <div class="player-photo">
-          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-      </div>
-      <div class="player-name">${obj.nom}</div>
-      <div class="statistique">
-          <div class="stat"><span>86</span> PAC</div>
-          <div class="stat"><span>82</span> SHO</div>
-          <div class="stat"><span>75</span> PAS</div>
-          <div class="stat"><span>84</span> DRI</div>
-          <div class="stat"><span>34</span> DEF</div>
-          <div class="stat"><span>76</span> PHY</div>
-      </div>
+    else {  cartat.outerHTML = ` <div class="player-card ">
+      <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>
     </div>`;}
   
   } else if (position.value === "LCB") {
@@ -658,39 +581,39 @@ create.addEventListener("click", function (event) {
     if(filteredGK_LCB.length===0){
       card[1].outerHTML = `
         <div class="player-card center-back1">
-          <div class="player-rating">85</div>
-          <div class="player-position">CBl</div>
+           <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
          
         </div>  `;
 
     }
     else{ cartat.outerHTML = `
-        <div class="player-card center-back1">
-          <div class="player-rating">85</div>
-          <div class="player-position">CBl</div>
+        <div class="player-card ">
+          <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
          
         </div>  `;}
@@ -700,37 +623,37 @@ create.addEventListener("click", function (event) {
     console.log(filteredGK_RCB);
     if(filteredGK_RCB.length===0){ 
     card[2].outerHTML = `<div class="player-card center-back2">
-        <div class="player-rating">85</div>
-        <div class="player-position">ST</div>
-        <div class="player-photo">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-        </div>
-        <div class="player-name">${obj.nom}</div>
-        <div class="statistique">
-            <div class="stat"><span>86</span> PAC</div>
-            <div class="stat"><span>82</span> SHO</div>
-            <div class="stat"><span>75</span> PAS</div>
-            <div class="stat"><span>84</span> DRI</div>
-            <div class="stat"><span>34</span> DEF</div>
-            <div class="stat"><span>76</span> PHY</div>
-        </div>
+         <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>
       </div>`;}
       else{
-        cartat.outerHTML = `<div class="player-card center-back2">
-        <div class="player-rating">85</div>
-        <div class="player-position">ST</div>
-        <div class="player-photo">
-            <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
-        </div>
-        <div class="player-name">${obj.nom}</div>
-        <div class="statistique">
-            <div class="stat"><span>86</span> PAC</div>
-            <div class="stat"><span>82</span> SHO</div>
-            <div class="stat"><span>75</span> PAS</div>
-            <div class="stat"><span>84</span> DRI</div>
-            <div class="stat"><span>34</span> DEF</div>
-            <div class="stat"><span>76</span> PHY</div>
-        </div>
+        cartat.outerHTML = `<div class="player-card ">
+        <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
+          <div class="player-photo">
+              <img src="${obj.photo}" alt="Player Name">
+          </div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
+          </div>
       </div>`;
 
       }
@@ -739,20 +662,20 @@ create.addEventListener("click", function (event) {
     // let filteredGK_CCM=filteredPlayers(players,"CCM");
     console.log(filteredGK_CCM);
 
-    if(filteredGK_CCM.length===0){card[6].outerHTML = `<div class="player-card enter-mid2">
-          <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+    if(filteredGK_CCM.length===0){card[6].outerHTML =`<div class="player-card enter-mid2">
+         <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
 
@@ -760,20 +683,21 @@ create.addEventListener("click", function (event) {
     }
     else{
       cartat.outerHTML = `<div class="player-card ">
-          <div class="player-rating">85</div>
-          <div class="player-position">ST</div>
+       <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
-          <div class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span> PAC</div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+          <div  class="player-name">${obj.nom}</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
+          
         </div>`;
 
     }
@@ -782,39 +706,39 @@ create.addEventListener("click", function (event) {
     // let filteredGK_ST=filteredPlayers(players,"ST");
     console.log(filteredGK_ST);
 
-    if(filteredGK_ST.length===0){ card[10].outerHTML = ` <div  id="STr" class="player-card striker">
-          <div class="player-rating">7</div>
-          <div class="player-position" data-position="ST"> nice</div>
+    if(filteredGK_ST.length===0){ card[10].outerHTML =`<div  id="STr" class="player-card striker">
+          <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="Player Name">
           </div>
           <div  class="player-name">${obj.nom}</div>
-          <div class="statistique">
-              <div class="stat"><span>86</span></div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+         <div class="statistique">
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
 
     }
     else{
-     cartat.outerHTML = ` <div  id="STr" class="player-card striker">
-          <div class="player-rating">7</div>
-          <div class="player-position" data-position="ST"> nice</div>
+     cartat.outerHTML =`<div  id="STr" class="player-card ">
+          <div class="player-rating">${obj.rating}</div>
+          <div class="player-position" data-position="ST">${obj.position}</div>
           <div class="player-photo">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="Player Name">
+              <img src="${obj.photo}" alt="${obj.nom}">
           </div>
           <div  class="player-name">${obj.nom}</div>
           <div class="statistique">
-              <div class="stat"><span>86</span></div>
-              <div class="stat"><span>82</span> SHO</div>
-              <div class="stat"><span>75</span> PAS</div>
-              <div class="stat"><span>84</span> DRI</div>
-              <div class="stat"><span>34</span> DEF</div>
-              <div class="stat"><span>76</span> PHY</div>
+              <div class="stat"><span>${obj.pace}</span>PAC</div>
+              <div class="stat"><span>${obj.shooting}</span> SHO</div>
+              <div class="stat"><span>${obj.passing}</span> PAS</div>
+              <div class="stat"><span>${obj.dribbling}</span> DRI</div>
+              <div class="stat"><span>${obj.defending}</span> DEF</div>
+              <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
 
@@ -905,104 +829,23 @@ console.log(status);
 
 
 // Définir les tableaux de cartes
-// let stadiums = [];
-// let chanagemenplayer = [];
+let stadiums = [];
+let chanagemenplayer = [];
 
-// // Sélectionner les cartes du stadium et des changements
+// Sélectionner les cartes du stadium et des changements
 
 
-// // Remplir les tableaux avec les cartes
-// stadium.querySelectorAll(".play-card").forEach(card => {
-//   stadiums.push(card);
-// });
-// changements.querySelectorAll(".player-card").forEach(card => {
-//   chanagemenplayer.push(card);
-// });
+// Remplir les tableaux avec les cartes
+stadium.querySelectorAll(".player-card").forEach(card => {
+  stadiums.push(card);
+});
+changements.querySelectorAll(".player-card").forEach(card => {
+  chanagemenplayer.push(card);
+});
+console.log("nash",stadiums);
+console.log("halawit",chanagemenplayer);
 
-// // Fonction pour échanger les cartes
-// function exchangeCards() {
-//   // Parcours des cartes du stadium
-//   stadium.querySelectorAll(".play-card").forEach(stadiumCard => {
-//     stadiumCard.addEventListener("click", () => {
-//       // Lorsque le stadium card est cliqué, on parcourt les cartes de changements
-//       chanagemenplayer.forEach((changeCard, index) => {
-//         changeCard.addEventListener("click", () => {
-//           // Sauvegarder les contenus des deux cartes
-//           let stadiumCardContent = stadiumCard.innerHTML;
-//           let changeCardContent = changeCard.innerHTML;
 
-//           // Échanger les contenus
-//           stadiumCard.innerHTML = changeCardContent;
-//           changeCard.innerHTML = stadiumCardContent;
-
-//           // Ajouter une classe pour marquer les cartes échangées
-        
-
-//           // Retirer la carte utilisée de chanagemenplayer
-//           chanagemenplayer.splice(index, 1);
-//         });
-//       });
-//     });
-//   });
-// }
-
-// // Appeler la fonction d'échange de cartes
-// exchangeCards();
-// Sélectionner toutes les cartes dans le stadium et les changements
-// const stadiumCards = stadium.querySelectorAll(".player-card");
-// const changementCards = changements.querySelectorAll(".player-card");
-
-// // Ajout des événements de mise à l'échelle lors du clic sur une carte du stadium
-// stadiumCards.forEach(element => {
-//   element.addEventListener("click", () => {
-//     // Réinitialiser l'échelle de toutes les cartes du stadium
-//     stadiumCards.forEach(card => {
-//       card.style.transform = "scale(1)";
-//     });
-
-//     // Mettre à l'échelle la carte cliquée
-//     element.style.transform = "scale(1.1)";
-//   });
-// });
-
-// // Ajout des événements de mise à l'échelle lors du clic sur une carte de changements
-// changementCards.forEach(element => {
-//   element.addEventListener("click", () => {
-//     // Réinitialiser l'échelle de toutes les cartes de changements
-//     changementCards.forEach(card => {
-//       card.style.transform = "scale(1)";
-//     });
-
-//     // Mettre à l'échelle la carte cliquée
-//     element.style.transform = "scale(1.2)";
-//   });
-// });
-
-// // Fonction pour échanger le contenu des cartes entre stadium et changements
-// function exchangeCards() {
-//   stadiumCards.forEach(stadiumCard => {
-//     stadiumCard.addEventListener("click", () => {
-//       // Ajouter un écouteur de clic sur toutes les cartes de changements
-//       changementCards.forEach(changeCard => {
-//         changeCard.addEventListener("click", () => {
-//           // Sauvegarder le contenu des deux cartes
-//           let stadiumCardContent = stadiumCard.innerHTML;
-       
-
-//           // Échanger les contenus des cartes
-//           stadiumCard.innerHTML = changeCardContent;
-//           changeCard.innerHTML = stadiumCardContent;
-
-//           // Retirer la carte utilisée de la section des changements
-         
-//         });
-//       });
-//     });
-//   });
-// }
-
-// // Appel de la fonction pour échanger les cartes
-// exchangeCards();
 // Sélectionner toutes les cartes dans le stadium et les changements
 const stadiumCards = stadium.querySelectorAll(".player-card");
 const changementCards = changements.querySelectorAll(".player-card");
@@ -1052,12 +895,15 @@ changementCards.forEach(element => {
       selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
     }
   });
+
 });
 
 
 
 
-
+ console.log(changements);
+ console.log(stadium);
+ console.log(players);
 
 
 
@@ -1103,126 +949,6 @@ function filteredPlayers(players,post){
 
   
 }
-// create.addEventListener("click", function(event) {
-//   event.preventDefault();
-
-//   let obj = {
-//     rating: rating.value,
-//     nom: nom.value,
-//     dribbling: dribbling.value,
-//     defending: defending.value,
-//     shooting: shooting.value,
-//     passing: passing.value,
-//     physical: physical.value,
-//     position: position.value,
-//     nationality: nationality.value,
-//     club: club.value,
-//     pace: pace.value,
-//   }
-
-//   console.log(position.value);
-
-//   // Créer une fonction générique pour ajouter une carte de joueur
-//   function addPlayerCard(position) {
-//     let cartat = document.createElement('div');
-//     let changements = document.getElementById('changements');
-//     changements.appendChild(cartat);
-
-//     const playerCard = `
-//       <div class="player-card ${position}">
-//         <div class="player-rating">${obj.rating}</div>
-//         <div class="player-position" data-position="${position}">${obj.position}</div>
-//         <div class="player-photo">
-//           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="${obj.nom}">
-//         </div>
-//         <div class="player-name">${obj.nom}</div>
-//         <div class="statistique">
-//           <div class="stat"><span>${obj.pace}</span> PAC</div>
-//           <div class="stat"><span>${obj.shooting}</span> SHO</div>
-//           <div class="stat"><span>${obj.passing}</span> PAS</div>
-//           <div class="stat"><span>${obj.dribbling}</span> DRI</div>
-//           <div class="stat"><span>${obj.defending}</span> DEF</div>
-//           <div class="stat"><span>${obj.physical}</span> PHY</div>
-//         </div>
-//       </div>
-//     `;
-    
-//     cartat.innerHTML = playerCard;
-//   }
-
-//   // Vérification de la position et ajout de la carte appropriée
-//   if (position.value === "GK") {
-//     let filteredGK = filteredPlayers(players, "GK");
-//     if (filteredGK.length === 0) {
-//       addPlayerCard("goalkeeper");
-//     } else {
-//       addPlayerCard("goalkeeper");
-//     }
-//   } else if (position.value === "LW") {
-//     let filteredLW = filteredPlayers(players, "LW");
-//     if (filteredLW.length === 0) {
-//       addPlayerCard("left-wing");
-//     } else {
-//       addPlayerCard("left-wing");
-//     }
-//   } else if (position.value === "RW") {
-//     let filteredRW = filteredPlayers(players, "RW");
-//     if (filteredRW.length === 0) {
-//       addPlayerCard("right-wing");
-//     } else {
-//       addPlayerCard("right-wing");
-//     }
-//   } else if (position.value === "LB") {
-//     let filteredLB = filteredPlayers(players, "LB");
-//     if (filteredLB.length === 0) {
-//       addPlayerCard("left-back");
-//     } else {
-//       addPlayerCard("left-back");
-//     }
-//   } else if (position.value === "RB") {
-//     let filteredRB = filteredPlayers(players, "RB");
-//     if (filteredRB.length === 0) {
-//       addPlayerCard("right-back");
-//     } else {
-//       addPlayerCard("right-back");
-//     }
-//   } else if (position.value === "LCM") {
-//     let filteredLCM = filteredPlayers(players, "LCM");
-//     if (filteredLCM.length === 0) {
-//       addPlayerCard("center-mid1");
-//     } else {
-//       addPlayerCard("center-mid1");
-//     }
-//   } else if (position.value === "RCM") {
-//     let filteredRCM = filteredPlayers(players, "RCM");
-//     if (filteredRCM.length === 0) {
-//       addPlayerCard("center-mid3");
-//     } else {
-//       addPlayerCard("center-mid3");
-//     }
-//   } else if (position.value === "LCB") {
-//     let filteredLCB = filteredPlayers(players, "LCB");
-//     if (filteredLCB.length === 0) {
-//       addPlayerCard("center-back1");
-//     } else {
-//       addPlayerCard("center-back1");
-//     }
-//   } else if (position.value === "RCB") {
-//     let filteredRCB = filteredPlayers(players, "RCB");
-//     if (filteredRCB.length === 0) {
-//       addPlayerCard("center-back2");
-//     } else {
-//       addPlayerCard("center-back2");
-//     }
-//   } else if (position.value === "CCM") {
-//     let filteredCCM = filteredPlayers(players, "CCM");
-//     if (filteredCCM.length === 0) {
-//       addPlayerCard("center-mid2");
-//     } else {
-//       addPlayerCard("center-mid2");
-//     }
-//   }
-// });
 
 
 
