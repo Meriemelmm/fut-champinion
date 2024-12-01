@@ -821,6 +821,7 @@ create.addEventListener("click", function (event) {
     }
    
   }
+  console.log("a9yi danita ",card[10])
 
 players.push(obj);
 console.log( 'players',players);
@@ -845,6 +846,20 @@ stadium.querySelectorAll(".player-card").forEach(element => {
 
 
 })
+// changements.querySelectorAll(".player-card").forEach(element => {
+//   element.addEventListener("click", () => {
+//     // Réinitialiser le fond de toutes les cartes
+  
+    
+//     element.style.scale=1.2;
+    
+    
+//   });
+ 
+
+
+// })
+
 console.log(filteredGK_GK);
  console.log( "first",filteredGK_GK[0]);
 
@@ -856,20 +871,6 @@ let status=[
  
 ]
  
-
-
-// Vérifier si chaque élément existe avant de l'ajouter au tableau
-// if (filteredGK_GK[0]) status.push(filteredGK_GK[0]);
-// if (filteredGK_LW[0]) status.push(filteredGK_LW[0]);
-// if (filteredGK_RW[0]) status.push(filteredGK_RW[0]);
-// if (filteredGK_CCM[0]) status.push(filteredGK_CCM[0]);
-// if(filteredGK_RCM[0]) status.push(filteredGK_RCM);
-// if(filteredGK_LCM[0])status.push(filteredGK_LCM[0]);
-// if(filteredGK_RCB[0]) status.push(filteredGK_RCB[0]);
-// if(filteredGK_ST[0]) status.push(filteredGK_ST[0]);
-// if(filteredGK_LCB[0]) status.push(filteredGK_LCB[0]);
-// if (filteredGK_LB[0]) status.push(filteredGK_LB[0]);
-// if(filteredGK_RB[0]) status.push(filteredGK_RB[0])
 
 
 // Créer un tableau de tableaux à vérifier
@@ -902,20 +903,165 @@ console.log(status);  // Tableau status avec seulement les éléments définis
 
 console.log(status);  
 
-// table(stadiumplayers,filteredGK_GK);
-// table(stadiumplayers,filteredGK_RW);
-// table(stadiumplayers,filteredGK_LW);
 
-// function table(stadiumplayers,filtred){
-//   filtred.length===0;
-//   stadiumplayers.push(obj);
+// Définir les tableaux de cartes
+// let stadiums = [];
+// let chanagemenplayer = [];
 
+// // Sélectionner les cartes du stadium et des changements
+
+
+// // Remplir les tableaux avec les cartes
+// stadium.querySelectorAll(".play-card").forEach(card => {
+//   stadiums.push(card);
+// });
+// changements.querySelectorAll(".player-card").forEach(card => {
+//   chanagemenplayer.push(card);
+// });
+
+// // Fonction pour échanger les cartes
+// function exchangeCards() {
+//   // Parcours des cartes du stadium
+//   stadium.querySelectorAll(".play-card").forEach(stadiumCard => {
+//     stadiumCard.addEventListener("click", () => {
+//       // Lorsque le stadium card est cliqué, on parcourt les cartes de changements
+//       chanagemenplayer.forEach((changeCard, index) => {
+//         changeCard.addEventListener("click", () => {
+//           // Sauvegarder les contenus des deux cartes
+//           let stadiumCardContent = stadiumCard.innerHTML;
+//           let changeCardContent = changeCard.innerHTML;
+
+//           // Échanger les contenus
+//           stadiumCard.innerHTML = changeCardContent;
+//           changeCard.innerHTML = stadiumCardContent;
+
+//           // Ajouter une classe pour marquer les cartes échangées
+        
+
+//           // Retirer la carte utilisée de chanagemenplayer
+//           chanagemenplayer.splice(index, 1);
+//         });
+//       });
+//     });
+//   });
 // }
 
-// Un tableau vide pour stocker les joueurs
+// // Appeler la fonction d'échange de cartes
+// exchangeCards();
+// Sélectionner toutes les cartes dans le stadium et les changements
+// const stadiumCards = stadium.querySelectorAll(".player-card");
+// const changementCards = changements.querySelectorAll(".player-card");
+
+// // Ajout des événements de mise à l'échelle lors du clic sur une carte du stadium
+// stadiumCards.forEach(element => {
+//   element.addEventListener("click", () => {
+//     // Réinitialiser l'échelle de toutes les cartes du stadium
+//     stadiumCards.forEach(card => {
+//       card.style.transform = "scale(1)";
+//     });
+
+//     // Mettre à l'échelle la carte cliquée
+//     element.style.transform = "scale(1.1)";
+//   });
+// });
+
+// // Ajout des événements de mise à l'échelle lors du clic sur une carte de changements
+// changementCards.forEach(element => {
+//   element.addEventListener("click", () => {
+//     // Réinitialiser l'échelle de toutes les cartes de changements
+//     changementCards.forEach(card => {
+//       card.style.transform = "scale(1)";
+//     });
+
+//     // Mettre à l'échelle la carte cliquée
+//     element.style.transform = "scale(1.2)";
+//   });
+// });
+
+// // Fonction pour échanger le contenu des cartes entre stadium et changements
+// function exchangeCards() {
+//   stadiumCards.forEach(stadiumCard => {
+//     stadiumCard.addEventListener("click", () => {
+//       // Ajouter un écouteur de clic sur toutes les cartes de changements
+//       changementCards.forEach(changeCard => {
+//         changeCard.addEventListener("click", () => {
+//           // Sauvegarder le contenu des deux cartes
+//           let stadiumCardContent = stadiumCard.innerHTML;
+       
+
+//           // Échanger les contenus des cartes
+//           stadiumCard.innerHTML = changeCardContent;
+//           changeCard.innerHTML = stadiumCardContent;
+
+//           // Retirer la carte utilisée de la section des changements
+         
+//         });
+//       });
+//     });
+//   });
+// }
+
+// // Appel de la fonction pour échanger les cartes
+// exchangeCards();
+// Sélectionner toutes les cartes dans le stadium et les changements
+const stadiumCards = stadium.querySelectorAll(".player-card");
+const changementCards = changements.querySelectorAll(".player-card");
+
+// Variable pour suivre la carte sélectionnée dans le stadium
+let selectedStadiumCard = null;
+
+// Ajouter l'événement de clic sur chaque carte du stadium
+stadiumCards.forEach(element => {
+  element.addEventListener("click", () => {
+    // Réinitialiser l'échelle de toutes les cartes du stadium
+    stadiumCards.forEach(card => {
+      card.style.transform = "scale(1)";
+    });
+
+    // Mettre à l'échelle la carte cliquée
+    element.style.transform = "scale(1.1)";
+
+    // Sélectionner la carte du stadium cliquée
+    selectedStadiumCard = element;
+  });
+});
+
+// Ajouter l'événement de clic sur chaque carte de changements
+changementCards.forEach(element => {
+  element.addEventListener("click", () => {
+    // Vérifier si une carte du stadium a été sélectionnée
+    if (selectedStadiumCard !== null) {
+      // Réinitialiser l'échelle de toutes les cartes de changements
+      changementCards.forEach(card => {
+        card.style.transform = "scale(1)";
+      });
+
+      // Mettre à l'échelle la carte cliquée dans les changements
+      element.style.transform = "scale(1.2)";
+
+      // Sauvegarder le contenu des cartes
+      let stadiumCardContent = selectedStadiumCard.innerHTML;
+      let changeCardContent = element.innerHTML;
+
+      // Échanger les contenus entre la carte du stadium et la carte des changements
+      selectedStadiumCard.innerHTML = changeCardContent;
+      element.innerHTML = stadiumCardContent;
+
+      // Réinitialiser la sélection de la carte du stadium après l'échange
+      selectedStadiumCard.style.transform = "scale(1)";
+      selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
+    }
+  });
+});
 
 
-console.log('nice',status);
+
+
+
+
+
+
+
 });
 
 
