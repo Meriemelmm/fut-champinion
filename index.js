@@ -973,6 +973,23 @@ console.log("shooo",shooting);
         selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
       }
     });})
+    changementCards.forEach(element => {
+        element.addEventListener("click", () => {
+         
+      
+          element.remove();
+          
+          console.log(changementCards);
+        });
+      
+      });
+      console.log( chanagemenplayer);
+    
+    
+    
+    });
+    
+
   function filteredPlayers(players,post){
     return players.filter(player => player.position === post);
   
