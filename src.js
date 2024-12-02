@@ -322,16 +322,17 @@ create.addEventListener("click", function (event) {
 // else{
 
 
-shooting = document.getElementById("shooting").value;
-//   console.log(shooting);
-  passing = document.getElementById("passing").value;
-  console.log(passing);
-   dribbling = document.getElementById("dribbling").value;
-//   console.log(dribbling);
-  defending = document.getElementById("defending").value;
-//   console.log(defending);
-   physical = document.getElementById("physical").value;
-   pace=document.getElementById('pace').value;
+
+shooting = document.getElementById("shooting");
+   console.log("-----",shooting);
+//   passing = document.getElementById("passing").value;
+//   console.log(passing);
+//    dribbling = document.getElementById("dribbling").value;
+// //   console.log(dribbling);
+//   defending = document.getElementById("defending").value;
+// //   console.log(defending);
+//    physical = document.getElementById("physical").value;
+//    pace=document.getElementById('pace').value;
 
    
 
@@ -417,7 +418,8 @@ console.log("shooo",shooting);
     // let  filteredGK_GK= filteredPlayers(players,"GK");
     console.log(filteredGK_GK)
    if (filteredGK_GK.length === 0){
-    console.log("adil",obj);
+
+
      card[0].outerHTML = ` <div  class="player-card goalkeeper">
     <div class="player-rating">${objet.rating}</div>
     <div class="player-position" data-position="GK">${objet.position}</div>
