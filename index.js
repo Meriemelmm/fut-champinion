@@ -898,7 +898,81 @@ console.log("shooo",shooting);
 
     }
    
-  }})
+  }   
+  let stadiums = [];
+  let chanagemenplayer = [];
+  
+  // Sélectionner les cartes du stadium et des changements
+  
+  
+  // Remplir les tableaux avec les cartes
+  stadium.querySelectorAll(".player-card").forEach(card => {
+    stadiums.push(card);
+  });
+  changements.querySelectorAll(".player-card").forEach(card => {
+    chanagemenplayer.push(card);
+  });
+  console.log("nash",stadiums);
+  console.log("halawit",chanagemenplayer);
+  
+  
+  // Sélectionner toutes les cartes dans le stadium et les changements
+  const stadiumCards = stadium.querySelectorAll(".player-card");
+  const changementCards = changements.querySelectorAll(".player-card");
+  
+  // Variable pour suivre la carte sélectionnée dans le stadium
+  let selectedStadiumCard = null;
+  let selectedPosition = ""; 
+  
+  // Ajouter l'événement de clic sur chaque carte du stadium
+  // stadiumCards.forEach(element => {
+  //   element.addEventListener("click", () => {
+  //     // Réinitialiser l'échelle de toutes les cartes du stadium
+  //     stadiumCards.forEach(card => {
+  //       card.style.transform = "scale(1)";
+  //     });
+  
+  //     // Mettre à l'échelle la carte cliquée
+  //     element.style.transform = "scale(1.1)";
+  
+  //     // Sélectionner la carte du stadium cliquée
+  //     selectedStadiumCard = element;
+  
+  //     let selectedposition=position.value;
+     
+  //     console.log( "ahlam", selectedposition);
+  
+    
+  
+  //   });
+  // });
+  
+  // Ajouter l'événement de clic sur chaque carte de changements
+  changementCards.forEach(element => {
+    element.addEventListener("click", () => {
+      // Vérifier si une carte du stadium a été sélectionnée
+      if (selectedStadiumCard !== null) {
+        // Réinitialiser l'échelle de toutes les cartes de changements
+        changementCards.forEach(card => {
+          card.style.transform = "scale(1)";
+        });
+  
+        // Mettre à l'échelle la carte cliquée dans les changements
+        element.style.transform = "scale(1.2)";
+  
+        // Sauvegarder le contenu des cartes
+        let stadiumCardContent = selectedStadiumCard.innerHTML;
+        let changeCardContent = element.innerHTML;
+  
+        // Échanger les contenus entre la carte du stadium et la carte des changements
+        selectedStadiumCard.innerHTML = changeCardContent;
+        element.innerHTML = stadiumCardContent;
+  
+        // Réinitialiser la sélection de la carte du stadium après l'échange
+        selectedStadiumCard.style.transform = "scale(1)";
+        selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
+      }
+    });})
   function filteredPlayers(players,post){
     return players.filter(player => player.position === post);
   
