@@ -237,95 +237,12 @@ create.addEventListener("click", function (event) {
 
 
  
-//   reflexes=document.getElementById('reflexes').value;
-// speed=document.getElementById('speed').value;
-// kicking=document.getElementById('kicking').value;
-// positioning=document.getElementById('positioning').value;
-// console.log(positioning);
-// diving=document.getElementById('diving').value;
 
 
 
-
-
-
-
-
-
-// let obj = {
-//   rating: rating.value,
-//   nom: nom.value,
-//   position: position.value,
-//   nationality: nationality.value,
-//   club: club.value,
-//   pace: pace.value,
-//   photo: photo.value,
-//   flag: flag.value,
-// };
-
-// if (position.value === "GK") {
-//   reflexes=document.getElementById('reflexes').value;
-//   // Add goalkeeper-specific stats
-//   obj = {
-//     ...obj,
-
-   
-   
-//     diving: diving.value,         // Specific for GK
-//     positioning: positioning.value, // Specific for GK
-//     kicking: kicking.value,       // Specific for GK
-//     speed: speed.value,           // Specific for GK
-//     reflexes: reflexes,     // Specific for GK
-//     handling: handling.value,     // Specific for GK
-//   };
-// } else {
-//   // Add outfield player-specific stats
-//   obj = {
-//     ...obj,
-//     dribbling: dribbling.value,    // Specific for outfield players
-//     defending: defending.value,    // Specific for outfield players
-//     shooting: shooting.value,      // Specific for outfield players
-//     passing: passing.value,        // Specific for outfield players
-//     physical: physical// Specific for outfield players
-//   };
-// }
-
-
-// let obj = {
-  
-// };
-
-// if(position.value=="GK"){
-//   obj = {
-//     rating: rating.value,
-//     nom: nom.value,
-//     dribbling: dribbling.value,
-//     defending: defending.value,
-//     shooting: shooting,
-//     passing: passing.value,
-//     physical: physical.value,
-//     position: position.value,
-//     nationality: nationality.value,
-//     club: club.value,
-//     pace: pace.value,
-//     photo: photo.value,
-//     flag: flag.value,
-//     // diving: diving.value,
-//     //  positioning:positioning,
-//     // kicking: kicking.value,
-//     // speed: speed.value,
-//     // reflexes: reflexes,
-//     // handling: handling.value
-//   };
-
-// }
-// else{
-
-
-
-shooting = document.getElementById("shooting");
-   console.log("-----",shooting);
-//   passing = document.getElementById("passing").value;
+// shooting = document.getElementById("shooting").value;
+ 
+//    passing = document.getElementById("passing").value;
 //   console.log(passing);
 //    dribbling = document.getElementById("dribbling").value;
 // //   console.log(dribbling);
@@ -334,49 +251,28 @@ shooting = document.getElementById("shooting");
 //    physical = document.getElementById("physical").value;
 //    pace=document.getElementById('pace').value;
 
-   
-
-
-
-//  reflexes=document.getElementById('reflexes').value;
-
-// speed=document.getElementById('speed').value;
-
-  let objet={
-    rating: rating.value,
-    nom: nom.value,
-    photo: photo.value,
-    flag: flag.value, nationality: nationality.value,
-    club: club.value,
-    diving: diving.value,
-     positioning:positioning.value.value,
-    kicking: kicking.value,
-    speed: speed.value,
-    reflexes: reflexes.value,
-    handling: handling.value
-
-  }
-   let obj = {
-    rating: rating.value,
-    nom: nom.value,
-    dribbling: dribbling,
-    defending: defending,
-    shooting: shooting,
-    passing: passing,
-    physical: physical,
-    position: position.value,
-    nationality: nationality.value,
-    club: club.value,
-    pace: pace,
-    photo: photo.value,
-    flag: flag.value,
-    // diving: diving,
-    //  positioning:positioning,
-    // kicking: kicking,
-    // speed: speed,
-    // reflexes: reflexes,
-    // handling: handling
-  };
+  
+  //  let obj = {
+  //   rating: rating.value,
+  //   nom: nom.value,
+  //   dribbling: dribbling,
+  //   defending: defending,
+  //   shooting: shooting,
+  //   passing: passing,
+  //   physical: physical,
+  //   position: position.value,
+  //   nationality: nationality.value,
+  //   club: club.value,
+  //   pace: pace,
+  //   photo: photo.value,
+  //   flag: flag.value,
+  //   // diving: diving,
+  //   //  positioning:positioning,
+  //   // kicking: kicking,
+  //   // speed: speed,
+  //   // reflexes: reflexes,
+  //   // handling: handling
+  // };
 
 
 // }
@@ -388,7 +284,7 @@ console.log("shooo",shooting);
   
    
 
-  console.log("Player object:", obj);
+
   
   console.log(position.value);
   let card = document.getElementsByClassName("player-card ");
@@ -408,33 +304,89 @@ console.log("shooo",shooting);
   let filteredGK_CCM=filteredPlayers(players,"CCM");
   let filteredGK_ST=filteredPlayers(players,"ST");
   
+  let obj = {
+    rating: rating.value,
+    nom: nom.value,
+    // dribbling: dribbling,
+    // defending: defending,
+    // shooting: shooting,
+    // passing: passing,
+    // physical: physical,
+    // pace: pace,
+    position: position.value,
+    nationality: nationality.value,
+    club: club.value,
+    photo: photo.value,
+    flag: flag.value,
+  };
+
+  // Ajout des statistiques spécifiques si le joueur est un gardien de but
+  if (position.value === "GK") {
+   diving = document.getElementById("diving").value;
+    kicking = document.getElementById("kicking").value;
+     reflexes = document.getElementById("reflexes").value;
+     handling = document.getElementById("handling").value;
+     positioning = document.getElementById("positioning").value;
+     speed=document.getElementById("speed").value;
+    
+
+    // Ajout des statistiques du gardien de but dans l'objet
+    obj.diving = diving;
+    obj.kicking = kicking;
+    obj.reflexes = reflexes;
+    obj.handling = handling;
+    obj.positioning = positioning;
+    obj.speed=speed;
+  }
+  else
+  {
+    shooting = document.getElementById("shooting").value;
  
+   passing = document.getElementById("passing").value;
+  console.log(passing);
+   dribbling = document.getElementById("dribbling").value;
+//   console.log(dribbling);
+  defending = document.getElementById("defending").value;
+//   console.log(defending);
+   physical = document.getElementById("physical").value;
+   pace=document.getElementById('pace').value;
+  
+     
+ 
+     // Ajout des statistiques du gardien de but dans l'objet
+     obj.shooting =shooting;
+     obj.passing =passing ;
+     obj.dribbling = dribbling;
+     obj. defending =  defending;
+     obj. physical =  physical;
+     obj. pace= pace;
+   }
 
 
   if (position.value === "GK") { 
     
-    
-    // let filteredGK = players.filter((player) =>player.position === "GK");
-    // let  filteredGK_GK= filteredPlayers(players,"GK");
-    console.log(filteredGK_GK)
+
    if (filteredGK_GK.length === 0){
 
 
      card[0].outerHTML = ` <div  class="player-card goalkeeper">
-    <div class="player-rating">${objet.rating}</div>
-    <div class="player-position" data-position="GK">${objet.position}</div>
+      <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
+    <div class="player-rating">${obj.rating}</div>
+    <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
-        <img src="${objet.photo}" alt="${obj.nom}">
+        <img src="${obj.photo}" alt="${obj.nom}">
     </div>
     <div class="player-name">${obj.nom}</div>
 
   <div class="statistique">
-              <div class="stat"><span>${objet.diving}</span>DIV</div>
-              <div class="stat"><span>${objet.kicking}</span> KI</div>
-              <div class="stat"><span>${objet.speed}</span> SP</div>
-              <div class="stat"><span>${objet.handling}</span> HAD</div>
-              <div class="stat"><span>${objet.reflexes}</span> RF</div>
-              <div class="stat"><span>${objet.positioning}</span> POS</div>
+              <div class="stat"><span>${obj.diving}</span>DIV</div>
+              <div class="stat"><span>${obj.kicking}</span> KI</div>
+              <div class="stat"><span>${obj.speed}</span> SP</div>
+              <div class="stat"><span>${obj.handling}</span> HAD</div>
+              <div class="stat"><span>${obj.reflexes}</span> RF</div>
+              <div class="stat"><span>${obj.positioning}</span> POS</div>
           </div>
           
     
@@ -443,19 +395,22 @@ console.log("shooo",shooting);
  else {
  
   cartat.outerHTML = ` <div  class="player-card">
-    <div class="player-rating">${objet.rating}</div>
-    <div class="player-position" data-position="GK">${objet.position}</div>
+   <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
+    <div class="player-rating">${obj.rating}</div>
+    <div class="player-position" data-position="GK">${obj.position}</div>
     <div class="player-photo">
-        <img src="${objet.photo}" alt="${objet.nom}">
+        <img src="${obj.photo}" alt="${obj.nom}">
     </div>
-    <div class="player-name">${objet.nom}</div>
+    <div class="player-name">${obj.nom}</div>
   <div class="statistique">
-              <div class="stat"><span>${objet.diving}</span>DIV</div>
-              <div class="stat"><span>${objet.kicking}</span> KI</div>
-              <div class="stat"><span>${objet.speed}</span> SP</div>
-              <div class="stat"><span>${objet.handling}</span> HAD</div>
-              <div class="stat"><span>${objet.reflexes}</span> RF</div>
-              <div class="stat"><span>${objet.positioning}</span> POS</div>
+              <div class="stat"><span>${obj.diving}</span>DIV</div>
+              <div class="stat"><span>${obj.kicking}</span> KI</div>
+              <div class="stat"><span>${obj.speed}</span> SP</div>
+              <div class="stat"><span>${obj.handling}</span> HAD</div>
+              <div class="stat"><span>${obj.reflexes}</span> RF</div>
+              <div class="stat"><span>${obj.positioning}</span> POS</div>
           </div>
 </div>`;
 
@@ -469,7 +424,11 @@ console.log("shooo",shooting);
     let  filteredGK_LW= filteredPlayers(players,"LW");
     console.log(filteredGK_LW);
     if(filteredGK_LW.length===0){card[8].outerHTML = `
+       
         <div  id="leftyo"class="player-card left-wing">
+        <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
          <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -490,7 +449,11 @@ console.log("shooo",shooting);
     }
      else {
      cartat.outerHTML = `
+      
         <div  id="leftyo"class="player-card ">
+        <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
          <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -517,6 +480,9 @@ console.log("shooo",shooting);
 
     if( filteredGK_RW.length===0){card[9].outerHTML = `
       <div  id="rwt" class="player-card right-wing">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
         <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -535,6 +501,9 @@ console.log("shooo",shooting);
 }
      else{ cartat.outerHTML = `
          <div  id="rwt" class="player-card ">
+          <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
            <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -558,6 +527,9 @@ console.log("shooo",shooting);
     console.log(filteredGK_LB);
     if(filteredGK_LB.length===0){
     card[3].outerHTML = `<div class="player-card left-back">
+     <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -575,6 +547,9 @@ console.log("shooo",shooting);
         </div>`;}
         else {
           cartat.outerHTML = `<div class="player-card ">
+           <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
            <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -596,6 +571,9 @@ console.log("shooo",shooting);
     // let filteredGK_RB=filteredPlayers(players,"RB");
     console.log(filteredGK_RB);
     if(filteredGK_RB===0){ card[4].outerHTML = `<div class="player-card right-back">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
            <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -615,6 +593,9 @@ console.log("shooo",shooting);
     }
     else{
       cartat.outerHTML = `<div class="player-card ">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
        <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -638,6 +619,9 @@ console.log("shooo",shooting);
     console.log(card[6]);
     if(filteredGK_LCM.length===0){
       card[5].outerHTML = `<div class="player-card enter-mid1">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
        <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -656,6 +640,9 @@ console.log("shooo",shooting);
 
     }
     else{cartat.outerHTML = `<div class="player-card ">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -677,6 +664,9 @@ console.log("shooo",shooting);
     console.log(filteredGK_RCM);
     if(filteredGK_RCM.length===0){
         card[7].outerHTML = ` <div class="player-card enter-mid3">
+         <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
        <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -694,6 +684,9 @@ console.log("shooo",shooting);
         </div>`;
     }
     else {  cartat.outerHTML = ` <div class="player-card ">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
       <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -716,6 +709,9 @@ console.log("shooo",shooting);
     if(filteredGK_LCB.length===0){
       card[1].outerHTML = `
         <div class="player-card center-back1">
+         <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
            <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -736,6 +732,9 @@ console.log("shooo",shooting);
     }
     else{ cartat.outerHTML = `
         <div class="player-card ">
+         <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -758,6 +757,9 @@ console.log("shooo",shooting);
     console.log(filteredGK_RCB);
     if(filteredGK_RCB.length===0){ 
     card[2].outerHTML = `<div class="player-card center-back2">
+     <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
          <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -775,6 +777,9 @@ console.log("shooo",shooting);
       </div>`;}
       else{
         cartat.outerHTML = `<div class="player-card ">
+         <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
         <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -798,6 +803,9 @@ console.log("shooo",shooting);
     console.log(filteredGK_CCM);
 
     if(filteredGK_CCM.length===0){card[6].outerHTML =`<div class="player-card enter-mid2">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
          <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -818,6 +826,9 @@ console.log("shooo",shooting);
     }
     else{
       cartat.outerHTML = `<div class="player-card ">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
        <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -842,6 +853,9 @@ console.log("shooo",shooting);
     console.log(filteredGK_ST);
 
     if(filteredGK_ST.length===0){ card[10].outerHTML =`<div  id="STr" class="player-card striker">
+       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST"> ${obj.position}</div>
           <div class="player-photo">
@@ -860,8 +874,11 @@ console.log("shooo",shooting);
 
     }
     else{
-     cartat.outerHTML =`
+     cartat.innerHTML =`
      <div  id="STr" class="player-card ">
+      <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
+          
+          ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST">${obj.position}</div>
           <div class="player-photo">
@@ -977,27 +994,27 @@ let selectedStadiumCard = null;
 let selectedPosition = ""; 
 
 // Ajouter l'événement de clic sur chaque carte du stadium
-stadiumCards.forEach(element => {
-  element.addEventListener("click", () => {
-    // Réinitialiser l'échelle de toutes les cartes du stadium
-    stadiumCards.forEach(card => {
-      card.style.transform = "scale(1)";
-    });
+// stadiumCards.forEach(element => {
+//   element.addEventListener("click", () => {
+//     // Réinitialiser l'échelle de toutes les cartes du stadium
+//     stadiumCards.forEach(card => {
+//       card.style.transform = "scale(1)";
+//     });
 
-    // Mettre à l'échelle la carte cliquée
-    element.style.transform = "scale(1.1)";
+//     // Mettre à l'échelle la carte cliquée
+//     element.style.transform = "scale(1.1)";
 
-    // Sélectionner la carte du stadium cliquée
-    selectedStadiumCard = element;
+//     // Sélectionner la carte du stadium cliquée
+//     selectedStadiumCard = element;
 
-    let selectedposition=position.value;
+//     let selectedposition=position.value;
    
-    console.log( "ahlam", selectedposition);
+//     console.log( "ahlam", selectedposition);
 
   
 
-  });
-});
+//   });
+// });
 
 // Ajouter l'événement de clic sur chaque carte de changements
 changementCards.forEach(element => {
@@ -1025,6 +1042,21 @@ changementCards.forEach(element => {
       selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
     }
   });
+  // supprimer les elements de changements:
+
+  changementCards.forEach(element => {
+    element.addEventListener("click", () => {
+     
+  
+      element.remove();
+      
+      console.log(changementCards);
+    });
+  
+  });
+  console.log( chanagemenplayer);
+
+
 
 });
 
@@ -1054,8 +1086,11 @@ changementCards.forEach(element => {
 let stadium = document.querySelector('.stadium');
 
 supprimer.forEach(function(icon,i) {
+
   icon.addEventListener('click', function() {
     console.log(icon.parentElement);
+    alert("hello");
+    console.log("hello")
     
    icon.parentElement.querySelector(".player-name").textContent="";
    icon.parentElement.querySelector(".player-photo").textContent="";
