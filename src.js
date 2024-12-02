@@ -17,9 +17,10 @@ let defending = document.getElementById("defending");
 console.log(defending);
 let physical = document.getElementById("physical");
 console.log(physical);
-let result = document.getElementsByClassName("text");
-console.log(result);
-console.log(result);
+let supprimer=document.getElementById('supprimer');
+console.log(supprimer)
+// let result = document.getElementsByClassName("text");
+
 flag=document.getElementById('flag');
 console.log(flag);
 photo=document.getElementById('photo');
@@ -69,6 +70,7 @@ position.addEventListener("change", (event) => {
   container.style.display="block";
   let positionvalue = position.value;
   if (positionvalue == "GK") {
+    console.log("Gardien de but sélectionné");
    
     container.innerHTML = ` <label for="">diving</label>
           <input type="number" id="diving"  required>
@@ -95,6 +97,7 @@ position.addEventListener("change", (event) => {
       
       `;
   } else {
+    console.log("Autre position sélectionnée");
     container.innerHTML = ` <label for=""> pace</label>
           <input type="number" id="pace" required>
           <div class="text"></div>
@@ -111,6 +114,8 @@ position.addEventListener("change", (event) => {
           <div class="text"></div>
           <label for="">defending</label>
           <input type="nomber" id="defending"  required>
+          <label for="physical">Physical</label>
+          <input type="number" id="physical" name="physical" required>
           <div class="text"></div>`;
   }
 });
@@ -124,9 +129,10 @@ function valide_nationality() {
     nationality.value.trim() !== "" &&
     /^[A-Za-z\s]+$/.test(nationality.value)
   ) {
-   result[2].textContent="correct"
+  //  result[2].textContent="correct"
     console.log("correct")
-  } else {result[2].textContent = "invalid";
+  } else {
+    // result[2].textContent = "invalid";
 
     console.log("incorrect");
   }
@@ -139,10 +145,10 @@ function valide_pace() {
     rating.value >= 0 &&
     pace.value <= 100
   ) {
-    result[5].innerHTML = "valide";
+    // result[5].innerHTML = "valide";
     console.log("correct");
   } else {
-    result[5].innerHTML = "invalid";
+    // result[5].innerHTML = "invalid";
   }
 }
 
@@ -151,7 +157,6 @@ function valide_pace() {
 
 
 
-console.log(result[10]);
 
 
 
@@ -167,12 +172,12 @@ function name_validation() {
   ) {
     console.log("correct");
 
-    result[0].innerHTML = "coorrect";
+    // result[0].innerHTML = "coorrect";
   } else {
     // Si la valeur est vide, retourner false
     console.log("Le champ est vide !");
 
-    result[0].innerHTML = "incorrect";
+    // result[0].innerHTML = "incorrect";
   }
 }
 function valide_club() {
@@ -182,11 +187,11 @@ function valide_club() {
     club.value.trim() !== "" &&  // S'assurer que le champ n'est pas vide
     /^[A-Za-z\s]+$/.test(club.value)  // Expression régulière pour valider les lettres et les espaces
   ) {
-   result[3].innerHTML = "Valide";  
+  //  result[3].innerHTML = "Valide";  
    console.log("corect")// Afficher "Valide" dans la zone de résultat
     // Mettre le texte en vert
   } else {
-    result[3].innerHTML = "Invalide";  // Afficher "Invalide" dans la zone de résultat
+    // result[3].innerHTML = "Invalide";  // Afficher "Invalide" dans la zone de résultat
      // Mettre le texte en rouge
   }
 }
@@ -214,10 +219,10 @@ function valide_positon() {
   let positionne = position.value.trim();
   if (validPositions.includes(positionne)) {
     console.log("correct");
-    result[1].innerHTML = "coorrect";
+    // result[1].innerHTML = "coorrect";
   } else {
     console.log("ncorrect");
-    result[1].innerHTML = "incorrect";
+    // result[1].innerHTML = "incorrect";
   }
 }
 
@@ -239,27 +244,51 @@ create.addEventListener("click", function (event) {
   let  filteredGK_RW=filteredPlayers(players,"RW");
   let  filteredGK_GK= filteredPlayers(players,"GK");
   let  filteredGK_LW= filteredPlayers(players,"LW");
-  let obj = {
-    rating: rating.value,
-    nom: nom.value,
-    dribbling: dribbling.value,
-    defending: defending.value,
-    shooting: shooting.value,
-    passing: passing.value,
-    physical: physical.value,
-    position: position.value,
-    nationality: nationality.value,
-    club: club.value,
-    pace: pace.value,
-    photo: photo.value,
-    flag: flag.value,
-    diving: diving.value,
-    positioning: positioning.value,
-    kicking: kicking.value,
-    speed: speed.value,
-    reflexes: reflexes.value,
-    handling: handling.value
-  };
+
+
+ 
+  reflexes=document.getElementById('reflexes').value;
+speed=document.getElementById('speed').value;
+kicking=document.getElementById('kicking').value;
+positioning=document.getElementById('positioning').value;
+console.log(positioning);
+diving=document.getElementById('diving').value;
+
+
+
+
+
+
+
+
+
+
+ 
+
+    let obj = {
+      rating: rating.value,
+      nom: nom.value,
+      dribbling: dribbling,
+      defending: defending,
+      shooting: shooting,
+      passing: passing,
+      physical: physical,
+      position: position.value,
+      nationality: nationality.value,
+      club: club.value,
+      pace: pace,
+      photo: photo.value,
+      flag: flag.value,
+      diving: diving,
+       positioning:positioning,
+      kicking: kicking,
+      speed: speed,
+      reflexes: reflexes,
+      handling: handling
+    };
+  
+   
+
   console.log("Player object:", obj);
   
   console.log(position.value);
@@ -314,7 +343,7 @@ create.addEventListener("click", function (event) {
     <div class="player-photo">
         <img src="${obj.photo}" alt="${obj.nom}">
     </div>
-    <div class="player-name">${obj .nom}</div>
+    <div class="player-name">${obj.nom}</div>
   <div class="statistique">
               <div class="stat"><span>${obj.diving}</span>DIV</div>
               <div class="stat"><span>${obj.kicking}</span> KI</div>
@@ -770,19 +799,7 @@ stadium.querySelectorAll(".player-card").forEach(element => {
 
 
 })
-// changements.querySelectorAll(".player-card").forEach(element => {
-//   element.addEventListener("click", () => {
-//     // Réinitialiser le fond de toutes les cartes
-  
-    
-//     element.style.scale=1.2;
-    
-    
-//   });
- 
 
-
-// })
 
 console.log(filteredGK_GK);
  console.log( "first",filteredGK_GK[0]);
@@ -852,6 +869,7 @@ const changementCards = changements.querySelectorAll(".player-card");
 
 // Variable pour suivre la carte sélectionnée dans le stadium
 let selectedStadiumCard = null;
+let selectedPosition = ""; 
 
 // Ajouter l'événement de clic sur chaque carte du stadium
 stadiumCards.forEach(element => {
@@ -866,6 +884,13 @@ stadiumCards.forEach(element => {
 
     // Sélectionner la carte du stadium cliquée
     selectedStadiumCard = element;
+
+    let selectedposition=position.value;
+   
+    console.log( "ahlam", selectedposition);
+
+  
+
   });
 });
 
@@ -901,9 +926,16 @@ changementCards.forEach(element => {
 
 
 
+
+
+
+
+
  console.log(changements);
  console.log(stadium);
  console.log(players);
+
+
 
 
 
