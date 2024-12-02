@@ -17,7 +17,7 @@ let defending = document.getElementById("defending");
 console.log(defending);
 let physical = document.getElementById("physical");
 console.log(physical);
-let supprimer=document.getElementById('supprimer');
+let supprimer=document.querySelectorAll('.supprimer');
 console.log(supprimer)
 // let result = document.getElementsByClassName("text");
 
@@ -152,16 +152,6 @@ function valide_pace() {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
 nom.addEventListener("input", name_validation);
 
 function name_validation() {
@@ -247,12 +237,12 @@ create.addEventListener("click", function (event) {
 
 
  
-  reflexes=document.getElementById('reflexes').value;
-speed=document.getElementById('speed').value;
-kicking=document.getElementById('kicking').value;
-positioning=document.getElementById('positioning').value;
-console.log(positioning);
-diving=document.getElementById('diving').value;
+//   reflexes=document.getElementById('reflexes').value;
+// speed=document.getElementById('speed').value;
+// kicking=document.getElementById('kicking').value;
+// positioning=document.getElementById('positioning').value;
+// console.log(positioning);
+// diving=document.getElementById('diving').value;
 
 
 
@@ -262,30 +252,138 @@ diving=document.getElementById('diving').value;
 
 
 
+// let obj = {
+//   rating: rating.value,
+//   nom: nom.value,
+//   position: position.value,
+//   nationality: nationality.value,
+//   club: club.value,
+//   pace: pace.value,
+//   photo: photo.value,
+//   flag: flag.value,
+// };
+
+// if (position.value === "GK") {
+//   reflexes=document.getElementById('reflexes').value;
+//   // Add goalkeeper-specific stats
+//   obj = {
+//     ...obj,
+
+   
+   
+//     diving: diving.value,         // Specific for GK
+//     positioning: positioning.value, // Specific for GK
+//     kicking: kicking.value,       // Specific for GK
+//     speed: speed.value,           // Specific for GK
+//     reflexes: reflexes,     // Specific for GK
+//     handling: handling.value,     // Specific for GK
+//   };
+// } else {
+//   // Add outfield player-specific stats
+//   obj = {
+//     ...obj,
+//     dribbling: dribbling.value,    // Specific for outfield players
+//     defending: defending.value,    // Specific for outfield players
+//     shooting: shooting.value,      // Specific for outfield players
+//     passing: passing.value,        // Specific for outfield players
+//     physical: physical// Specific for outfield players
+//   };
+// }
+
+
+// let obj = {
+  
+// };
+
+// if(position.value=="GK"){
+//   obj = {
+//     rating: rating.value,
+//     nom: nom.value,
+//     dribbling: dribbling.value,
+//     defending: defending.value,
+//     shooting: shooting,
+//     passing: passing.value,
+//     physical: physical.value,
+//     position: position.value,
+//     nationality: nationality.value,
+//     club: club.value,
+//     pace: pace.value,
+//     photo: photo.value,
+//     flag: flag.value,
+//     // diving: diving.value,
+//     //  positioning:positioning,
+//     // kicking: kicking.value,
+//     // speed: speed.value,
+//     // reflexes: reflexes,
+//     // handling: handling.value
+//   };
+
+// }
+// else{
+
+
+shooting = document.getElementById("shooting").value;
+//   console.log(shooting);
+  passing = document.getElementById("passing").value;
+  console.log(passing);
+   dribbling = document.getElementById("dribbling").value;
+//   console.log(dribbling);
+  defending = document.getElementById("defending").value;
+//   console.log(defending);
+   physical = document.getElementById("physical").value;
+   pace=document.getElementById('pace').value;
+
+   
+
+
+
+//  reflexes=document.getElementById('reflexes').value;
+
+// speed=document.getElementById('speed').value;
+
+  let objet={
+    rating: rating.value,
+    nom: nom.value,
+    photo: photo.value,
+    flag: flag.value, nationality: nationality.value,
+    club: club.value,
+    diving: diving.value,
+     positioning:positioning.value.value,
+    kicking: kicking.value,
+    speed: speed.value,
+    reflexes: reflexes.value,
+    handling: handling.value
+
+  }
+   let obj = {
+    rating: rating.value,
+    nom: nom.value,
+    dribbling: dribbling,
+    defending: defending,
+    shooting: shooting,
+    passing: passing,
+    physical: physical,
+    position: position.value,
+    nationality: nationality.value,
+    club: club.value,
+    pace: pace,
+    photo: photo.value,
+    flag: flag.value,
+    // diving: diving,
+    //  positioning:positioning,
+    // kicking: kicking,
+    // speed: speed,
+    // reflexes: reflexes,
+    // handling: handling
+  };
+
+
+// }
+console.log("shooo",shooting);
 
  
 
-    let obj = {
-      rating: rating.value,
-      nom: nom.value,
-      dribbling: dribbling,
-      defending: defending,
-      shooting: shooting,
-      passing: passing,
-      physical: physical,
-      position: position.value,
-      nationality: nationality.value,
-      club: club.value,
-      pace: pace,
-      photo: photo.value,
-      flag: flag.value,
-      diving: diving,
-       positioning:positioning,
-      kicking: kicking,
-      speed: speed,
-      reflexes: reflexes,
-      handling: handling
-    };
+ 
   
    
 
@@ -313,44 +411,49 @@ diving=document.getElementById('diving').value;
 
 
   if (position.value === "GK") { 
+    
+    
     // let filteredGK = players.filter((player) =>player.position === "GK");
     // let  filteredGK_GK= filteredPlayers(players,"GK");
     console.log(filteredGK_GK)
-   if (filteredGK_GK.length === 0){ card[0].outerHTML = ` <div  class="player-card goalkeeper">
-    <div class="player-rating">${obj.rating}</div>
-    <div class="player-position" data-position="GK">${obj.position}</div>
+   if (filteredGK_GK.length === 0){
+    console.log("adil",obj);
+     card[0].outerHTML = ` <div  class="player-card goalkeeper">
+    <div class="player-rating">${objet.rating}</div>
+    <div class="player-position" data-position="GK">${objet.position}</div>
     <div class="player-photo">
-        <img src="${obj.photo}" alt="${obj.nom}">
+        <img src="${objet.photo}" alt="${obj.nom}">
     </div>
     <div class="player-name">${obj.nom}</div>
 
   <div class="statistique">
-              <div class="stat"><span>${obj.diving}</span>DIV</div>
-              <div class="stat"><span>${obj.kicking}</span> KI</div>
-              <div class="stat"><span>${obj.speed}</span> SP</div>
-              <div class="stat"><span>${obj.handling}</span> HAD</div>
-              <div class="stat"><span>${obj.reflexes}</span> RF</div>
-              <div class="stat"><span>${obj.positioning}</span> POS</div>
+              <div class="stat"><span>${objet.diving}</span>DIV</div>
+              <div class="stat"><span>${objet.kicking}</span> KI</div>
+              <div class="stat"><span>${objet.speed}</span> SP</div>
+              <div class="stat"><span>${objet.handling}</span> HAD</div>
+              <div class="stat"><span>${objet.reflexes}</span> RF</div>
+              <div class="stat"><span>${objet.positioning}</span> POS</div>
           </div>
           
     
 </div>`;
 }
  else {
+ 
   cartat.outerHTML = ` <div  class="player-card">
-    <div class="player-rating">${obj.rating}</div>
-    <div class="player-position" data-position="GK">${obj.position}</div>
+    <div class="player-rating">${objet.rating}</div>
+    <div class="player-position" data-position="GK">${objet.position}</div>
     <div class="player-photo">
-        <img src="${obj.photo}" alt="${obj.nom}">
+        <img src="${objet.photo}" alt="${objet.nom}">
     </div>
-    <div class="player-name">${obj.nom}</div>
+    <div class="player-name">${objet.nom}</div>
   <div class="statistique">
-              <div class="stat"><span>${obj.diving}</span>DIV</div>
-              <div class="stat"><span>${obj.kicking}</span> KI</div>
-              <div class="stat"><span>${obj.speed}</span> SP</div>
-              <div class="stat"><span>${obj.handling}</span> HAD</div>
-              <div class="stat"><span>${obj.reflexes}</span> RF</div>
-              <div class="stat"><span>${obj.positioning}</span> POS</div>
+              <div class="stat"><span>${objet.diving}</span>DIV</div>
+              <div class="stat"><span>${objet.kicking}</span> KI</div>
+              <div class="stat"><span>${objet.speed}</span> SP</div>
+              <div class="stat"><span>${objet.handling}</span> HAD</div>
+              <div class="stat"><span>${objet.reflexes}</span> RF</div>
+              <div class="stat"><span>${objet.positioning}</span> POS</div>
           </div>
 </div>`;
 
@@ -359,8 +462,9 @@ diving=document.getElementById('diving').value;
 
  
      
-   else if (position.value === "LW") {
-    // let  filteredGK_LW= filteredPlayers(players,"LW");
+   else
+    if (position.value === "LW") {
+    let  filteredGK_LW= filteredPlayers(players,"LW");
     console.log(filteredGK_LW);
     if(filteredGK_LW.length===0){card[8].outerHTML = `
         <div  id="leftyo"class="player-card left-wing">
@@ -754,7 +858,8 @@ diving=document.getElementById('diving').value;
 
     }
     else{
-     cartat.outerHTML =`<div  id="STr" class="player-card ">
+     cartat.outerHTML =`
+     <div  id="STr" class="player-card ">
           <div class="player-rating">${obj.rating}</div>
           <div class="player-position" data-position="ST">${obj.position}</div>
           <div class="player-photo">
@@ -769,7 +874,8 @@ diving=document.getElementById('diving').value;
               <div class="stat"><span>${obj.defending}</span> DEF</div>
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
-        </div>`;
+        </div>
+        `;
 
     }
    
@@ -789,11 +895,8 @@ stadium.querySelectorAll(".player-card").forEach(element => {
     stadium.querySelectorAll(".player-card").forEach(i => {
       i.style.scale = 1; 
      
-    });
-    
+    });   
     element.style.scale=1.1;
-    
-    
   });
  
 
@@ -941,6 +1044,70 @@ changementCards.forEach(element => {
 
 
 });
+
+
+// Assurez-vous que la variable `supprimer` sélectionne toutes les icônes de suppression
+
+// Sélectionner toutes les icônes de suppression
+let stadium = document.querySelector('.stadium');
+
+supprimer.forEach(function(icon,i) {
+  icon.addEventListener('click', function() {
+    console.log(icon.parentElement);
+    
+   icon.parentElement.querySelector(".player-name").textContent="";
+   icon.parentElement.querySelector(".player-photo").textContent="";
+   icon.parentElement.querySelector(".player-position").textContent="";
+   icon.parentElement.querySelector(".player-rating").innerHTML="";
+   icon.parentElement.querySelectorAll("span").forEach(element => {
+    element.textContent="0"
+   });
+
+    // Trouver la carte parente de l'icône cliquée
+// for(let i=0;stadiumCards.length-1;i++){  
+//    console.log(stadiumCards[i]);
+//    stadiumCards[i].innerHTML="";
+
+// }
+   
+    
+   
+
+    
+  });
+});
+
+
+//  supprimer.forEach(function(icon) {
+//     icon.addEventListener('click', function() {
+//       alert("hello")
+//       // Sélectionner la carte parente (l'élément .player-card)
+// let cards=document.querySelector(".player-card");
+// cards.forEach(function(card){
+//   card.innerHTML="";
+// })
+
+//     });
+//   });
+
+
+// let hello = card[0]; // Obtenez l'élément DOM (la carte elle-même)
+// supprimer.addEventListener('click', sprt);
+
+// function sprt() {
+//   alert("hello");
+//   hello.innerHTML = ''; // Supprime uniquement le contenu de l'élément
+// } 
+
+
+
+
+
+
+
+
+
+
 
 
 
