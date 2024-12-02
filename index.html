@@ -261,19 +261,19 @@
     
         <!-- Nom label et input -->
         <label for="nom">Nom</label>
-        <input type="text" id="nom" required>
+        <input type="text" id="nom"  class="input">
     
         <!-- Nationality label et input -->
         <label for="nationality">Nationalité</label>
-        <input type="text" id="nationality" required>
+        <input type="text" id="nationality"  class="input">
     
         <!-- Club label et input -->
         <label for="club">Club</label>
-        <input type="text" id="club" required>
+        <input type="text" id="club" class="input" required>
     
         <!-- Flag label et input -->
         <label for="flag">Drapeau</label>
-        <input type="text" id="flag" required>
+        <input type="text" id="flag"  class="input">
     
         <!-- Photo label et input -->
         <label for="photo">Photo</label>
@@ -285,45 +285,45 @@
     
         <!-- Rating label et input -->
         <label for="rating">Rating</label>
-        <input type="number" id="rating" required>
+        <input type="number" id="rating" min="1" max="100" required>
     
         <!-- Container for stats -->
         <div id="container" style="text-align: center; display: none;">
             <label for="pace">Pace</label>
-            <input type="number" id="pace" name="pace" required>
+            <input type="number" id="pace" name="pace" class="number"  min="0" max="99" required>
     
             <label for="shooting">Shooting</label>
-            <input type="number" id="shooting" name="shooting" required>
+            <input type="number" id="shooting" name="shooting" class="number"  min="0" max="99"required>
     
             <label for="passing">Passing</label>
-            <input type="number" id="passing" name="passing" required>
+            <input type="number" id="passing" name="passing"   class="number" min="0" max="99" required>
     
             <label for="dribbling">Dribbling</label>
-            <input type="number" id="dribbling" name="dribbling" required>
+            <input type="number" id="dribbling" name="dribbling"  min="0" max="99"required>
     
             <label for="defending">Defending</label>
-            <input type="number" id="defending" name="defending" required>
+            <input type="number" id="defending" name="defending"  min="0" max="99" required>
     
             <label for="physical">Physical</label>
-            <input type="number" id="physical" name="physical" required>
+            <input type="number" id="physical" name="physical"  min="0" max="99"required>
     
             <label for="diving">Diving</label>
-            <input type="number" id="diving" name="diving" required>
+            <input type="number" id="diving" name="diving" min="0" max="99" required>
     
             <label for="handling">Handling</label>
-            <input type="number" id="handling" name="handling" required>
+            <input type="number" id="handling" name="handling"   min="0" max="99"required>
     
             <label for="kicking">Kicking</label>
-            <input type="number" id="kicking" name="kicking" required>
+            <input type="number" id="kicking" name="kicking"  min="0" max="99" required>
     
             <label for="speed">Speed</label>
-            <input type="number" id="speed" name="speed" required>
+            <input type="number" id="speed" name="speed"  min="0" max="99" required>
     
             <label for="reflexes">Reflexes</label>
-            <input type="number" id="reflexes" name="reflexes" required>
+            <input type="number" id="reflexes" name="reflexes"  min="0" max="99" required>
     
             <label for="positioning">Positioning</label>
-            <input type="number" id="positioning" name="positioning" required>
+            <input type="number" id="positioning" name="positioning"  min="0" max="99" required>
         </div>
    
     
@@ -361,7 +361,7 @@
  
  </div>
   
-  <script   src="index.js" > 
+  <script   src="src.js" > 
  
 
 
