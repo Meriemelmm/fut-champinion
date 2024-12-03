@@ -1,8 +1,10 @@
 *{
     
     box-sizing: border-box;
+
   }
   body {
+    background-color: #333;
     margin:0 auto;
                 font-family: Arial, sans-serif;
               
@@ -11,13 +13,21 @@
             }
   .container{
     display: flex;
-                flex-wrap: nowrap;
+                flex-wrap: wrap;
 gap:10px;
                
               align-items: center;
               justify-content: center;
               margin:0 auto;
               margin-top: 50px;
+             
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                margin: 50px auto 0;
+            
+              
             
               
              
@@ -30,7 +40,7 @@ gap:10px;
 
   h1{
     font-size: 2rem;
-    color: #fee440;
+    color: rgb(21, 35, 21);
     margin-top: 50px;
     height: 30%;
   }
@@ -55,7 +65,7 @@ gap:10px;
     padding: 20px; 
     box-shadow: 0 4px 8px rgba(56, 21, 21, 0.5);
     border-radius: 4px;
-    width:100%;
+    width:100vh;
   
  
     
@@ -164,6 +174,7 @@ gap:10px;
             background-repeat: no-repeat;
             position: relative;
             margin: -8px;
+
         }
         .player-rating {
             position: absolute;
@@ -239,6 +250,20 @@ gap:10px;
                 flex-direction: column;
       
                 align-items: center;
+                /* position: absolute; */
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex
+            ;
+                /* flex-direction: column;
+                align-items: center;
+                position: absolute;
+                left: 60px;
+                top: 174px; */
+            
+               
+
                 
         
            }
@@ -297,9 +322,9 @@ gap:10px;
    
   .formation-controls {
     display: flex;
-    flex-wrap: wrap;
-    
-    gap: 60px;
+
+    gap:10px;
+   
   margin-top: 100px;
   justify-items: center;
   justify-content: center;
