@@ -383,6 +383,7 @@ console.log("shooo",shooting);
           
     
 </div>`;
+DeletePlayer()
 }
  else {
  
@@ -436,6 +437,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+        DeletePlayer()
        
 
     }
@@ -490,6 +492,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
      </div>`;
+     DeletePlayer()
 }
      else{ cartat.outerHTML = `
          <div  id="rwt" class="player-card ">
@@ -536,7 +539,8 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.defending}</span> DEF</div>
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
-        </div>`;}
+        </div>`;
+        DeletePlayer()}
         else {
           cartat.outerHTML = `<div class="player-card ">
            <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
@@ -562,7 +566,7 @@ console.log("shooo",shooting);
   } else if (position.value === "RB") {
     // let filteredGK_RB=filteredPlayers(players,"RB");
     console.log(filteredGK_RB);
-    if(filteredGK_RB===0){ card[4].outerHTML = `<div class="player-card right-back">
+    if(filteredGK_RB.length===0){ card[4].outerHTML= `<div class="player-card right-back">
        <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
           
           ">
@@ -581,9 +585,11 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+        DeletePlayer()
 
     }
-    else{
+    else{ 
+      console.log("incorrect")
       cartat.outerHTML = `<div class="player-card ">
        <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
           
@@ -603,6 +609,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>>
     </div>`;
+   
     }
    
   } else if (position.value === "LCM") {
@@ -629,6 +636,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
     </div>`;
+    DeletePlayer()
 
     }
     else{cartat.outerHTML = `<div class="player-card ">
@@ -674,6 +682,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+        DeletePlayer()
     }
     else {  cartat.outerHTML = ` <div class="player-card ">
        <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
@@ -720,6 +729,7 @@ console.log("shooo",shooting);
           </div>
          
         </div>  `;
+        DeletePlayer()
 
     }
     else{ cartat.outerHTML = `
@@ -766,7 +776,8 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.defending}</span> DEF</div>
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
-      </div>`;}
+      </div>`;
+      DeletePlayer()}
       else{
         cartat.outerHTML = `<div class="player-card ">
          <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
@@ -813,6 +824,7 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+        DeletePlayer()
 
       
     }
@@ -863,6 +875,9 @@ console.log("shooo",shooting);
               <div class="stat"><span>${obj.physical}</span> PHY</div>
           </div>
         </div>`;
+        DeletePlayer()
+        
+ 
 
     }
     else{
@@ -995,7 +1010,8 @@ changementCards.forEach(element => {
 
      
       selectedStadiumCard.style.transform = "scale(1)";
-      selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
+      selectedStadiumCard = null; 
+      DeletePlayer();// Réinitialiser la carte sélectionnée
     }
   });
  
@@ -1033,33 +1049,7 @@ changementCards.forEach(element => {
 });
 let stadium = document.querySelector('.stadium');
 
-// function DeletePlayer(){
-// supprimer.forEach(function(icon,i) {
-//   icon.addEventListener('click', function() {
-//     console.log(icon.parentElement);
-//     alert("hello");
-//     console.log("hello")
-    
-//   //  icon.parentElement.querySelector(".player-name") .remove();
-//   //  icon.parentElement.querySelector(".player-photo").remove();
-//   //  icon.parentElement.querySelector(".player-position").remove();
-//   //  icon.parentElement.querySelector(".player-rating").remove();
 
-
-//    icon.parentElement.querySelectorAll("span").forEach(element => {
-//     element.remove();})
-//     icon.parentElement.querySelectorAll("player-rating").forEach(element => {
-//       element.remove();})
-//       icon.parentElement.querySelectorAll("player-photo").forEach(element => {
-//         element.remove();})
-//         icon.parentElement.querySelectorAll("player-name").forEach(element => {
-//           element.remove();})
-//           icon.parentElement.querySelectorAll("player-position").forEach(element => {
-//             element.remove();})
-//   });
- 
-  
-// }); }
 
 function DeletePlayer() {
   supprimer.forEach(function(icon, i) {
@@ -1076,9 +1066,7 @@ function DeletePlayer() {
   });
 }
 
-document.addEventListener("DOMContentLoaded",() => {
-  DeletePlayer();
-})
+
 function filteredPlayers(players, post){
   return players.filter(player => player.position === post);
 }
@@ -1096,9 +1084,64 @@ changementCards.forEach(element => {
 });
 
 
-DeletePlayer();
 
 
 
 
 
+
+
+
+
+// function DeletePlayer(){
+// supprimer.forEach(function(icon,i) {
+//   icon.addEventListener('click', function() {
+//     console.log(icon.parentElement);
+//     alert("hello");
+//     console.log("hello")
+    
+  //  icon.parentElement.querySelector(".player-name") .remove();
+  //  icon.parentElement.querySelector(".player-photo").remove();
+  //  icon.parentElement.querySelector(".player-position").remove();
+  //  icon.parentElement.querySelector(".player-rating").remove();
+
+
+//    icon.parentElement.querySelectorAll("span").forEach(element => {
+//     element.remove();})
+//     icon.parentElement.querySelectorAll("player-rating").forEach(element => {
+//       element.remove();})
+//       icon.parentElement.querySelectorAll("player-photo").forEach(element => {
+//         element.remove();})
+//         icon.parentElement.querySelectorAll("player-name").forEach(element => {
+//           element.remove();})
+//           icon.parentElement.querySelectorAll("player-position").forEach(element => {
+//             element.remove();})
+//   });
+ 
+  
+// }); }
+
+document.addEventListener("DOMContentLoaded",() => {
+  DeletePlayer()})
+
+
+function DeletePlayer() {
+  let supprimer = document.querySelectorAll('.supprimer'); 
+  supprimer.forEach(function(icon, i) {
+    icon.addEventListener('click', function() {
+      console.log(icon.parentElement);
+
+      // Remove all elements within the player's parent element
+      icon.parentElement.querySelectorAll(".player-rating, .player-photo, .player-name, .player-position, span").forEach(element => {
+        element.remove();
+      });
+    });
+  });
+}
+
+
+
+
+ console.log(card[4])
+
+  
