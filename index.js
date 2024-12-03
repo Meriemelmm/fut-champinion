@@ -1069,14 +1069,14 @@ function valider(number) {
   
   function valider(text) {
     if (text.length === 0) {
-      return false; 
+      return false;  
     }
     for (let i = 0; i < text.length; i++) {
       const char = text[i];
       if (
         !(char >= "A" && char <= "Z") &&
         !(char >= "a" && char <= "z") && 
-        !(char === " ") // Allow spaces
+        !(char === " ") 
       ) {
         return false; 
       }

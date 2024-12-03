@@ -19,6 +19,7 @@ let physical = document.getElementById("physical");
 console.log(physical);
 let supprimer=document.querySelectorAll('.supprimer');
 console.log(supprimer);
+let forma = document.getElementById("forma")
 function valider(text) {
   if (text.length === 0) {
     return false; 
@@ -43,34 +44,107 @@ function validateInput(input) {
   }
 }
 
+
 document.querySelectorAll('.input').forEach(input => {
 
   input.addEventListener('input', () => {
+
+    
       validateInput(input);  
   });
 
  
 });
 
- function valida_number() {
-  // Vérifie si la valeur est vide, si ce n'est pas un nombre, ou si le nombre est en dehors de la plage [0, 99]
-  if (rating.value === '' ||rating.value < 0 || rating.value > 99) {
+//  function valida_number(number) {
+
+//   // Vérifie si la valeur est vide, si ce n'est pas un nombre, ou si le nombre est en dehors de la plage [0, 99]
+//   if (number.value === '' ||number.value < 0 || number.value > 99) {
      
-    console.log("incorrect")
+//     console.log("incorrect")
  
-    document.getElementById('rating').style.border = '2px solid red';  // Bordure rouge si la valeur est incorrecte
+//     document.getElementById('number').style.border = '2px solid red';  // Bordure rouge si la valeur est incorrecte
+//     return false;
+//   }
+//   else  {
+//   console.log("correct") // Alerte si la validation est réussie
+//   document.getElementById('number').style.border = ' 2px solid green';  // Bordure verte si la valeur est correcte
+//     return true;
+//   }
+// }
+
+
+// rating.addEventListener('input', valida_number (number));
+// Fonction de validation pour les champs de type number
+function valida_number(input) {
+  // Vérifie si la valeur est vide, si ce n'est pas un nombre, ou si le nombre est en dehors de la plage [0, 99]
+  const value = input.value.trim();
+  
+  // Validation de la valeur
+  if (value === '' || isNaN(value) || value < 0 || value > 99) {
+    console.log("incorrect");
+
+    // Bordure rouge si la valeur est incorrecte
+    input.style.border = '2px solid red';
     return false;
-  }
-  else  {
-  console.log("correct") // Alerte si la validation est réussie
-  document.getElementById('rating').style.border = ' 2px solid green';  // Bordure verte si la valeur est correcte
+  } else {
+    console.log("correct");  // Message de validation réussie
+
+    // Bordure verte si la valeur est correcte
+    input.style.border = '2px solid green';
     return true;
   }
 }
 
+rating.addEventListener('input', () => valida_number(rating));
+
+// let inputs = document.querySelectorAll('.number');
 
 
-rating.addEventListener('input', valida_number);
+
+
+
+// inputs.forEach(input=>
+//  input.addEventListener('click',validated(input))
+// )
+//  function validated( input){
+
+//   if (input.value === '' || value < 0 || value > 99){
+//     console.log("incorrect");
+//     input.style.border="red";
+//   }
+//   else{
+//     console.log("correct");
+//     input.style.border="greeen";
+//   }
+//  }
+let inputs = document.querySelectorAll('.number');
+
+document.querySelectorAll('.input').forEach(input => {
+  input.addEventListener('input', () => validated(input));
+});
+
+
+
+
+function validated(input) {
+
+ 
+  const value = parseInt(input.value);
+
+
+  if (value === '' || value < 0 ||  value > 99) {
+   console.log("--------------incorrect");
+   input.style.border = '2px solid red'; 
+    
+  } else {
+    console.log("----------correct");
+   input.style.border = '2px solid green';  
+  }
+}
+
+
+// validated(4)
 
 
 
@@ -99,7 +173,7 @@ console.log(diving)
 
 // formation switch
 
-let forma = document.getElementById("forma");
+// let forma = document.getElementById("forma");
 console.log(forma);
 
 let create = document.getElementById("create");
@@ -130,22 +204,22 @@ position.addEventListener("change", (event) => {
     console.log("Gardien de but sélectionné");
    
     container.innerHTML = ` <label for="">diving</label>
-          <input type="number" id="diving"  required>
+          <input type="number" id="diving" class="number" min="0" max="99"  required>
           <div class="text"></div></div>
           <label for="">handling</label>
-          <input type="number" id="handling"  required>
+          <input type="number" id="handling" class="number"  min="0" max="99" required>
           <div class="text"></div></div>
           <label for="">kicking</label>
-          <input type="number" id="kicking"  required>
+          <input type="number" id="kicking"  class="number" min="0" max="99" required>
           <div class="text"></div></div>
           <label for="">speed</label>
-          <input type="number" id="speed"  required>
+          <input type="number" id="speed"   class="number"min="0" max="99" equired>
           <div class="text"></div></div>
           <label for="">reflexes</label>
-          <input type="number" id="reflexes"  required>
+          <input type="number" id="reflexes"   class="number"min="0" max="99" required>
           <div class="text"></div></div>
            <label for="">positioning</label>
-           <input type="number" id="positioning"  required>
+           <input type="number" id="positioning"  class="number" min="0" max="99" required>
           <div class="text"></div>
       
       
@@ -156,23 +230,23 @@ position.addEventListener("change", (event) => {
   } else {
     console.log("Autre position sélectionnée");
     container.innerHTML = ` <label for=""> pace</label>
-          <input type="number" id="pace" required>
+          <input type="number" id="pace" class=  "number" min="0" max="99" required>
           <div class="text"></div>
           <label for=""> shootting</label>
-          <input type="number" id="shooting" required>
+          <input type="number" id="shooting" class"number" min="0" max="99"  required>
           <div class="text"></div>
           <label for="">passing</label>
   
-          <input type="number" id="passing" required> 
+          <input type="number" id="passing" class="number" min="0" max="99"  required> 
           <div class="text"></div>
           
           <label for="">dribbling</label>
-          <input type="number" id="dribbling" required>
+          <input type="number" id="dribbling"   class="number" required>
           <div class="text"></div>
           <label for="">defending</label>
-          <input type="nomber" id="defending"  required>
+          <input type="nomber" id="defending"  class="number "min="0" max="99" required>
           <label for="physical">Physical</label>
-          <input type="number" id="physical" name="physical" required>
+          <input type="number" id="physical" name="physical"  class="number"required>
           <div class="text"></div>`;
   }
 });
@@ -953,28 +1027,28 @@ const changementCards = changements.querySelectorAll(".player-card");
 let selectedStadiumCard = null;
 let selectedPosition = ""; 
 
-// Ajouter l'événement de clic sur chaque carte du stadium
-// stadiumCards.forEach(element => {
-//   element.addEventListener("click", () => {
-//     // Réinitialiser l'échelle de toutes les cartes du stadium
-//     stadiumCards.forEach(card => {
-//       card.style.transform = "scale(1)";
-//     });
 
-//     // Mettre à l'échelle la carte cliquée
-//     element.style.transform = "scale(1.1)";
+stadiumCards.forEach(element => {
+  element.addEventListener("click", () => {
+    // Réinitialiser l'échelle de toutes les cartes du stadium
+    stadiumCards.forEach(card => {
+      card.style.transform = "scale(1)";
+    });
 
-//     // Sélectionner la carte du stadium cliquée
-//     selectedStadiumCard = element;
+    // Mettre à l'échelle la carte cliquée
+    element.style.transform = "scale(1.1)";
 
-//     let selectedposition=position.value;
+    // Sélectionner la carte du stadium cliquée
+    selectedStadiumCard = element;
+
+    let selectedposition=position.value;
    
-//     console.log( "ahlam", selectedposition);
+    console.log( "ahlam", selectedposition);
 
   
 
-//   });
-// });
+  });
+});
 
 // Ajouter l'événement de clic sur chaque carte de changements
 changementCards.forEach(element => {
@@ -1002,23 +1076,46 @@ changementCards.forEach(element => {
       selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
     }
   });
-  // supprimer les elements de changements:
+ 
 
-  changementCards.forEach(element => {
-    element.addEventListener("click", () => {
+//   changementCards.forEach(element => { 
+//     console.log("correct")
+//     element.addEventListener("click", () => {
      
-  
-      element.remove();
+//   console.log("hello")
+//       element.remove();
 
-      console.log(changementCards);
+//       console.log(changementCards);
+//     });
+    
+  
+//   });
+
+//   console.log( chanagemenplayer);
+
+
+
+ });
+ 
+  // changementCards.forEach(element => { 
+  //   console.log("correct")
+  //   element.addEventListener("click", () => {
+     
+  // console.log("hello")
+  //     element.remove();
+
+  //     console.log(changementCards);
+  //   });
+    
+  
+  // });
+  changementCards.forEach(element => {
+    element.addEventListener("dblclick", () => {
+      console.log("Double-clic détecté sur une carte !");
+      element.remove(); // Supprime l'élément lorsque l'utilisateur fait un double-clic
+      console.log("Carte supprimée.");
     });
-  
-  });
-  console.log( chanagemenplayer);
-
-
-
-});
+  })
 
 
 
@@ -1060,81 +1157,14 @@ supprimer.forEach(function(icon,i) {
     element.textContent="0"
    });
 
-    // Trouver la carte parente de l'icône cliquée
-// for(let i=0;stadiumCards.length-1;i++){  
-//    console.log(stadiumCards[i]);
-//    stadiumCards[i].innerHTML="";
-
-// }
-   
     
    
 
     
   });
-});
-
-
-//  supprimer.forEach(function(icon) {
-//     icon.addEventListener('click', function() {
-//       alert("hello")
-//       // Sélectionner la carte parente (l'élément .player-card)
-// let cards=document.querySelector(".player-card");
-// cards.forEach(function(card){
-//   card.innerHTML="";
-// })
-
-//     });
-//   });
-
-
-// let hello = card[0]; // Obtenez l'élément DOM (la carte elle-même)
-// supprimer.addEventListener('click', sprt);
-
-// function sprt() {
-//   alert("hello");
-//   hello.innerHTML = ''; // Supprime uniquement le contenu de l'élément
-// } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;
-
+ 
+  
+}); 
 
 
 //   FUNCTION FILTRAGE LES POSITIONS
@@ -1145,6 +1175,31 @@ function filteredPlayers(players,post){
 
   
 }
+
+
+// let changementCards = changements.querySelectorAll(".player-card");
+//   changementCards.forEach(element => { 
+//     console.log("correct")
+//     element.addEventListener("click", () => {
+     
+//   console.log("tsss")
+//       element.remove();
+
+//       console.log(changementCards);
+//     });
+    
+  
+//   });
+// let changementCards = changements.querySelectorAll(".player-card");
+// changementCards.forEach(element => {
+//   element.addEventListener("dblclick", () => {
+//     console.log("Double-clic détecté sur une carte !");
+//     element.remove(); // Supprime l'élément lorsque l'utilisateur fait un double-clic
+//     console.log("Carte supprimée.");
+//   });
+// });
+
+
 
 
 

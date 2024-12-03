@@ -239,7 +239,7 @@
     </div>
 
 
-      <form action="" id="forma" method="get">
+      <form action="" id="forma" method="get" name="myform">
         <h1 style="text-align: center; width:500px"> Add Player</h1>
         
         <!-- Position label et select -->
@@ -273,15 +273,15 @@
     
         <!-- Flag label et input -->
         <label for="flag">Drapeau</label>
-        <input type="text" id="flag"  class="input">
+        <input type="url" id="flag"  class="input">
     
         <!-- Photo label et input -->
         <label for="photo">Photo</label>
-        <input type="text" id="photo" required>
+        <input type="url" id="photo" required>
     
         <!-- Logo label et input -->
         <label for="logo">Logo</label>
-        <input type="text" id="logo" required>
+        <input type="url" id="logo" required>
     
         <!-- Rating label et input -->
         <label for="rating">Rating</label>
@@ -290,40 +290,40 @@
         <!-- Container for stats -->
         <div id="container" style="text-align: center; display: none;">
             <label for="pace">Pace</label>
-            <input type="number" id="pace" name="pace" class="number"  min="0" max="99" required>
+            <input type="number" id="pace" min="1" max="100" required>
     
-            <label for="shooting">Shooting</label>
-            <input type="number" id="shooting" name="shooting" class="number"  min="0" max="99"required>
-    
+            <label for="shooting">Shooting</label> 
+           
+            <input type="number" id="shooting" min="1" max="100" required>
             <label for="passing">Passing</label>
-            <input type="number" id="passing" name="passing"   class="number" min="0" max="99" required>
+            <input type="number" id="passing" name="passing"   class="number" min="1" max="100" required>
     
             <label for="dribbling">Dribbling</label>
-            <input type="number" id="dribbling" name="dribbling"  min="0" max="99"required>
+            <input type="number" id="dribbling" name="dribbling"  class="number" min="0" max="99"required>
     
             <label for="defending">Defending</label>
-            <input type="number" id="defending" name="defending"  min="0" max="99" required>
+            <input type="number" id="defending" name="defending"  class="number" min="0" max="99" required>
     
             <label for="physical">Physical</label>
-            <input type="number" id="physical" name="physical"  min="0" max="99"required>
+            <input type="number" id="physical" name="physical"   class="number"min="0" max="99"required>
     
             <label for="diving">Diving</label>
-            <input type="number" id="diving" name="diving" min="0" max="99" required>
+            <input type="number" id="diving" name="diving" class="number" min="0" max="99" required>
     
             <label for="handling">Handling</label>
-            <input type="number" id="handling" name="handling"   min="0" max="99"required>
+            <input type="number" id="handling" name="handling"  class="number"  min="0" max="99"required>
     
             <label for="kicking">Kicking</label>
-            <input type="number" id="kicking" name="kicking"  min="0" max="99" required>
+            <input type="number" id="kicking" name="kicking"  class="number" min="0" max="99" required>
     
             <label for="speed">Speed</label>
-            <input type="number" id="speed" name="speed"  min="0" max="99" required>
+            <input type="number" id="speed" name="speed"  class="number" min="0" max="99" required>
     
             <label for="reflexes">Reflexes</label>
-            <input type="number" id="reflexes" name="reflexes"  min="0" max="99" required>
+            <input type="number" id="reflexes" name="reflexes" class="number"  min="0" max="99" required>
     
             <label for="positioning">Positioning</label>
-            <input type="number" id="positioning" name="positioning"  min="0" max="99" required>
+            <input type="number" id="positioning" name="positioning"   class="number"min="0" max="99" required>
         </div>
    
     
