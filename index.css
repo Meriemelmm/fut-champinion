@@ -37,28 +37,14 @@ gap:10px;
   h1 span{
     color: #fff;
   }
-  #btn{
-    width: 140px;
-    height:40px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    background: #fff;
-    color: #333;
-    border: none;
-    transition: 0.3s ease;
-  }
-  #btn:hover{
-    background-color: #fee440;
-    color: #333;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.8px;
-  }
+  
+  
   .main-container{
      width: 70%;
      height: 100vh;
   }
   .stadium {
-    background-image: url('https://raw.githubusercontent.com/Mo7amed-Boukab/FUT-Champions-Web-App/refs/heads/main/src/assets/img/stadium_background.webp');
+    background-image: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/stadium_background.webp');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;

@@ -1,24 +1,24 @@
 //  les champs de input
 let nationality = document.getElementById("nationality");
-console.log(nationality);
+
 let club = document.getElementById("club");
-console.log(club);
+
 let rating = document.getElementById("rating");
-console.log(rating);
+
 let pace = document.getElementById("pace");
-console.log(pace);
+
 let shooting = document.getElementById("shooting");
-console.log(shooting);
+
 let passing = document.getElementById("passing");
-console.log(passing);
+
 let dribbling = document.getElementById("dribbling");
-console.log(dribbling);
+
 let defending = document.getElementById("defending");
-console.log(defending);
+
 let physical = document.getElementById("physical");
-console.log(physical);
+
 let supprimer=document.querySelectorAll('.supprimer');
-console.log(supprimer);
+
 let forma = document.getElementById("forma")
 function valider(text) {
   if (text.length === 0) {
@@ -55,27 +55,6 @@ document.querySelectorAll('.input').forEach(input => {
 
  
 });
-
-//  function valida_number(number) {
-
-//   // Vérifie si la valeur est vide, si ce n'est pas un nombre, ou si le nombre est en dehors de la plage [0, 99]
-//   if (number.value === '' ||number.value < 0 || number.value > 99) {
-     
-//     console.log("incorrect")
- 
-//     document.getElementById('number').style.border = '2px solid red';  // Bordure rouge si la valeur est incorrecte
-//     return false;
-//   }
-//   else  {
-//   console.log("correct") // Alerte si la validation est réussie
-//   document.getElementById('number').style.border = ' 2px solid green';  // Bordure verte si la valeur est correcte
-//     return true;
-//   }
-// }
-
-
-// rating.addEventListener('input', valida_number (number));
-// Fonction de validation pour les champs de type number
 function valida_number(input) {
   // Vérifie si la valeur est vide, si ce n'est pas un nombre, ou si le nombre est en dehors de la plage [0, 99]
   const value = input.value.trim();
@@ -97,93 +76,54 @@ function valida_number(input) {
 }
 
 rating.addEventListener('input', () => valida_number(rating));
-
-// let inputs = document.querySelectorAll('.number');
-
-
-
-
-
-// inputs.forEach(input=>
-//  input.addEventListener('click',validated(input))
-// )
-//  function validated( input){
-
-//   if (input.value === '' || value < 0 || value > 99){
-//     console.log("incorrect");
-//     input.style.border="red";
-//   }
-//   else{
-//     console.log("correct");
-//     input.style.border="greeen";
-//   }
-//  }
-let inputs = document.querySelectorAll('.number');
-
-document.querySelectorAll('.input').forEach(input => {
-  input.addEventListener('input', () => validated(input));
-});
-
-
-
-
-function validated(input) {
-
- 
-  const value = parseInt(input.value);
-
-
+function validatedNumberInput(input) {
+  console.log("called!");
+  
+  const value= input.value;
   if (value === '' || value < 0 ||  value > 99) {
-   console.log("--------------incorrect");
-   input.style.border = '2px solid red'; 
-    
+    console.log("--------------incorrect");
+    input.style.border = '2px solid red'; 
+    return false;
   } else {
     console.log("----------correct");
-   input.style.border = '2px solid green';  
+    input.style.border = '2px solid green';
+    return true;
   }
 }
-
-
-// validated(4)
-
-
-
-
-
-
-
+let Urlinputs = document.querySelectorAll('input.link');
+console.log(Urlinputs);
+function validateUrlInput(){
+ 
+console.log("hello");
+  
+}
 flag=document.getElementById('flag');
-console.log(flag);
+
 photo=document.getElementById('photo');
-console.log(photo);
+
 logo=document.getElementById('logo')
 
-console.log(rating);
+
 let kicking=document.getElementById('kicking');
-console.log(kicking);
+
 let  speed=document.getElementById('speed');
-console.log(speed);
+
 let  handling=document.getElementById('handling');
 let positioning=document.getElementById('positioning');
-console.log(positioning);
+
 let reflexes=document.getElementById('reflexes');
-console.log(reflexes);
+
 let diving=document.getElementById('diving');
-console.log(diving)
 
-// formation switch
-
-// let forma = document.getElementById("forma");
-console.log(forma);
 
 let create = document.getElementById("create");
 let nom = document.getElementById("nom");
-console.log(nom);
+
 let position = document.getElementById("position");
 let container = document.getElementById("container");
-console.log(container);
+
 let formation_select = document.getElementById("formation-select");
-console.log(formation_select);
+
 formation_select.addEventListener("change", () => {
   let formulevalue = formation_select.value;
 
@@ -193,17 +133,19 @@ formation_select.addEventListener("change", () => {
     alert("niceeeee");
   }
 });
+
 //
 let positionvalue = position.value;
-console.log(positionvalue);
+
 // switch  position et gk
 position.addEventListener("change", (event) => {
   container.style.display="block";
   let positionvalue = position.value;
   if (positionvalue == "GK") {
-    console.log("Gardien de but sélectionné");
    
-    container.innerHTML = ` <label for="">diving</label>
+   
+    container.innerHTML = ` 
+    <label for="">diving</label>
           <input type="number" id="diving" class="number" min="0" max="99"  required>
           <div class="text"></div></div>
           <label for="">handling</label>
@@ -220,7 +162,7 @@ position.addEventListener("change", (event) => {
           <div class="text"></div></div>
            <label for="">positioning</label>
            <input type="number" id="positioning"  class="number" min="0" max="99" required>
-          <div class="text"></div>
+        <div class="text"></div>
       
       
       
@@ -228,7 +170,7 @@ position.addEventListener("change", (event) => {
       
       `;
   } else {
-    console.log("Autre position sélectionnée");
+  
     container.innerHTML = ` <label for=""> pace</label>
           <input type="number" id="pace" class=  "number" min="0" max="99" required>
           <div class="text"></div>
@@ -281,35 +223,52 @@ function valide_positon() {
   let positionne = position.value.trim();
   if (validPositions.includes(positionne)) {
     console.log("correct");
-    // result[1].innerHTML = "coorrect";
+ 
   } else {
     console.log("ncorrect");
-    // result[1].innerHTML = "incorrect";
+   
   }
 }
 
 name_playeer = document.getElementsByClassName("name_player");
-// localStorage.setItem()
-console.log(name_playeer);
-//  tableau pour stocker
+
+
 let players = [];
-console.log(position.value);
+
 
 card = document.getElementsByClassName("player-card ");
-//   let stadium=document.querySelector(".stadium")
-// console.log(stadium);
+
 console.log(card[0]);
 
 //  ajoutaer players
+
+
+let inputs = document.querySelectorAll('.number');
+console.log(inputs)
+
+
+
+
 create.addEventListener("click", function (event) {
   event.preventDefault();
-  let  filteredGK_RW=filteredPlayers(players,"RW");
-  let  filteredGK_GK= filteredPlayers(players,"GK");
-  let  filteredGK_LW= filteredPlayers(players,"LW");
 
+  let  filteredGK_RW = filteredPlayers(players,"RW");
+  let  filteredGK_GK = filteredPlayers(players,"GK");
+  let  filteredGK_LW = filteredPlayers(players,"LW");
+  let numberInputs = document.querySelectorAll('input.number');
+  let allValid = true; 
+
+  numberInputs.forEach(input => {
+    if (!validatedNumberInput(input)) {
+      allValid = false; 
+    }
+  });
 
  
+  if (allValid ) {
+    console.log("All inputs are valid!");
 
+  }
 
 
 
@@ -401,7 +360,6 @@ console.log("shooo",shooting);
     
 
    if (filteredGK_GK.length === 0){
-
 
      card[0].outerHTML = ` <div  class="player-card goalkeeper">
       <img src="https://cdn-icons-png.flaticon.com/128/51/51468.png" alt=""  class="supprimer"style=" position: absolute;width: 12px;top: 18px;left:43px
@@ -509,7 +467,7 @@ console.log("shooo",shooting);
      }
     
   } else if (position.value === "RW") {
-    // let  filteredGK_RW=filteredPlayers(players,"RW");
+   
     console.log( filteredGK_RW);
 
     if( filteredGK_RW.length===0){card[9].outerHTML = `
@@ -933,37 +891,22 @@ console.log("shooo",shooting);
     }
    
   }
-  console.log("a9yi danita ",card[10])
+ 
 
 players.push(obj);
-console.log( 'players',players);
+
 
 let stadium = document.querySelector('.stadium');
-console.log(stadium);
-
-
 stadium.querySelectorAll(".player-card").forEach(element => {
   element.addEventListener("click", () => {
     // Réinitialiser le fond de toutes les cartes
     stadium.querySelectorAll(".player-card").forEach(i => {
       i.style.scale = 1; 
-     
     });   
     element.style.scale=1.1;
   });
- 
-
-
 })
 
-
-console.log(filteredGK_GK);
- console.log( "first",filteredGK_GK[0]);
-
-
-
-
- 
 let status=[
  
 ]
@@ -983,32 +926,17 @@ let arraysToCheck = [
   filteredGK_LCB,
   filteredGK_LB,
   filteredGK_RB
-];
-
-// Boucle pour ajouter uniquement les éléments définis
+]; 
 arraysToCheck.forEach(arr => {
   if (arr[0]) {
     status.push(arr[0]);
   }
 });
 
-console.log(status);  // Tableau status avec seulement les éléments définis
-
-
-
-
-
-console.log(status);  
-
-
-// Définir les tableaux de cartes
+console.log("status",status);  
 let stadiums = [];
 let chanagemenplayer = [];
 
-// Sélectionner les cartes du stadium et des changements
-
-
-// Remplir les tableaux avec les cartes
 stadium.querySelectorAll(".player-card").forEach(card => {
   stadiums.push(card);
 });
@@ -1019,96 +947,66 @@ console.log("nash",stadiums);
 console.log("halawit",chanagemenplayer);
 
 
-// Sélectionner toutes les cartes dans le stadium et les changements
 const stadiumCards = stadium.querySelectorAll(".player-card");
 const changementCards = changements.querySelectorAll(".player-card");
 
-// Variable pour suivre la carte sélectionnée dans le stadium
 let selectedStadiumCard = null;
 let selectedPosition = ""; 
 
 
 stadiumCards.forEach(element => {
   element.addEventListener("click", () => {
-    // Réinitialiser l'échelle de toutes les cartes du stadium
+   
     stadiumCards.forEach(card => {
       card.style.transform = "scale(1)";
     });
 
-    // Mettre à l'échelle la carte cliquée
+    
     element.style.transform = "scale(1.1)";
 
-    // Sélectionner la carte du stadium cliquée
+  
     selectedStadiumCard = element;
 
     let selectedposition=position.value;
-   
-    console.log( "ahlam", selectedposition);
-
   
 
   });
 });
 
-// Ajouter l'événement de clic sur chaque carte de changements
 changementCards.forEach(element => {
   element.addEventListener("click", () => {
-    // Vérifier si une carte du stadium a été sélectionnée
+   
     if (selectedStadiumCard !== null) {
-      // Réinitialiser l'échelle de toutes les cartes de changements
+     
       changementCards.forEach(card => {
         card.style.transform = "scale(1)";
       });
 
-      // Mettre à l'échelle la carte cliquée dans les changements
+  
       element.style.transform = "scale(1.2)";
 
-      // Sauvegarder le contenu des cartes
+      
       let stadiumCardContent = selectedStadiumCard.innerHTML;
       let changeCardContent = element.innerHTML;
 
-      // Échanger les contenus entre la carte du stadium et la carte des changements
+    
       selectedStadiumCard.innerHTML = changeCardContent;
       element.innerHTML = stadiumCardContent;
 
-      // Réinitialiser la sélection de la carte du stadium après l'échange
+     
       selectedStadiumCard.style.transform = "scale(1)";
       selectedStadiumCard = null; // Réinitialiser la carte sélectionnée
     }
   });
  
 
-//   changementCards.forEach(element => { 
-//     console.log("correct")
-//     element.addEventListener("click", () => {
-     
-//   console.log("hello")
-//       element.remove();
 
-//       console.log(changementCards);
-//     });
-    
-  
-//   });
-
-//   console.log( chanagemenplayer);
 
 
 
  });
  
-  // changementCards.forEach(element => { 
-  //   console.log("correct")
-  //   element.addEventListener("click", () => {
-     
-  // console.log("hello")
-  //     element.remove();
-
-  //     console.log(changementCards);
-  //   });
-    
   
-  // });
   changementCards.forEach(element => {
     element.addEventListener("dblclick", () => {
       console.log("Double-clic détecté sur une carte !");
@@ -1129,76 +1027,76 @@ changementCards.forEach(element => {
  console.log(stadium);
  console.log(players);
 
-
-
-
+ DeletePlayer();
 
 
 });
-
-
-// Assurez-vous que la variable `supprimer` sélectionne toutes les icônes de suppression
-
-// Sélectionner toutes les icônes de suppression
 let stadium = document.querySelector('.stadium');
 
-supprimer.forEach(function(icon,i) {
-
-  icon.addEventListener('click', function() {
-    console.log(icon.parentElement);
-    alert("hello");
-    console.log("hello")
+// function DeletePlayer(){
+// supprimer.forEach(function(icon,i) {
+//   icon.addEventListener('click', function() {
+//     console.log(icon.parentElement);
+//     alert("hello");
+//     console.log("hello")
     
-   icon.parentElement.querySelector(".player-name").textContent="";
-   icon.parentElement.querySelector(".player-photo").textContent="";
-   icon.parentElement.querySelector(".player-position").textContent="";
-   icon.parentElement.querySelector(".player-rating").innerHTML="";
-   icon.parentElement.querySelectorAll("span").forEach(element => {
-    element.textContent="0"
-   });
+//   //  icon.parentElement.querySelector(".player-name") .remove();
+//   //  icon.parentElement.querySelector(".player-photo").remove();
+//   //  icon.parentElement.querySelector(".player-position").remove();
+//   //  icon.parentElement.querySelector(".player-rating").remove();
 
-    
-   
 
-    
-  });
+//    icon.parentElement.querySelectorAll("span").forEach(element => {
+//     element.remove();})
+//     icon.parentElement.querySelectorAll("player-rating").forEach(element => {
+//       element.remove();})
+//       icon.parentElement.querySelectorAll("player-photo").forEach(element => {
+//         element.remove();})
+//         icon.parentElement.querySelectorAll("player-name").forEach(element => {
+//           element.remove();})
+//           icon.parentElement.querySelectorAll("player-position").forEach(element => {
+//             element.remove();})
+//   });
  
   
-}); 
+// }); }
 
+function DeletePlayer() {
+  supprimer.forEach(function(icon, i) {
+    icon.addEventListener('click', function() {
+      console.log(icon.parentElement);
+      alert("hello");
+      console.log("hello");
 
-//   FUNCTION FILTRAGE LES POSITIONS
+      // Remove all elements within the player's parent element
+      icon.parentElement.querySelectorAll(".player-rating, .player-photo, .player-name, .player-position, span").forEach(element => {
+        element.remove();
+      });
+    });
+  });
+}
 
-function filteredPlayers(players,post){
+document.addEventListener("DOMContentLoaded",() => {
+  DeletePlayer();
+})
+function filteredPlayers(players, post){
   return players.filter(player => player.position === post);
-
-
-  
 }
 
 
-// let changementCards = changements.querySelectorAll(".player-card");
-//   changementCards.forEach(element => { 
-//     console.log("correct")
-//     element.addEventListener("click", () => {
-     
-//   console.log("tsss")
-//       element.remove();
 
-//       console.log(changementCards);
-//     });
-    
-  
-//   });
-// let changementCards = changements.querySelectorAll(".player-card");
-// changementCards.forEach(element => {
-//   element.addEventListener("dblclick", () => {
-//     console.log("Double-clic détecté sur une carte !");
-//     element.remove(); // Supprime l'élément lorsque l'utilisateur fait un double-clic
-//     console.log("Carte supprimée.");
-//   });
-// });
 
+let changementCards = changements.querySelectorAll(".player-card");
+changementCards.forEach(element => {
+  element.addEventListener("dblclick", () => {
+    console.log("Double-clic détecté sur une carte !");
+    element.remove(); // Supprime l'élément lorsque l'utilisateur fait un double-clic
+    console.log("Carte supprimée.");
+  });
+});
+
+
+DeletePlayer();
 
 
 
