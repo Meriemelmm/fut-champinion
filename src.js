@@ -1042,7 +1042,7 @@ changementCards.forEach(element => {
 
 
 });
-ç
+
 
 
 
