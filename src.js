@@ -1143,5 +1143,6 @@ function DeletePlayer() {
 
 
  console.log(card[4])
+ 
 
   

@@ -71,9 +71,7 @@
   
  
     
-               ;/* La largeur est flexible, elle s'adapte à l'écran */
-                /* Hauteur fixe pour l'exemple, peut être ajustée */
-          
+               ;
                
                
   
@@ -158,13 +156,14 @@
   .striker {
     grid-row: 1;
     grid-column: 3;
+    position: relative;
   
   }
   
   .right-wing {
     grid-row: 1;
     grid-column: 4;
-    position: relative;
+    position: relative0;
     top: 20px;
   
   }
@@ -204,7 +203,7 @@
             width: 54px;
             height: 54px;
             border-radius: 50%;
-            overflow: hidden;
+           
         }
         .player-photo img {
             width: 100%;
@@ -221,6 +220,17 @@
             font-size: 10px;
             font-weight: bold;
             color: #333;
+           
+              position: absolute;
+              bottom: 102px;
+              left: 0;
+              width: 100%;
+              top: 83px;
+              text-align: center;
+              font-size: 6px;
+              font-weight: bold;
+              color: #333;
+          
         }
         .statistique {
           
