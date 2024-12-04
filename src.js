@@ -251,6 +251,7 @@ create.addEventListener("click", function (event) {
   let  filteredGK_GK = filteredPlayers(players,"GK");
   let  filteredGK_LW = filteredPlayers(players,"LW");
   let numberInputs = document.querySelectorAll('input.number');
+  
   let allValid = true; 
   let allValids=true;
   
@@ -278,7 +279,7 @@ document.querySelectorAll('.input').forEach(input => {
   if (allValid &&allValids) { 
 
     console.log("All inputs are valid!");
-    
+
 
   }
 
@@ -304,8 +305,6 @@ console.log("shooo",shooting);
   let changements=document.getElementById('changements');
   console.log( changements);
   changements.appendChild(cartat);
- 
-  let stadiumplayers = [];
   let filteredGK_LB=filteredPlayers(players,"LB");
   let filteredGK_RB=filteredPlayers(players,"RB");
   let filteredGK_LCM=filteredPlayers(players,"LCM");
@@ -314,6 +313,16 @@ console.log("shooo",shooting);
   let filteredGK_RCB=filteredPlayers(players,"RCB");
   let filteredGK_CCM=filteredPlayers(players,"CCM");
   let filteredGK_ST=filteredPlayers(players,"ST");
+ 
+  let stadiumplayers = [];
+  filteredGK_LB=filteredPlayers(players,"LB");
+   filteredGK_RB=filteredPlayers(players,"RB");
+  filteredGK_LCM=filteredPlayers(players,"LCM");
+   filteredGK_RCM=filteredPlayers(players,"RCM");
+   filteredGK_LCB=filteredPlayers(players,"LCB");
+   filteredGK_RCB=filteredPlayers(players,"RCB");
+  filteredGK_CCM=filteredPlayers(players,"CCM");
+   filteredGK_ST=filteredPlayers(players,"ST");
   
   let obj = {
     rating: rating.value,
@@ -324,6 +333,12 @@ console.log("shooo",shooting);
     photo: photo.value,
     flag: flag.value,
   };
+  
+  // players.forEach(element=>
+  //   element.rating+=element.rating
+  // )
+  // let moyen=elemnt.rating/players.length;
+  // console.log(moyen)
 
   // Ajout des statistiques spécifiques si le joueur est un gardien de but
   if (position.value === "GK") {
@@ -1118,6 +1133,72 @@ function DeletePlayer() {
 
 
  console.log(card[4])
- 
 
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ let shoo=document.getElementById('shooting');
+ let noms=document.getElementById('nom');
+ let pacex=document.getElementById('pace');
+ 
+  let changementsplayeer=document.querySelectorAll('.play-card');
+  changementsplayeer.forEach(element=>
+  element.addEventListener('click',()=>{
+     let rat=rating.value;
+     let  names=noms.value;
+     let shot=shooting.value;
+     let  pacee=pacex.value;
+     let natio=document.getElementById('nationality').value;
+
+console.log(" les informations de  ce joueur est",
+  rat,names,shot,pace,natio
+)
+
+
+
+
+
+  })
+ )
+ 
+  // players.forEach(element=>
+  //   element.rating+=element.rating
+  // )
+  // let moyen=elemnt.rating/players.length;
+  // console.log(moyen)
+
+ 
