@@ -252,6 +252,21 @@ create.addEventListener("click", function (event) {
   let  filteredGK_LW = filteredPlayers(players,"LW");
   let numberInputs = document.querySelectorAll('input.number');
   let allValid = true; 
+  let allValids=true;
+  
+
+document.querySelectorAll('.input').forEach(input => {
+
+  if (!validateInput(input)) {
+    allValids = false; 
+  }
+    
+
+ 
+  });
+
+ 
+
 
   numberInputs.forEach(input => {
     if (!validatedNumberInput(input)) {
@@ -260,8 +275,10 @@ create.addEventListener("click", function (event) {
   });
 
  
-  if (allValid ) {
+  if (allValid &&allValids) { 
+
     console.log("All inputs are valid!");
+    
 
   }
 
@@ -1090,7 +1107,7 @@ function DeletePlayer() {
       console.log(icon.parentElement);
 
       // Remove all elements within the player's parent element
-      icon.parentElement.querySelectorAll(".player-rating, .player-photo, .player-name, .player-position, span").forEach(element => {
+      icon.parentElement.querySelectorAll(".player-rating, .player-photo, .player-name, .player-position, .stat").forEach(element => {
         element.remove();
       });
     });
