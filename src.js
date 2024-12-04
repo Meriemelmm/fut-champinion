@@ -90,13 +90,8 @@ function validatedNumberInput(input) {
     return true;
   }
 }
-let Urlinputs = document.querySelectorAll('input.link');
-console.log(Urlinputs);
-function validateUrlInput(){
- 
-console.log("hello");
-  
-}
+
+
 flag=document.getElementById('flag');
 
 photo=document.getElementById('photo');
@@ -912,15 +907,15 @@ players.push(obj);
 
 
 let stadium = document.querySelector('.stadium');
-stadium.querySelectorAll(".player-card").forEach(element => {
-  element.addEventListener("click", () => {
-    // Réinitialiser le fond de toutes les cartes
-    stadium.querySelectorAll(".player-card").forEach(i => {
-      i.style.scale = 1; 
-    });   
-    element.style.scale=1.1;
-  });
-})
+// stadium.querySelectorAll(".player-card").forEach(element => {
+//   element.addEventListener("click", () => {
+//     // Réinitialiser le fond de toutes les cartes
+//     stadium.querySelectorAll(".player-card").forEach(i => {
+//       i.style.scale = 1; 
+//     });   
+//     element.style.scale=1.1;
+//   });
+// })
 
 let status=[
  
@@ -958,8 +953,8 @@ stadium.querySelectorAll(".player-card").forEach(card => {
 changements.querySelectorAll(".player-card").forEach(card => {
   chanagemenplayer.push(card);
 });
-console.log("nash",stadiums);
-console.log("halawit",chanagemenplayer);
+console.log("stadeplayer",stadiums);
+
 
 
 const stadiumCards = stadium.querySelectorAll(".player-card");
@@ -1047,7 +1042,7 @@ changementCards.forEach(element => {
 
 
 });
-let stadium = document.querySelector('.stadium');
+ç
 
 
 
@@ -1083,43 +1078,6 @@ changementCards.forEach(element => {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-// function DeletePlayer(){
-// supprimer.forEach(function(icon,i) {
-//   icon.addEventListener('click', function() {
-//     console.log(icon.parentElement);
-//     alert("hello");
-//     console.log("hello")
-    
-  //  icon.parentElement.querySelector(".player-name") .remove();
-  //  icon.parentElement.querySelector(".player-photo").remove();
-  //  icon.parentElement.querySelector(".player-position").remove();
-  //  icon.parentElement.querySelector(".player-rating").remove();
-
-
-//    icon.parentElement.querySelectorAll("span").forEach(element => {
-//     element.remove();})
-//     icon.parentElement.querySelectorAll("player-rating").forEach(element => {
-//       element.remove();})
-//       icon.parentElement.querySelectorAll("player-photo").forEach(element => {
-//         element.remove();})
-//         icon.parentElement.querySelectorAll("player-name").forEach(element => {
-//           element.remove();})
-//           icon.parentElement.querySelectorAll("player-position").forEach(element => {
-//             element.remove();})
-//   });
- 
-  
-// }); }
 
 document.addEventListener("DOMContentLoaded",() => {
   DeletePlayer()})
