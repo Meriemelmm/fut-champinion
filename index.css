@@ -13,8 +13,8 @@
             }
   .container{
     display: flex;
-                flex-wrap: wrap;
-gap:10px;
+                flex-wrap: wrap-reverse;
+
                
               align-items: center;
               justify-content: center;
@@ -25,7 +25,7 @@ gap:10px;
                 gap: 10px;
                 align-items: center;
                 justify-content: center;
-                margin: 50px auto 0;
+                gap:15px;
             
               
             
@@ -52,6 +52,7 @@ gap:10px;
   .main-container{
      width: 70%;
      height: 100vh;
+     display: flex;flex-wrap: wrap;
   }
   .stadium {
     background-image: url('https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/stadium_background.webp');
@@ -63,9 +64,10 @@ gap:10px;
     grid-template-columns: repeat(4, 1fr); 
     grid-template-rows: repeat(4, 1fr);
     padding: 20px; 
-    box-shadow: 0 4px 8px rgba(56, 21, 21, 0.5);
+   
     border-radius: 4px;
-    width:100vh;
+    width:90vh;
+    height: 90vh
   
  
     
@@ -77,7 +79,7 @@ gap:10px;
   
     
   }
-  
+
   
   
   
@@ -245,22 +247,17 @@ gap:10px;
                 padding: 20px;
                
                 border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+               
                 display: flex;
                 flex-direction: column;
       
                 align-items: center;
-                /* position: absolute; */
                 padding: 20px;
                 border-radius: 8px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+               
                 display: flex
             ;
-                /* flex-direction: column;
-                align-items: center;
-                position: absolute;
-                left: 60px;
-                top: 174px; */
+                
             
                
 
@@ -321,13 +318,20 @@ gap:10px;
   
    
   .formation-controls {
-    display: flex;
+  
 
-    gap:10px;
-   
-  margin-top: 100px;
+  margin-top: 50px;
+  margin-left: 60px;
+  display: flex;
+flex-wrap: wrap;
   justify-items: center;
-  justify-content: center;
+  align-items: center;
+  gap: 60px;
+ 
+ 
+   
+
+ 
 
 }
 #add_player{
@@ -350,6 +354,20 @@ gap:10px;
 }
    #formation-select{
     background-color: white;
-    width:300px;
-    height: 30px;
+    width:200px;
+    height: 40px; 
+    border: 1px solid #ddd;
+    border-radius: 4px
+
+
+
    }
+   @media screen and (max-width: 491px) {
+    .stadium {
+      gap: 1px;
+      width: 68vh;
+    }
+    
+  }
+
+  
